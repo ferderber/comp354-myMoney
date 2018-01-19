@@ -13,7 +13,9 @@ MyMoney is a money management desktop application written in Java.
 | Eric Morgan       | ericchiassonmorgan@gmail.com  | e-cm              |
 | Real Nguyen       | real.nguyen@hotmail.com       |                   |
 | Matthew Dugal     | mattDugal@live.com            |                   |
-| Viktoriya Malinova| malinova.vk@gmail.com         |                   |
+| Viktoriya Malinova| malinova.vk@gmail.com         |                   |
+| Kai Nicoll-Griffit| Kai.nicoll.griffith@gmail.com | kng-scherezade    |
+
 
 ## Installing
 
