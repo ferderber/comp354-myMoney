@@ -41,7 +41,7 @@ public class Database {
 	}
 
 	public <T extends Table> void update(T model) {
-		// user db driver to update a row
+		// use db driver to update a row
 	}
 
 }
