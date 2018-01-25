@@ -6,8 +6,16 @@ import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import main.java.dao.TransactionDao;
 import main.java.models.Transaction;
 
+/**
+ * Displays a detailed view of a transaction. Allows the user to update the
+ * transaction's details.
+ * 
+ * @author Matthew Ferderber
+ *
+ */
 public class TransactionDetailController implements Initializable {
 
 	@FXML
@@ -24,7 +32,8 @@ public class TransactionDetailController implements Initializable {
 
 	@FXML
 	private void saveTransaction() {
-		System.out.println("Saving transaction");
+		TransactionDao dao = new TransactionDao();
+		dao.updateTransaction(transactionProperty.get());
 	}
 
 	public ObjectProperty<Transaction> transactionProperty() {

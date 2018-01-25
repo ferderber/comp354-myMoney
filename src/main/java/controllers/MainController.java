@@ -13,6 +13,13 @@ import javafx.scene.layout.StackPane;
 import main.java.models.Transaction;
 import main.java.views.TransactionView;
 
+/**
+ * Controls the MainView of the application. Responsible for handling the left
+ * menu and transitions between different views.
+ * 
+ * @author Matthew Ferderber
+ *
+ */
 public class MainController implements Initializable {
 	@FXML
 	private TransactionListController transactionListController;
@@ -29,9 +36,6 @@ public class MainController implements Initializable {
 	@FXML
 	private StackPane detailPane;
 
-	public MainController() {
-	}
-
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		mainView.setDividerPosition(0, 0.3);
@@ -40,11 +44,17 @@ public class MainController implements Initializable {
 		transactionListController.setOnTransactionViewClick(new TransactionViewClickHandler());
 	}
 
+	/**
+	 * Switches between detail views
+	 */
 	private void switchDetailView() {
 		transactionList.setVisible(!transactionList.isVisible());
 		transactionDetail.setVisible(!transactionDetail.isVisible());
 	}
 
+	/**
+	 * Handles clicking on Transactions. Switches to the corresponding detail view.
+	 */
 	public class TransactionViewClickHandler implements EventHandler<MouseEvent> {
 
 		@Override
