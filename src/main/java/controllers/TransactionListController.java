@@ -1,26 +1,39 @@
 package main.java.controllers;
 
+import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
-
+import java.util.ResourceBundle;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.FlowPane;
 import main.java.dao.TransactionDao;
 import main.java.models.Transaction;
+import main.java.views.TransactionView;
 
-public class TransactionListController {
+public class TransactionListController implements Initializable {
 
-	public TransactionListController() {
-		System.out.println("Creating Transaction List Controller");
+	@FXML
+	private FlowPane container;
+
+	private List<TransactionView> transactionViews;
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		transactionViews = new ArrayList<TransactionView>();
+		TransactionDao dao = new TransactionDao();
+		List<Transaction> transactions = dao.getAllTransactions();
+		transactions.forEach((transaction) -> {
+			transactionViews.add(new TransactionView(transaction));
+		});
+		container.getChildren().addAll(transactionViews);
+
 	}
 
-	/**
-	 * Dispatches editTransaction event to MainController
-	 * 
-	 * @return
-	 */
-	@FXML
-	private int editTransaction() {
-		// TODO: Implement event dispatching.
-		return 0;
+	public void setOnTransactionViewClick(EventHandler<MouseEvent> handler) {
+		transactionViews.forEach((tView) -> tView.setOnAction(handler));
 	}
 
 	@FXML
@@ -28,4 +41,5 @@ public class TransactionListController {
 		TransactionDao transactionDao = new TransactionDao();
 		return transactionDao.getAllTransactions();
 	}
+
 }

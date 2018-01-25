@@ -4,28 +4,9 @@
 <?import javafx.scene.text.Text?>
 <?import main.java.controllers.TransactionListController?>
 
-<FlowPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controllers.TransactionListController">
+<FlowPane xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="main.java.controllers.TransactionListController" fx:id="container">
 	<children>
-		<FlowPane prefHeight="100.0" prefWidth="200.0">
-			<Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE"
-				strokeWidth="0.0" text="Selected Transaction" />
-		</FlowPane>
-		<FlowPane prefHeight="100.0" prefWidth="200.0">
-			<Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE"
-				strokeWidth="0.0" text="Transaction" />
-		</FlowPane>
-		<FlowPane prefHeight="100.0" prefWidth="200.0">
-			<Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE"
-				strokeWidth="0.0" text="Transaction" />
-		</FlowPane>
-		<FlowPane prefHeight="100.0" prefWidth="200.0">
-			<Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE"
-				strokeWidth="0.0" text="Transaction" />
-		</FlowPane>
-		<FlowPane prefHeight="100.0" prefWidth="200.0">
-			<Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE"
-				strokeWidth="0.0" text="Transaction" />
-		</FlowPane>
 	</children>
 </FlowPane>
 
