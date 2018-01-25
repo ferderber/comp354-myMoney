@@ -1,16 +1,23 @@
 package main.java.models;
 
-import java.sql.Date;
+import java.util.Date;
 
-import main.java.service.Table;
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.table.DatabaseTable;
 
-public class Transaction extends Table {
-	public int id;
-	public String name;
-	public String description;
-	public Date date;
+@DatabaseTable
+public class Transaction {
+	@DatabaseField(id = true)
+	private int id;
+	private String name;
+	private String description;
+	private Date date;
 
-	Transaction(int id, String name, String description, Date date) {
+	protected Transaction() {
+
+	}
+
+	public Transaction(int id, String name, String description, Date date) {
 		this.id = id;
 		this.name = name;
 		this.description = description;
