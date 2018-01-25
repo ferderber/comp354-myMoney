@@ -7,6 +7,7 @@ import java.util.List;
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.dao.DaoManager;
 import com.j256.ormlite.support.ConnectionSource;
+import com.j256.ormlite.table.TableUtils;
 
 import main.java.models.Transaction;
 import main.java.services.Database;
@@ -19,6 +20,7 @@ public class TransactionDao {
 		try {
 			connection = Database.getConnection();
 			this.transactionDao = DaoManager.createDao(connection, Transaction.class);
+			TableUtils.createTableIfNotExists(connection, Transaction.class);
 		} catch (SQLException ex) {
 			ex.printStackTrace();
 		}
