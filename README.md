@@ -27,3 +27,9 @@ MyMoney is a money management desktop application written in Java.
 - Java 1.8
 - Eclipse
 - JUnit
+- Maven
+
+## Dependencies
+
+- [ORMLite](http://ormlite.com/)
+- [SQLite JDBC Driver](https://github.com/xerial/sqlite-jdbc)
