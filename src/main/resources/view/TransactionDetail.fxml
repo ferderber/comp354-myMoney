@@ -6,12 +6,12 @@
 <?import main.java.controllers.TransactionListController?>
 
 
-<FlowPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-	minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"
-	xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1"
+<FlowPane xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1"
 	fx:controller="main.java.controllers.TransactionDetailController">
 	<children>
 		<Text strokeType="OUTSIDE" strokeWidth="0.0" text="Transaction Details" />
+		<Text text="${controller.transaction.name}" />
+
 		<Button mnemonicParsing="false" onMouseClicked="#saveTransaction"
 			text="Save Transaction" />
 	</children>
