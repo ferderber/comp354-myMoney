@@ -1,0 +1,16 @@
+January 24th
+----------
+Installed and and started working with LaTeX
+
+
+January 25th
+----------
+Discussed how to go about documentation with other documenter (Viktoriya) and made
+a tentative plan for dividing the work.
+
+
+January 27th
+----------
+Refreshed on Git and Eclipse, installed both. 
+Troublshot errors with running project locally in Eclipse. 
+Reviewed the parts of the document I'm responsible for and started planning them out.
