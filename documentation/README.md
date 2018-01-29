@@ -6,6 +6,10 @@ whole___. Note that the content for the document is the __joint responsibility o
 ### LaTeX
 Documentation is to be generated using the LaTeX system.<br/>
 Asuming you have no idea where to start.... The following are some introductory information on how to generate LaTeX that I used for 353's E/R diagrams using TeX Studio, tikv, and ulem. Tex Studio has a built in package installer for your use.<br/>
+#### UML Specific
+https://perso.ensta-paristech.fr/~kielbasi/tikzuml/var/files/html/web-tikz-uml-userguidech3.html
+<br/>
+#### General Purpose
 https://www.youtube.com/watch?v=Y-kXtWdjtmw<br/>
 https://www.youtube.com/watch?v=5pdQG8ZMPVA<br/>
 https://tex.stackexchange.com/questions/288506/customize-arrow-path-tikz<br/>
