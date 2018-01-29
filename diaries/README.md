@@ -1,17 +1,17 @@
 # Guide on Markdown(.md) Formatting
 
-* .md is a markdown language that adds formatting to your text files when viewing them in github. 
+* .md is a markup language that adds formatting to your text files when viewing them in github. 
 * It can mostly be done in \<html> if you're more comfortable with that.
-* It's much prettier than text files so whoever is reading our repository won't have their eyes bleed when going through an entire section of student's daily logs.
+* It's much prettier than .txt files so whoever is grading our repository won't have their eyes bleed when going through an entire section of student's daily logs.
 * It allows you to write readme files on github that appear at the bottom of directory pages such as the one you're reading now.
 * The <a href = "https://github.com/tchapi/markdown-cheatsheet/blob/master/README.md">mardown-cheatsheet</a> at the bottom tells you everything you need to know.
 
 ## The Basic Details:
 * \<br/> creates a newline
-* # ==  h1/very large size tag
-* ## == h2/large size tag
-* ### == h3/fairly large size tag
-* #### == h4/regular size tag
+* \# ->  h1/very large size tag
+* \## -> h2/large size tag
+* \### -> h3/fairly large size tag
+* \#### -> h4/regular size tag
 * \* Generates bullet point lists
 * 1\. Generates a numbered list
 * _ _Generates Italics_ _
