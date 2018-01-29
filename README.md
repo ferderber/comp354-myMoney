@@ -4,6 +4,15 @@
 
 MyMoney is a money management desktop application written in Java.
 
+### Iteration 1
+Document: Software requirements specification (for all user stories). Each team will
+be responsible to independently refine the user stories into software requirements. (Your
+team is your customer.)
+### Iteration 2
+Document: Architectural and detailed design specification (for all user stories)
+### Iteration 3
+Document: Test plan and test report
+
 ## Team Members
 
 | Name               | Email Address                  | Github Username   | Role(Iteration 1)             
