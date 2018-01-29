@@ -6,7 +6,7 @@ MyMoney is a money management desktop application written in Java.
 
 ## Team Members
 
-| Name               | Email Address                  | Github Username   | Role             
+| Name               | Email Address                  | Github Username   | Role(Iteration 1)             
 | :----------------  | :----------------------------  | :---------------- |:---------------- 
 | Matthew Ferderber  | matthewferderber@gmail.com     | matthewferderber  | Coder
 | Matthew Dugal      | mattDugal@live.com             | mdugal            | Coder
