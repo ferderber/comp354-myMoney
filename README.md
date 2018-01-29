@@ -48,19 +48,19 @@ use cases, TDD, MVC.
 of roles for Iteration 2; select use cases for Iteration 2; and agree on task assignments,
 deadlines, and overall timeline. Possible de-brief on what worked well and what did not
 work well on Iteration 1. Possible plan to fix any remaining issues in software for Iteration
-1.
+1.<br/><br/>
 <strong>Laboratory Week 7:</strong> Documenters should review Latex and create a sample document.
 Coders should review JUnit and create sample unit tests. The team should meet and
 resolve any misunderstandings for Iteration 2 about the domain model and use cases;
 hear how the Coders plan to implement their assigned use case; hear what issues the
 Documenters have, and what content/information they need. Everyone can help create
 sample data for person X as needed by the unit tests. Review the timeline overall for
-iteration 2, assigned tasks and deadlines.
+iteration 2, assigned tasks and deadlines.<br/><br/>
 <strong>Laboratory Week 8:</strong> Present your working version of the system for iteration 2. The
 team meeting should review what needs to be done over the next week to get the application
 ready for submission; the team should review status of the document, and review
 the timeline overall for iteration 2, assigned tasks and deadlines, for both the software
-and the document to be ready for submission.
+and the document to be ready for submission.<br/><br/>
 <strong>Tutorial Week 9: Laboratory Week 9:</strong> Last minute scrum to resolve remaining work
 for software and document submission. Do not forget to write minutes of meetings and
 individual diaries, and place these on the repository under version control. Do not forget
@@ -84,22 +84,22 @@ Submission at end of Week 9.
 rotation of roles for Iteration 3; select use cases for Iteration 3; and agree on task assignments,
 deadlines, and overall timeline. Possible de-brief on what worked well and what
 did not work well on Iteration 2. Possible plan to fix any remaining issues in software for
-Iteration 2.
+Iteration 2.<br/><br/>
 <strong>Personal Study Week 10 and 11:</strong> Review course material for Quiz 2. Pay particular
 attention to how the lectures relate to your project work. Web page should have questions
-to guide your study. Review what you covered in tutorials.
+to guide your study. Review what you covered in tutorials.<br/><br/>
 <strong>Laboratory Week 11:</strong> Present your working version of the system for iteration 3.
 The team meeting should review what needs to be done over the next week to get the
 application ready for submission; the team should review status of the document, and
 review the timeline overall for iteration 3, assigned tasks and deadlines, for both the
-software and the document to be ready for submission.
+software and the document to be ready for submission.<br/><br/>
 <strong>Tutorial Week 12: Laboratory Week 12:</strong> Last minute scrum to resolve remaining
 work for software and document submission. Do not forget to write minutes of meetings
 and individual diaries, and place these on the repository under version control. Do not
 forget to submit software, document, diary. Submit to EAS under required category:
 Documents should be submitted as “project 3”; Source code as “programming assignment
 3”; diary as “theory assignment 3”.
-Submission at end of Week 12.
+Submission at end of Week 12.<br/><br/>
 <strong>Tutorial Week 13: Laboratory Week 13:</strong> Final project presentations and demos will
 be scheduled
 </details>
