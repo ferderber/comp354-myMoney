@@ -16,6 +16,6 @@ https://tex.stackexchange.com/questions/7396/underlining-text-in-tikz<br/>
 #### UML Specific
 https://perso.ensta-paristech.fr/~kielbasi/tikzuml/var/files/html/web-tikz-uml-userguidech3.html
 <br/>
-<br/><br/>_This Document is just placeholder text to be filled in or discarded as needed_
+
 ### Diagrams
 ### Use Cases
