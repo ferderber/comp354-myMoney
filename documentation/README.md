@@ -6,7 +6,8 @@ whole___. Note that the content for the document is the __joint responsibility o
 ### LaTeX
 Documentation is to be generated using the LaTeX system.<br/>
 Asuming you have no idea where to start... The following are some introductory information on how to generate LaTeX that I used for 353's E/R diagrams using TeX Studio, tikv, and ulem. Tex Studio has a built in package installer for your use.<br/>
-__Alternatively, for a web based solution to rendering diagrams [ShareLaTeX](https://www.sharelatex.com) does package installation for you and doesn't require you to install anything.__
+__Alternatively, for a web based solution to rendering diagrams [ShareLaTeX](https://www.sharelatex.com) does package installation for you and doesn't require you to install anything.__<br/>
+These links only serve an introductory purpose. LaTeX is highly developed langauge with many packages more suited to your goals than what is presented.
 
 #### General Purpose
 https://www.youtube.com/watch?v=Y-kXtWdjtmw<br/>
