@@ -7,20 +7,23 @@
 * The <a href = "https://github.com/tchapi/markdown-cheatsheet/blob/master/README.md">mardown-cheatsheet</a> at the bottom tells you everything you need to know.
 
 ## The Basic Details:
+* \<br/> creates a newline
 * # ==  h1/very large size tag
 * ## == h2/large size tag
 * ### == h3/fairly large size tag
 * #### == h4/regular size tag
-* * creates bullet point lists
-* _ _creates Italics_ _
+* \* Generates bullet point lists
+* 1\. Generates a numbered list
+* _ _Generates Italics_ _
 * Underlines are not possible afaik
-* __ __creates bold__ __
-* \___ ___creates bold italics___ ___
+* __ __Generates bold__ __
+* \___ ___Generates bold italics___ ___
 * \``` ```is used to enclose code``` \```
 * \[this creates a URL link](http:\\\\)
 * Tables are best described in the cheatsheet
+* View this file to see how it's applied
 
 ## See for More Indepth Guide:
-__Basically the same, but giving options of what to read__
-https://github.com/tchapi/markdown-cheatsheet/blob/master/README.md
-https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+__Bellow are basically the same things, but giving options of what to read__<br/>
+https://github.com/tchapi/markdown-cheatsheet/blob/master/README.md<br/>
+https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet<br/>
