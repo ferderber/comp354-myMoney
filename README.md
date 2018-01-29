@@ -6,15 +6,16 @@ MyMoney is a money management desktop application written in Java.
 
 ## Team Members
 
-| Name              | Email Address                 | Github Username   |
-| :---------------- | :---------------------------- | :---------------- |
-| Matthew Ferderber | matthewferderber@gmail.com    | matthewferderber  |
-| Mylene Haurie     | mylenehaurie@gmail.com        |                   |
-| Eric Morgan       | ericchiassonmorgan@gmail.com  | e-cm              |
-| Real Nguyen       | real.nguyen@hotmail.com       |                   |
-| Matthew Dugal     | mattDugal@live.com            |                   |
-| Viktoriya Malinova| malinova.vk@gmail.com         |                   |
-| Kai Nicoll-Griffit| Kai.nicoll.griffith@gmail.com | kng-scherezade    |
+| Name               | Email Address                  | Github Username   | Role             
+| :----------------  | :----------------------------  | :---------------- |:---------------- 
+| Matthew Ferderber  | matthewferderber@gmail.com     | matthewferderber  | Coder
+| Matthew Dugal      | mattDugal@live.com             | mdugal            | Coder
+| Artem Khomich      | khomich.art@gmail.com          | khomich.art       | Coder
+| Eric Morgan        | ericchiassonmorgan@gmail.com   | e-cm              | Documentation
+| Viktoriya Malinova | malinova.vk@gmail.com          | viktosa           | Documentation
+| Maxmilien malderle | maxmalderle@gmail.com          |                   | Documentation
+| Mylene Haurie      | mylenehaurie@gmail.com         |                   | Organizer
+| Kai Nicoll-Griffith| Kai.nicoll.griffith@gmail.com  | kng-scherezade    | Organizer
 
 
 ## Installing
