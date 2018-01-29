@@ -13,7 +13,7 @@
 * #### == h4/regular size tag
 * * creates bullet point lists
 * _ _creates Italics_ _
-* <u>Underlines are not possible</u>, must use HTML's <u> tag
+* Underlines are not possible afaik
 * __ __creates bold__ __
 * \___ ___creates bold italics___ ___
 * \``` ```is used to enclose code``` \```
