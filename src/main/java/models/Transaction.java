@@ -14,23 +14,27 @@ public class Transaction {
 	@DatabaseField
 	private String description;
 	@DatabaseField
+	private double amount;
+	@DatabaseField
 	private Date date;
 
 	protected Transaction() {
 
 	}
 
-	public Transaction(String name, String description, Date date) {
+	public Transaction(String name, String description, Date date, double amount) {
 		this.name = name;
 		this.description = description;
 		this.date = date;
+		this.amount = amount;
 	}
 
-	public Transaction(int id, String name, String description, Date date) {
+	public Transaction(int id, String name, String description, Date date, double amount) {
 		this.id = id;
 		this.name = name;
 		this.description = description;
 		this.date = date;
+		this.amount = amount;
 	}
 
 	public int getId() {
@@ -63,6 +67,14 @@ public class Transaction {
 
 	public void setDate(Date date) {
 		this.date = date;
+	}
+
+	public double getAmount() {
+		return amount;
+	}
+
+	public void setAmount(double amount) {
+		this.amount = amount;
 	}
 
 }

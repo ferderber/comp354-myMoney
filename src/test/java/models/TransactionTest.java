@@ -16,7 +16,8 @@ public class TransactionTest {
 		String name = "name";
 		String description = "description";
 		Date date = new Date();
-		Transaction t = new Transaction(id, name, description, date);
+		double amount = 10;
+		Transaction t = new Transaction(id, name, description, date, amount);
 		assertEquals(t.getId(), id);
 		assertEquals(t.getName(), name);
 		assertEquals(t.getDescription(), description);
@@ -28,7 +29,8 @@ public class TransactionTest {
 		String name = "name";
 		String description = "description";
 		Date date = new Date();
-		Transaction t = new Transaction(name, description, date);
+		double amount = 10;
+		Transaction t = new Transaction(name, description, date, amount);
 		assertEquals(t.getId(), 0);
 		assertEquals(t.getName(), name);
 		assertEquals(t.getDescription(), description);
