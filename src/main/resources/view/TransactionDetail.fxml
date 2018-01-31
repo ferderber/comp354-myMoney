@@ -4,13 +4,18 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.text.Text?>
 <?import main.java.controllers.TransactionListController?>
+<?import javafx.scene.layout.Pane?>
 
 
 <FlowPane xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1"
-	fx:controller="main.java.controllers.TransactionDetailController">
+	fx:controller="main.java.controllers.TransactionDetailController"
+	orientation="VERTICAL">
 	<children>
-		<Text strokeType="OUTSIDE" strokeWidth="0.0" text="Transaction Details" />
 		<Text text="${controller.transaction.name}" />
+		<FlowPane>
+			<Text text="Amount: " />
+			<Text text="${controller.transaction.amount}" />
+		</FlowPane>
 
 		<Button mnemonicParsing="false" onMouseClicked="#saveTransaction"
 			text="Save Transaction" />
