@@ -26,11 +26,12 @@ public class MyMoneyDriver extends Application {
 	public void start(Stage primaryStage) throws Exception {
 		// Create and Insert a sample element into the Transaction table
 		TransactionDao dao = new TransactionDao();
-		dao.insert(new Transaction("Sample Transaction", "Sample Description", new Date()));
+		dao.insert(new Transaction("Sample Transaction", "Sample Description", new Date(), Math.round(Math.random() * 50)));
 		// Load MainView fxml object
 		Parent root = FXMLLoader.load(getClass().getResource("/main/resources/view/MainView.fxml"));
 		// Add the fxml Object to a new scene
 		Scene scene = new Scene(root, 800, 600);
+		scene.getStylesheets().add("/main/resources/css/application.css");
 		// Set the title of the application
 		primaryStage.setTitle("MyMoney Application");
 		// Set the scene of the application to the new Scene
