@@ -12,10 +12,14 @@
 	<items>
 		<FlowPane minWidth="200" orientation="VERTICAL" alignment="CENTER">
 			<children>
-				<Button text="View Accounts" minWidth="180" minHeight="100"/>
-				<Button text="Add Transaction" minWidth="180" minHeight="100"/>
-				<Button text="View Transaction History" onAction="#handleTransactionListClick" minWidth="180" minHeight="100"/>
-				<Button text="Settings" minWidth="180" minHeight="100"/>
+				<Button text="View Accounts" onAction="#handleAccountListClick"
+					minWidth="180" minHeight="100" />
+				<Button text="Add Transaction" onAction="#handleAddTransactionClick"
+					minWidth="180" minHeight="100" />
+				<Button text="View Transaction History" onAction="#handleTransactionListClick"
+					minWidth="180" minHeight="100" />
+				<Button text="Settings" onAction="#handleSettingsClick"
+					minWidth="180" minHeight="100" />
 			</children>
 		</FlowPane>
 
