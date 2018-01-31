@@ -4,20 +4,23 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.control.Button?>
 
 <SplitPane prefHeight="400.0" prefWidth="600.0"
 	xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1"
 	fx:controller="main.java.controllers.MainController" fx:id="mainView">
 	<items>
-		<FlowPane minWidth="200">
+		<FlowPane minWidth="200" orientation="VERTICAL" alignment="CENTER">
 			<children>
-				<Text>Place Menu Here</Text>
+				<Button text="View Accounts" minWidth="180" minHeight="100"/>
+				<Button text="Add Transaction" minWidth="180" minHeight="100"/>
+				<Button text="View Transaction History" onAction="#handleTransactionListClick" minWidth="180" minHeight="100"/>
+				<Button text="Settings" minWidth="180" minHeight="100"/>
 			</children>
 		</FlowPane>
 
 		<FlowPane minWidth="200" orientation="VERTICAL">
 			<children>
-				<Text>Detail View Section</Text>
 				<StackPane fx:id="detailPane">
 					<children>
 						<fx:include fx:id="transactionList"

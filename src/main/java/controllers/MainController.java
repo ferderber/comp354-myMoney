@@ -66,5 +66,11 @@ public class MainController implements Initializable {
 		}
 
 	}
+	
+	@FXML
+	public void handleTransactionListClick() {
+		transactionList.setVisible(true);
+		transactionDetail.setVisible(false);
+	}
 
 }
