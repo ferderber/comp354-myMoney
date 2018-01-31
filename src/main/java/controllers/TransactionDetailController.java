@@ -6,6 +6,9 @@ import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.Pane;
 import main.java.dao.TransactionDao;
 import main.java.models.Transaction;
 
@@ -20,6 +23,14 @@ public class TransactionDetailController implements Initializable {
 
 	@FXML
 	private ObjectProperty<Transaction> transactionProperty = new SimpleObjectProperty<>();
+	@FXML
+	private Button editTransactionButton;
+	@FXML
+	private Button saveTransactionButton;
+	@FXML
+	private FlowPane editPane;
+	@FXML
+	private FlowPane detailPane;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -34,6 +45,14 @@ public class TransactionDetailController implements Initializable {
 	private void saveTransaction() {
 		TransactionDao dao = new TransactionDao();
 		dao.updateTransaction(transactionProperty.get());
+		editPane.setVisible(false);
+		detailPane.setVisible(true);
+	}
+
+	@FXML
+	private void editTransaction() {
+		editPane.setVisible(true);
+		detailPane.setVisible(false);
 	}
 
 	public ObjectProperty<Transaction> transactionProperty() {
