@@ -37,6 +37,13 @@ public class Transaction {
 		this.amount = amount;
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		Transaction t = (Transaction) obj;
+		return t != null && amount == t.amount && id == t.id && name.equals(t.name) && description.equals(t.description)
+				&& date.equals(t.date);
+	}
+
 	public int getId() {
 		return id;
 	}
