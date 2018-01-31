@@ -1,8 +1,12 @@
 package main.java.views;
 
+import java.text.NumberFormat;
+
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
+import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
+import javafx.scene.Node;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.text.Text;
@@ -17,7 +21,22 @@ public class TransactionView extends FlowPane {
 	public TransactionView(Transaction transaction) {
 		super();
 		this.transaction = transaction;
-		this.getChildren().add(new Text(transaction.getName()));
+		styleComponent();
+		setContent();
+	}
+
+	private void styleComponent() {
+		this.setHgap(4);
+		this.getStyleClass().add("transaction-view"); // add class name to component
+
+	}
+
+	private void setContent() {
+		NumberFormat formatter = NumberFormat.getCurrencyInstance();
+		ObservableList<Node> children = this.getChildren();
+		children.add(new Text(formatter.format(transaction.getAmount())));
+		children.add(new Text(transaction.getName()));
+
 	}
 
 	public void setOnAction(EventHandler<MouseEvent> eventHandler) {
