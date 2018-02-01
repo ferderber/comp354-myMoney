@@ -1,0 +1,36 @@
+\iffalse 
+https://tex.stackexchange.com/questions/287924/using-dates-as-section-numbering 
+https://www.sharelatex.com/learn/Lists
+\fi
+
+\documentclass{article}
+\usepackage[english]{babel}
+\usepackage[calc,useregional,showdow]{datetime2}
+\usepackage{titletoc}
+\dottedcontents{section}[1.5in]{\bfseries\large}{1.5in}{10pt}
+
+\usepackage{xparse}
+\NewDocumentCommand{\datesec}{o m m}{%
+	\renewcommand\thesection{\DTMdate{#2}}
+	\IfNoValueTF{#1}
+	{\section{#3}}
+	{\section[#1]{#3}}
+}
+
+\title{Diary Entries}
+\author{My Name}
+
+\begin{document}
+	\maketitle
+	
+	\datesec{2016-01-16}{Running}
+	\begin{itemize}
+		\item One entry in the list
+		\item Another entry in the list
+	\end{itemize}
+	\datesec{2016-01-18}{Swimming}
+	\begin{itemize}
+		\item One entry in the list
+		\item Another entry in the list
+	\end{itemize}
+\end{document}
