@@ -5,19 +5,44 @@
 <?import javafx.scene.text.Text?>
 <?import main.java.controllers.TransactionListController?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
 
 
 <FlowPane xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1"
 	fx:controller="main.java.controllers.TransactionDetailController"
 	orientation="VERTICAL">
 	<children>
-		<Text text="${controller.transaction.name}" />
-		<FlowPane>
-			<Text text="Amount: " />
-			<Text text="${controller.transaction.amount}" />
+		<FlowPane fx:id="detailPane">
+			<Button fx:id="editTransactionButton" mnemonicParsing="false"
+				onMouseClicked="#editTransaction" text="Edit Transaction" />
+
+			<Text id="transactionName" text="${controller.transaction.name}" />
+			<FlowPane id="amountPane">
+				<Text text="Amount: " />
+				<Text text="${controller.transaction.amount}" />
+			</FlowPane>
 		</FlowPane>
 
-		<Button mnemonicParsing="false" onMouseClicked="#saveTransaction"
-			text="Save Transaction" />
+		<VBox fx:id="editPane" visible="false">
+			<HBox>
+				<Label>Name: </Label>
+				<TextField fx:id="nameField" value="${controller.transaction.name}" />
+			</HBox>
+			<HBox>
+				<Label>Amount</Label>
+				<TextField fx:id="amountField" value="${controller.transaction.amount}" />
+			</HBox>
+			<HBox>
+				<Label>Description: </Label>
+				<TextField fx:id="descriptionField" value="${controller.transaction.description}" />
+			</HBox>
+			<Button fx:id="saveTransactionButton" mnemonicParsing="false"
+				onMouseClicked="#saveTransaction" text="Save Transaction" />
+		</VBox>
+
+
 	</children>
 </FlowPane>
