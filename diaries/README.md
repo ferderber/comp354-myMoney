@@ -2,12 +2,18 @@
 
 ## Diary Requirment Info
 
+### Template LaTeX
+ Use: https://www.sharelatex.com <br/>
+ See: https://github.com/matthewferderber/comp354-myMoney/tree/master/diaries/templates <br/>
+### Description
 Each team will maintain a software repository at github with version control. All software
-will be maintained at the repository under version control. ___All documents including
+will be maintained at the repository under version control.<br/>
+___Must be in LaTeX___<br/>
+__All documents including
 minutes of meetings and individual student diaries will be maintained at the repository
 under version control.<br/>
 In addition, each student is required to keep a diary of their individual project activities
-and to submit their diary at each stage of the project.___
+and to submit their diary at each stage of the project.__
 
 ## The Organizer's Challenge
 The _organiser_ is responsible for ___coordinating activities across the whole project___, but specifically

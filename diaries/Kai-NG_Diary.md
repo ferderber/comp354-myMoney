@@ -9,3 +9,5 @@
 * Resolved team formation issues. 
 * Gathered and updated team contact info.
 * Gave info on creating markdown files
+## 29/01
+* Generated indepth Readme files for all directory pages covering goals, techniques and project information.
