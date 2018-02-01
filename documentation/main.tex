@@ -1,4 +1,5 @@
 \documentclass{article}
+\usepackage{graphicx}
 \begin{document}
 
 \begin {titlepage}
@@ -29,15 +30,15 @@
 \newpage
 \tableofcontents
 
+
 \newpage
 \section {Project Description}
-
 
 \subsection{Introduction}
 \paragraph{\indent MyMoney is a desktop application that targets young adults organize and helps them analyse their financial data. The app relies on a user input of data, and can considers multiple accounts at the same time in its analysis. The main end goal of MyMoney is to help visually and statistically represent whether a person is making enough money for its expenses and show which fields of expenses (e.g. eating out, beverages, clothes shopping, house necessities, etc.) is most costly and what percentage of the budget it currently uses up. The app analyses these statistics based on a monthly cycle of expenditures and can alert when a person is spending more money they can afford in a given cycle. }
 
 \subsection{Context}
-\paragraph{\indent }
+\paragraph{\indent For iteration 1, we look mainly at transactions. Our app is centered around the idea that each customer class will have one or many bank accounts which can be of any type (ex. Savings, Checking, etc.). The customer class can add transactions for each of its accounts which hold a certain value (if positive, we have a deposit; if negative, we have a withdrawer). The customer class holds a name and a unique ID.}
 
 \subsection{Business Goals}
 \paragraph{\indent Max's text}
@@ -46,6 +47,13 @@
 \paragraph{\indent MyMoney is a three-month long project that aims to deliver a finance-analysing application.  By end of iteration 1, the app should be able to support separate accounts linked to an individual, to have functional and user interactive sections where the client can submit data and… Iteration 2 will take 3 weeks and will support statistical analysis. Iteration 3 will take 2 weeks and will put in place money generating advertisement. }
 
 \subsection{Domain Model}
+
+
+\includegraphics[width=12.5cm]{dm.jpg}
+\caption{Figure 1: MyMoney Domain Model}
+
+
+
 
 \subsection{Actors}
 \paragraph{\indent There are several important actors that will interact with our application perpetually. The most important ones worth considering are the client, the stakeholders, the business manager(s), coders and the testers.}
@@ -105,26 +113,60 @@ HOW the program functions/will function (performance, reliability, etc)
 \newpage
 \section {Glossary}
 
-\textbf{\indent Iteration:} A cycle consisting of design, development and testing of a new feature that is ultimately added in a overall application\\
+\textbf{\indent Eclipse: }An integrated development environment used for programming mainly in Java. It is one of the most popular of its kind.\\
 
-\textbf{Test-driven project:} A project that is driven by different tests put in place before coding even starts. The goal is that the end product can pass these tests that were set from the start.\\
+\textbf{GitHub: }Version control system that keeps all changes in a project up-to-date while multiple people work on it simultaneously \\
 
-\textbf{Latex: }def.\\
+\textbf{GUI: }Short for graphical user interface. This interface represents what the end user sees and allows the user to interact with the system without needing to code commands. \\
 
-\textbf{GitHub: }def\\
+\textbf{Iteration: }A cycle consisting of design, development and testing of a new feature that is ultimately added in a overall application\\
 
-\textbf{}
+\textbf{LaTeX: }Document preparation software used mainly for scientific and academic documents.\\
+
+\textbf{Slack: }Online collaboration app based heavily on compartmentalized instant messaging.\\
+
+\textbf{SQL database: }SQL, short of structured query language, is a language used to manipulate databases. A SQL database is a database which is accessed through this specific programming language.\\
+
+\textbf{Test-driven project:}A project that is driven by different tests put in place before coding even starts. The goal is that the end product passed these tests that were set from the start.\\
+
+\textbf{UML modeling: }A visual representation of the main classes, attributes and methods composing an application, website or other code-based product.\\
+
 
 \newpage
 \begin{thebibliography}{9}
 
 \bibitem{source} 
-Oracle. "Introduction to FXML,"\textit{Oracle}, June 21, 2008. [Online]. Available: https://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction\_to\_fxml.html,2008. [Accessed: Jan. 28,2018]
+Computer Hope. "GUI," \textit{Computer Hope}, Oct. 30 2017. [Online]. Available: https://www.computerhope.com/jargon/g/gui.htm. [Accessed: Jan. 31,2018].
 
 \bibitem{source} 
-Author, author and author. 
-\textit{Introduction to FXML}.
-Addison-Wesley, Reading, city, 1234yr.
+JCG. "JavaFX ListView Example," \textit{Java Code Geeks}, March 15, 2o16. [Online]. Available: https://examples.javacodegeeks.com /desktop-java/javafx/listview-javafx/javafx-listview-example/. [Accessed: Jan. 28,2018].
+
+\bibitem{source} 
+K. Brown. "What Is GitHub, and What Is It Used For?," \textit{How-To Geek}, Sept. 21 2016. [Online]. Available: https://www.howtogeek.com/180167/htg- explains-what-is-github-and-what-do-geeks-use-it-for/. [Accessed: Jan. 28,2018].
+
+\bibitem{source} 
+M. Mansfield. "What is Slack and How Do I Use It for My Team?," \textit{Small Business Trends}, June 7, 2016. [Online]. Available: https://smallbiztrends.com/2015/12/slack-use-team.html. [Accessed: Jan. 31,2018].
+
+\bibitem{source} 
+Oracle. "Introduction to FXML," \textit{Oracle}, June 21, 2008. [Online]. Available: https://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction\_to\_fxml.html. [Accessed: Jan. 28,2018].
+
+\bibitem{source} 
+Oracle. "Packages," \textit{Oracle}, 2014. [Online]. Available: https://docs.oracle.com/javafx/2/api/overview-summary.html. [Accessed: Jan. 28,2018].
+
+\bibitem{source} 
+Oracle. "Skinning JavaFX Applications with CSS," \textit{Oracle}, June 2013. [Online]. Available: https://docs.oracle.com/javafx/2/css\_tu torial/jfxpub-css\_tutorial.htm. [Accessed: Jan. 28,2018].
+
+\bibitem{source} 
+Refsnes Data. "Introduction to SQL," \textit{w3schools.com}, 2018. [Online]. Available:https://www.w3schools.com/sql/sql\_intro.asp. [Accessed: Jan. 31,2018].
+
+\bibitem{source} 
+The LaTeX Project Public. "LaTeX – A document preparation system," \textit{The LATEX Project}. [Online]. Available: https://www.latex-project.org/. [Accessed: Jan. 31,2018].
+
+
+
+
+
+
 
 \end{thebibliography}
 \addcontentsline{toc}{section}{References}
