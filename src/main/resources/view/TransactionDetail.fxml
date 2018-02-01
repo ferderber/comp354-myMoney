@@ -6,6 +6,9 @@
 <?import main.java.controllers.TransactionListController?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
 
 
 <FlowPane xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1"
@@ -23,13 +26,22 @@
 			</FlowPane>
 		</FlowPane>
 
-		<FlowPane fx:id="editPane" visible="false">
-			<TextField fx:id="nameField" value="${controller.transaction.name}" />
-			<TextField fx:id="amountField" value="${controller.transaction.amount}" />
-			<TextField fx:id="descriptionField" value="${controller.transaction.description}" />
+		<VBox fx:id="editPane" visible="false">
+			<HBox>
+				<Label>Name: </Label>
+				<TextField fx:id="nameField" value="${controller.transaction.name}" />
+			</HBox>
+			<HBox>
+				<Label>Amount</Label>
+				<TextField fx:id="amountField" value="${controller.transaction.amount}" />
+			</HBox>
+			<HBox>
+				<Label>Description: </Label>
+				<TextField fx:id="descriptionField" value="${controller.transaction.description}" />
+			</HBox>
 			<Button fx:id="saveTransactionButton" mnemonicParsing="false"
 				onMouseClicked="#saveTransaction" text="Save Transaction" />
-		</FlowPane>
+		</VBox>
 
 
 	</children>

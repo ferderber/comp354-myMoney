@@ -9,6 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.VBox;
 import main.java.dao.TransactionDao;
 import main.java.models.Transaction;
 
@@ -28,7 +29,7 @@ public class TransactionDetailController implements Initializable {
 	@FXML
 	private Button saveTransactionButton;
 	@FXML
-	private FlowPane editPane;
+	private VBox editPane;
 	@FXML
 	private FlowPane detailPane;
 
@@ -46,6 +47,10 @@ public class TransactionDetailController implements Initializable {
 
 	public void setTransaction(Transaction transaction) {
 		this.transactionProperty.set(transaction);
+		// When the transaction is set, reset view
+		detailPane.setVisible(true);
+		editPane.setVisible(false);
+
 	}
 
 	@FXML
