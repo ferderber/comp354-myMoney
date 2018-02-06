@@ -2,6 +2,20 @@
 .button {
 }
 .transaction-view {
-	-fx-pref-height: 20px;
-	-fx-padding: 5px;
+	-fx-pref-width: 200.0;
+	-fx-pref-height: 20.0;
+	-fx-padding: 5.0;
+}
+.transaction-view:hover {
+	-fx-background-color: rgba(0.0,0.0,0.0,0.2);
+}
+.transaction-container {
+	-fx-background-color: rgba(0.0,0.0,0.0,0.2);
+}
+.transaction-list {
+	-fx-background-color: transparent;
+	-fx-control-inner-background: transparent;
+}
+.detail-pane {
+	-fx-padding: 10.0;
 }
