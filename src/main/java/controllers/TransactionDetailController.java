@@ -79,6 +79,12 @@ public class TransactionDetailController implements Initializable {
 	}
 
 	@FXML
+	private void cancelUpdate() {
+		editPane.setVisible(false);
+		detailPane.setVisible(true);
+	}
+
+	@FXML
 	private void editTransaction() {
 		editPane.setVisible(true);
 		detailPane.setVisible(false);
