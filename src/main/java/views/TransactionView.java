@@ -8,11 +8,11 @@ import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import main.java.models.Transaction;
 
-public class TransactionView extends FlowPane {
+public class TransactionView extends VBox {
 
 	private Transaction transaction;
 	private EventHandler<MouseEvent> onAction;
@@ -26,9 +26,7 @@ public class TransactionView extends FlowPane {
 	}
 
 	private void styleComponent() {
-		this.setHgap(4);
 		this.getStyleClass().add("transaction-view"); // add class name to component
-
 	}
 
 	private void setContent() {
