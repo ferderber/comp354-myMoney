@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.control.Button?>
 
-<SplitPane prefHeight="400.0" prefWidth="600.0"
+<BorderPane prefHeight="400.0" prefWidth="600.0"
 	xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1"
 	fx:controller="main.java.controllers.MainController" fx:id="mainView">
-	<items>
+	<left>
 		<FlowPane minWidth="200" orientation="VERTICAL" alignment="CENTER">
 			<children>
 				<Button text="View Accounts" onAction="#handleAccountListClick"
@@ -22,18 +22,15 @@
 					minWidth="180" minHeight="100" />
 			</children>
 		</FlowPane>
-
-		<FlowPane minWidth="200" orientation="VERTICAL">
+	</left>
+	<center>
+		<StackPane fx:id="detailPane" prefWidth="400.0" styleClass="detail-pane">
 			<children>
-				<StackPane fx:id="detailPane">
-					<children>
-						<fx:include fx:id="transactionList"
-							source="/main/resources/view/TransactionList.fxml" />
-						<fx:include fx:id="transactionDetail"
-							source="/main/resources/view/TransactionDetail.fxml" />
-					</children>
-				</StackPane>
+				<fx:include fx:id="transactionList"
+					source="/main/resources/view/TransactionList.fxml" />
+				<fx:include fx:id="transactionDetail"
+					source="/main/resources/view/TransactionDetail.fxml" />
 			</children>
-		</FlowPane>
-	</items>
-</SplitPane>
+		</StackPane>
+	</center>
+</BorderPane>
