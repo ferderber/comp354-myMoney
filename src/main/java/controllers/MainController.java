@@ -28,9 +28,13 @@ public class MainController implements Initializable {
 	@FXML
 	private TransactionDetailController transactionDetailController;
 	@FXML
+	private AccountController accountController;
+	@FXML
 	private ScrollPane transactionList;
 	@FXML
 	private Pane transactionDetail;
+	@FXML
+	private Pane accountView;
 
 	@FXML
 	private BorderPane mainView;
@@ -41,7 +45,8 @@ public class MainController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 //		mainView.setDividerPosition(0, 0.3);
-		transactionList.setVisible(true);
+		transactionList.setVisible(false);
+		accountView.setVisible(true);
 		transactionDetail.setVisible(false);
 		transactionListController.setOnTransactionViewClick(new TransactionViewClickHandler());
 	}
@@ -71,14 +76,16 @@ public class MainController implements Initializable {
 
 	@FXML
 	public void handleTransactionListClick() {
+		accountView.setVisible(false);
 		transactionList.setVisible(true);
 		transactionDetail.setVisible(false);
 	}
 
 	@FXML
 	public void handleAccountListClick() {
-		// TODO: Implement action
-	}
+		accountView.setVisible(true);
+		transactionList.setVisible(false);
+		transactionDetail.setVisible(false);	}
 
 	@FXML
 	public void handleSettingsClick() {
