@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import main.java.dao.TransactionDao;
+import main.java.models.Account;
 import main.java.models.Transaction;
 
 /**
@@ -26,8 +27,9 @@ public class MyMoneyDriver extends Application {
 	public void start(Stage primaryStage) throws Exception {
 		// Create and Insert a sample element into the Transaction table
 		TransactionDao dao = new TransactionDao();
+		Account account = new Account("Savings", new Date());
 		dao.insert(new Transaction("Sample Transaction", "Sample Description", new Date(),
-				Math.round(Math.random() * 50)));
+				Math.round(Math.random() * 50), account, null));
 		// Load MainView fxml object
 		Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("main/resources/view/MainView.fxml"));
 		// Add the fxml Object to a new scene

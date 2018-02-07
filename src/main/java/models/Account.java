@@ -24,6 +24,11 @@ public class Account {
 		this.dateAdded = dateAdded;
 	}
 
+	public Account(String name, Date dateAdded) {
+		this.name = name;
+		this.dateAdded = dateAdded;
+	}
+
 	public int getId() {
 		return id;
 	}

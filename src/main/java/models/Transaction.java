@@ -17,24 +17,34 @@ public class Transaction {
 	private double amount;
 	@DatabaseField
 	private Date date;
+	@DatabaseField(foreign = true, foreignColumnName = "id")
+	private Account accountTo;
+	@DatabaseField(foreign = true, foreignColumnName = "id")
+	private Account accountFrom;
 
 	protected Transaction() {
 
 	}
 
-	public Transaction(String name, String description, Date date, double amount) {
+	public Transaction(String name, String description, Date date, double amount, Account accountFrom,
+			Account accountTo) {
 		this.name = name;
 		this.description = description;
 		this.date = date;
 		this.amount = amount;
+		this.accountFrom = accountFrom;
+		this.accountTo = accountTo;
 	}
 
-	public Transaction(int id, String name, String description, Date date, double amount) {
+	public Transaction(int id, String name, String description, Date date, double amount, Account accountFrom,
+			Account accountTo) {
 		this.id = id;
 		this.name = name;
 		this.description = description;
 		this.date = date;
 		this.amount = amount;
+		this.accountFrom = accountFrom;
+		this.accountTo = accountTo;
 	}
 
 	@Override
@@ -82,6 +92,22 @@ public class Transaction {
 
 	public void setAmount(double amount) {
 		this.amount = amount;
+	}
+
+	public Account getAccountTo() {
+		return accountTo;
+	}
+
+	public void setAccountTo(Account accountTo) {
+		this.accountTo = accountTo;
+	}
+
+	public Account getAccountFrom() {
+		return accountFrom;
+	}
+
+	public void setAccountFrom(Account accountFrom) {
+		this.accountFrom = accountFrom;
 	}
 
 }
