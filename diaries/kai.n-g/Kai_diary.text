@@ -1,0 +1,54 @@
+
+\iffalse 
+https://tex.stackexchange.com/questions/287924/using-dates-as-section-numbering 
+https://www.sharelatex.com/learn/Lists
+\fi
+
+\documentclass{article}
+\usepackage[english]{babel}
+\usepackage[calc,useregional,showdow]{datetime2}
+\usepackage{titletoc}
+\dottedcontents{section}[1.5in]{\bfseries\large}{1.5in}{10pt}
+
+\usepackage{xparse}
+\NewDocumentCommand{\datesec}{o m m}{%
+	\renewcommand\thesection{\DTMdate{#2}}
+	\IfNoValueTF{#1}
+	{\section{#3}}
+	{\section[#1]{#3}}
+}
+
+\title{Diary Entries}
+\author{My Name}
+
+\begin{document}
+	\maketitle
+	
+	\datesec{2018-01-24}{}
+	\begin{itemize}
+		\item Organized UI with group.  
+		\item Github set up and roles assigned.
+	\end{itemize}
+
+	\datesec{2018-01-27}{}
+	\begin{itemize}
+		\item Organized UI with group.  
+		\item Github set up and roles assigned.
+	\end{itemize}
+
+	\datesec{2018-01-28}{}
+	\begin{itemize}
+		\item Organized UI with group.  
+		\item Github set up and roles assigned.
+	\end{itemize}
+
+	\datesec{2018-01-29}{}
+	\begin{itemize}
+		\item Organized UI with group.  
+		\item Github set up and roles assigned.
+\end{itemize}
+	\datesec{2018-02-02}{}
+	\begin{itemize}
+		\item Created Diary template for team
+	\end{itemize}
+\end{document}
