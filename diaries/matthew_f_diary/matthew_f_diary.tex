@@ -1,0 +1,84 @@
+\iffalse 
+https://tex.stackexchange.com/questions/287924/using-dates-as-section-numbering 
+https://www.sharelatex.com/learn/Lists
+\fi
+
+\documentclass{article}
+\usepackage[english]{babel}
+\usepackage[calc,useregional,showdow]{datetime2}
+\usepackage{titletoc}
+\dottedcontents{section}[1.5in]{\bfseries\large}{1.5in}{10pt}
+
+\usepackage{xparse}
+\NewDocumentCommand{\datesec}{o m m}{%
+	\renewcommand\thesection{\DTMdate{#2}}
+	\IfNoValueTF{#1}
+	{\section{#3}}
+	{\section[#1]{#3}}
+}
+
+\title{Diary Entries}
+\author{Matthew Ferderber}
+
+\begin{document}
+	\maketitle
+	
+	\datesec{2018-01-17}{Learning}
+  \begin{itemize}
+    \item Looked through the project description.
+		\item Started looking through options for Desktop Java applications.
+  \end{itemize}
+  
+	
+	\datesec{2018-01-18}{Setup & Planning}
+  \begin{itemize}
+    \item Created the Github Repository.
+    \item Created the initial commit.
+    \item Chose structure for the application.
+  \end{itemize}
+  
+  \datesec{2018-01-20}{User Requirement Planning & Research}
+  \begin{itemize}
+    \item Created several User Requirements based on the project description.
+    \item Started learning tools for dependency management.
+    \item Researched packages that would help with our project.
+  \end{itemize}
+
+  \datesec{2018-01-24}{Dependency Management}
+  \begin{itemize}
+    \item Decided on the tools that are required for the project.
+    \item Began using Maven for dependency management.
+    \item Chose JavaFX as the GUI library.
+    \item Installed ORMLite and SQLite packages as dependencies under Maven.
+  \end{itemize}
+
+  \datesec{2018-01-24}{Transaction Use Case}
+  \begin{itemize}
+    \item Began working on Transaction use case.
+    \item Seperated use case into model, views, and controllers.
+    \item Implemented basic Data Access layer and Model.
+  \end{itemize}
+
+  \datesec{2018-01-25}{Unit Tests}
+  \begin{itemize}
+    \item Created sample unit tests to aid others in developing.
+    \item Added unit tests for the Transaction model and data access.
+  \end{itemize}
+	
+	\datesec{2018-01-25}{Documentation}
+  \begin{itemize}
+    \item Documented previously un-documented code.
+  \end{itemize}
+  
+	\datesec{2018-01-30}{Transaction Use Case}
+  \begin{itemize}
+    \item Continued working on Transaction Use Case.
+    \item Implemented various views for different Transaction uses (Detail, Edit, List).
+	\end{itemize}
+	
+	\datesec{2018-02-06}{Transaction Use Case & Styling}
+	\begin{itemize}
+    \item Switched to VBox from FlowPane because of consistency issues.
+    \item Worked on styling various components (CSS).
+	\end{itemize}
+\end{document}
