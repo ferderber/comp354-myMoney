@@ -1,0 +1,64 @@
+\iffalse 
+https://tex.stackexchange.com/questions/287924/using-dates-as-section-numbering 
+https://www.sharelatex.com/learn/Lists
+\fi
+
+\documentclass{article}
+\usepackage[english]{babel}
+\usepackage[calc,useregional,showdow]{datetime2}
+\usepackage{titletoc}
+\dottedcontents{section}[1.5in]{\bfseries\large}{1.5in}{10pt}
+
+\usepackage{xparse}
+\NewDocumentCommand{\datesec}{o m m}{%
+	\renewcommand\thesection{\DTMdate{#2}}
+	\IfNoValueTF{#1}
+	{\section{#3}}
+	{\section[#1]{#3}}
+}
+
+\title{Diary Entries}
+\author{Maximilien Malderle}
+
+\begin{document}
+	\maketitle
+	
+	\datesec{2018-01-18}{Learning}
+  \begin{itemize}
+        \item Met the group for the first time, familiarized myself with the members.  
+        \item Learned the members names and positions
+        \item Looked through the project description.
+		\item Started thinking on how to implement a business perspective to the project.
+  \end{itemize}
+  
+	
+	\datesec{2018-01-24}{Setup & Planning}
+  \begin{itemize}
+        \item Discussion related to the design of the application in the lab.
+        \item Focused on the the layout of the application.
+        \item Discussed possible features and use cases.
+  \end{itemize}
+  
+  \datesec{2018-01-25}{Detailing of my specific tasks}
+  \begin{itemize}
+    \item Discussed the groups progress and inquired on possible helpful         tasks to work on.
+    \item Switched from Organizer to Documentation role in the project.
+    \item New task to focus on developing business goals.
+  \end{itemize}
+
+  \datesec{2018-01-31}{Progress Review}
+  \begin{itemize}
+    \item Wrote a BDC format business plan for the application.
+    \item Discussed the totality of the project with the TA in the Lab.
+    \item Decided that business goals should not be a complete business plan.
+  \end{itemize}
+
+  \datesec{2018-02-7}{Task Review}
+  \begin{itemize}
+    \item Familiarized myself with Latex to transcribe Diaries.
+    \item Retooled the business plan to better fulfill the business goals format.
+    \item Discussed the validity of the business goals.
+  \end{itemize}
+
+  
+\end{document}
