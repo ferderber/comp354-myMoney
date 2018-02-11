@@ -27,10 +27,13 @@ public class MyMoneyDriver extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		/*// Create and Insert a sample element into the Transaction table
-		AccountDao adao = new AccountDao();
-		adao.insert(new Account("Sample Account", 12345L, AccountType.debit,14));
-		adao.insert(new Account("Sample Account2", 12345L, AccountType.credit,3));*/
+		/*
+		 * AccountDao adao = new AccountDao(); adao.insert(new Account("Sample Account",
+		 * 12345L, AccountType.debit,14)); adao.insert(new Account("Sample Account2",
+		 * 12345L, AccountType.credit,3));
+		 */
+		// Create and Insert a sample element into the Transaction table
+
 		TransactionDao dao = new TransactionDao();
 		dao.insert(new Transaction("Sample Transaction", "Sample Description", new Date(),
 				Math.round(Math.random() * 50)));

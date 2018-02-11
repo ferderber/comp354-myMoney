@@ -14,7 +14,7 @@
 	fx:controller="main.java.controllers.AccountSingleController"
 	orientation="VERTICAL" fx:id="singleAccountContainer">
 	<children>
-			<VBox fx:id="accountAddBox">
+		<VBox fx:id="accountAddBox">
 			<HBox>
 				<Label>Name: </Label>
 				<TextField fx:id="nameField" value="${controller.account.name}" />
@@ -33,7 +33,7 @@
 			</HBox>
 			<HBox>
 				<Button fx:id="backToAccountListButton" mnemonicParsing="false"
-					 text="Back" />
+					text="Back" />
 				<Button fx:id="saveAccountButton" mnemonicParsing="false"
 					onMouseClicked="#saveAccount" text="Save Account" />
 			</HBox>
