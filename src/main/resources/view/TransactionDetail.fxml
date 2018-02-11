@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.text.Text?>
 <?import main.java.controllers.TransactionListController?>
 <?import javafx.scene.layout.Pane?>
@@ -11,39 +12,40 @@
 <?import javafx.scene.layout.VBox?>
 
 
-<FlowPane xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1"
-	fx:controller="main.java.controllers.TransactionDetailController"
-	orientation="VERTICAL">
-	<children>
-		<FlowPane fx:id="detailPane">
-			<Button fx:id="editTransactionButton" mnemonicParsing="false"
-				onMouseClicked="#editTransaction" text="Edit Transaction" />
+<GridPane xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="main.java.controllers.TransactionDetailController">
+	<GridPane fx:id="detailPane" GridPane.columnIndex="0"
+		GridPane.rowIndex="0">
+		<Button fx:id="editTransactionButton" mnemonicParsing="false"
+			onMouseClicked="#editTransaction" text="Edit Transaction"
+			GridPane.columnIndex="0" GridPane.rowIndex="0" />
 
-			<Text id="transactionName" text="${controller.transaction.name}" />
-			<FlowPane id="amountPane">
-				<Text text="Amount: " />
-				<Text text="${controller.transaction.amount}" />
-			</FlowPane>
-		</FlowPane>
+		<Text text="Title:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+		<Text id="transactionName" text="${controller.transaction.name}"
+			GridPane.columnIndex="1" GridPane.rowIndex="1" />
+		<Text text="Amount: " GridPane.columnIndex="0" GridPane.rowIndex="2" />
+		<Text text="${controller.transaction.amount}"
+			GridPane.columnIndex="1" GridPane.rowIndex="2" />
+		<Text text="Date: " GridPane.columnIndex="0" GridPane.rowIndex="3" />
+		<Text text="${controller.transaction.date}" GridPane.columnIndex="1"
+			GridPane.rowIndex="3" />
+	</GridPane>
 
-		<VBox fx:id="editPane" visible="false">
-			<HBox>
-				<Label>Name: </Label>
-				<TextField fx:id="nameField" value="${controller.transaction.name}" />
-			</HBox>
-			<HBox>
-				<Label>Amount</Label>
-				<TextField fx:id="amountField" value="${controller.transaction.amount}" />
-			</HBox>
-			<HBox>
-				<Label>Description: </Label>
-				<TextField fx:id="descriptionField" value="${controller.transaction.description}" />
-			</HBox>
-			<Button fx:id="saveTransactionButton" mnemonicParsing="false"
-				onMouseClicked="#saveTransaction" text="Save Transaction" />
-			<Button onMouseClicked="#cancelUpdate" text="Cancel" />
-		</VBox>
-
-
-	</children>
-</FlowPane>
+	<GridPane fx:id="editPane" visible="false">
+		<Label GridPane.columnIndex="0" GridPane.rowIndex="0">Name: </Label>
+		<TextField fx:id="nameField" value="${controller.transaction.name}"
+			GridPane.columnIndex="1" GridPane.rowIndex="0" />
+		<Label GridPane.columnIndex="0" GridPane.rowIndex="1">Amount</Label>
+		<TextField fx:id="amountField" value="${controller.transaction.amount}"
+			GridPane.columnIndex="1" GridPane.rowIndex="1" />
+		<Label GridPane.columnIndex="0" GridPane.rowIndex="2">Description:
+		</Label>
+		<TextField fx:id="descriptionField" value="${controller.transaction.description}"
+			GridPane.columnIndex="1" GridPane.rowIndex="2" />
+		<Button fx:id="saveTransactionButton" mnemonicParsing="false"
+			onMouseClicked="#saveTransaction" text="Save Transaction"
+			GridPane.columnIndex="0" GridPane.rowIndex="3" />
+		<Button onMouseClicked="#cancelUpdate" text="Cancel"
+			GridPane.columnIndex="1" GridPane.rowIndex="3" />
+	</GridPane>
+</GridPane>

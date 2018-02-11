@@ -8,6 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import main.java.dao.TransactionDao;
 import main.java.models.Transaction;
@@ -17,9 +18,7 @@ public class TransactionAddController implements Initializable {
 	@FXML
 	private Button addTransactionButton;
 	@FXML
-	private VBox addPane;
-	@FXML
-	private FlowPane detailPane;
+	private GridPane addPane;
 	@FXML
 	private TextField nameField;
 	@FXML
