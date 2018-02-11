@@ -6,8 +6,10 @@ import java.util.ResourceBundle;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.SplitPane;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import main.java.models.Transaction;
@@ -26,19 +28,19 @@ public class MainController implements Initializable {
 	@FXML
 	private TransactionDetailController transactionDetailController;
 	@FXML
-	private Pane transactionList;
+	private ScrollPane transactionList;
 	@FXML
 	private Pane transactionDetail;
 
 	@FXML
-	private SplitPane mainView;
+	private BorderPane mainView;
 
 	@FXML
 	private StackPane detailPane;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		mainView.setDividerPosition(0, 0.3);
+//		mainView.setDividerPosition(0, 0.3);
 		transactionList.setVisible(true);
 		transactionDetail.setVisible(false);
 		transactionListController.setOnTransactionViewClick(new TransactionViewClickHandler());

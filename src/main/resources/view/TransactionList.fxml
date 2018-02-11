@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.VBox?>
+	<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.text.Text?>
 <?import main.java.controllers.TransactionListController?>
 
-<FlowPane xmlns:fx="http://javafx.com/fxml/1"
-	fx:controller="main.java.controllers.TransactionListController" fx:id="container">
-	<children>
-	</children>
-</FlowPane>
+<ScrollPane xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="main.java.controllers.TransactionListController"
+	styleClass="transaction-list" hbarPolicy="NEVER">
+	<VBox fx:id="container" styleClass="transaction-container">
+		<children>
+		</children>
+	</VBox>
+</ScrollPane>
 

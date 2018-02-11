@@ -37,6 +37,7 @@ public class MyMoneyDriver extends Application {
 		primaryStage.setTitle("MyMoney Application");
 		// Set the scene of the application to the new Scene
 		primaryStage.setScene(scene);
+		primaryStage.setResizable(false);
 		// Display the Stage
 		primaryStage.show();
 	}

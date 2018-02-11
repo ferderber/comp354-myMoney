@@ -1,0 +1,73 @@
+\iffalse 
+https://tex.stackexchange.com/questions/287924/using-dates-as-section-numbering 
+https://www.sharelatex.com/learn/Lists
+\fi
+
+\documentclass{article}
+\usepackage[english]{babel}
+\usepackage[calc,useregional,showdow]{datetime2}
+\usepackage{titletoc}
+\dottedcontents{section}[1.5in]{\bfseries\large}{1.5in}{10pt}
+
+\usepackage{xparse}
+\NewDocumentCommand{\datesec}{o m m}{%
+	\renewcommand\thesection{\DTMdate{#2}}
+	\IfNoValueTF{#1}
+	{\section{#3}}
+	{\section[#1]{#3}}
+}
+
+\title{Diary Entries}
+\author{Eric Morgan}
+
+\begin{document}
+	\maketitle
+	
+	\datesec{2018-01-24}{Setup}
+	\begin{itemize}
+		\item Installed and and started reviewing LaTeX
+	\end{itemize}
+	
+	\datesec{2018-01-25}{Planning}
+	\begin{itemize}
+		\item Discussed how to go about documentation with Viktoriya and made a 						tentative plan for dividing the work.
+	\end{itemize}
+	
+	\datesec{2018-01-27}{Eclipse}
+	\begin{itemize}
+		\item Refreshed on Git and Eclipse, installed both.
+		\item Troubleshot errors with running project locally in Eclipse.
+		\item Reviewed course notes on the parts of the document I'm responsible for and 			started planning them out.
+	\end{itemize}
+	
+	\datesec{2018-01-31}{Use Cases}
+	\begin{itemize}
+		\item Discussed with team members all the use cases we were going to have in 					iteration 1.
+		\item Also discussed what our technical requirements were.
+	\end{itemize}
+	
+	\datesec{2018-02-04}{Documentation}
+	\begin{itemize}
+		\item Consulted ShareLatex documentation to see how to make tables to display 					the use cases in.
+		\item Added non-technical requirements and some of the Use Cases to the 						documentation.
+	\end{itemize}
+	
+	\datesec{2018-02-06}{Diary Formatting}
+	\begin{itemize}
+		\item Updated diary into the LaTeX template made by Kai.
+	\end{itemize}
+	
+	\datesec{2018-02-07}{More Documentation}
+	\begin{itemize}
+		\item Wrote up the functional requirements for the documentation.
+		\item Wrote the main flow for each of the use cases.
+		\item Clarified the requirements for use cases, use diagram, and business rules 				with the TA, and subsequently planned new use cases to include while 						condensing some of the ones I had already written.
+	\end{itemize}
+	
+	\datesec{2018-02-08}{Business Rules and Diagrams}
+	\begin{itemize}
+		\item Changed some of the use cases to apply to features we plan to develop in 					future iterations.
+		\item Wrote business rules that apply to the use cases.
+		\item Created a use case diagram that encompasses all the proposed use cases.
+	\end{itemize}
+\end{document}

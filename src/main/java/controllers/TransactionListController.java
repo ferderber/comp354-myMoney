@@ -9,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.VBox;
 import main.java.dao.TransactionDao;
 import main.java.models.Transaction;
 import main.java.views.TransactionView;
@@ -22,7 +23,7 @@ import main.java.views.TransactionView;
 public class TransactionListController implements Initializable {
 
 	@FXML
-	private FlowPane container;
+	private VBox container;
 
 	private List<TransactionView> transactionViews;
 

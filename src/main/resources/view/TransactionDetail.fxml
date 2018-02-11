@@ -41,6 +41,7 @@
 			</HBox>
 			<Button fx:id="saveTransactionButton" mnemonicParsing="false"
 				onMouseClicked="#saveTransaction" text="Save Transaction" />
+			<Button onMouseClicked="#cancelUpdate" text="Cancel" />
 		</VBox>
 
 
