@@ -7,7 +7,6 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ScrollPane;
-import javafx.scene.control.SplitPane;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
@@ -28,9 +27,15 @@ public class MainController implements Initializable {
 	@FXML
 	private TransactionDetailController transactionDetailController;
 	@FXML
+	private AccountController accountController;
+	@FXML
 	private ScrollPane transactionList;
 	@FXML
 	private Pane transactionDetail;
+	@FXML
+	private Pane accountView;
+	@FXML
+	private Pane transactionAdd;
 
 	@FXML
 	private BorderPane mainView;
@@ -40,9 +45,8 @@ public class MainController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-//		mainView.setDividerPosition(0, 0.3);
-		transactionList.setVisible(true);
-		transactionDetail.setVisible(false);
+		setAllViewsInvisible();
+		accountView.setVisible(true);
 		transactionListController.setOnTransactionViewClick(new TransactionViewClickHandler());
 	}
 
@@ -71,13 +75,15 @@ public class MainController implements Initializable {
 
 	@FXML
 	public void handleTransactionListClick() {
+		transactionListController.createTransactionList();
+		setAllViewsInvisible();
 		transactionList.setVisible(true);
-		transactionDetail.setVisible(false);
 	}
 
 	@FXML
 	public void handleAccountListClick() {
-		// TODO: Implement action
+		setAllViewsInvisible();
+		accountView.setVisible(true);
 	}
 
 	@FXML
@@ -87,7 +93,18 @@ public class MainController implements Initializable {
 
 	@FXML
 	public void handleAddTransactionClick() {
-		// TODO: Implement action
+		setAllViewsInvisible();
+		transactionAdd.setVisible(true);
+	}
+
+	/**
+	 * Makes all views Invisible (useful for changing between views)
+	 */
+	public void setAllViewsInvisible() {
+		transactionAdd.setVisible(false);
+		accountView.setVisible(false);
+		transactionList.setVisible(false);
+		transactionDetail.setVisible(false);
 	}
 
 }

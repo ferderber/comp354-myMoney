@@ -30,6 +30,9 @@
 					source="/main/resources/view/TransactionList.fxml" />
 				<fx:include fx:id="transactionDetail"
 					source="/main/resources/view/TransactionDetail.fxml" />
+				<fx:include fx:id="transactionAdd"
+					source="/main/resources/view/TransactionAdd.fxml" />
+				<fx:include fx:id="accountView" source="/main/resources/view/AccountView.fxml" />
 			</children>
 		</StackPane>
 	</center>
