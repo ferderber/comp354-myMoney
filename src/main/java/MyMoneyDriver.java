@@ -6,7 +6,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import main.java.dao.AccountDao;
 import main.java.dao.TransactionDao;
+import main.java.models.Account;
+import main.java.models.Enumerator.AccountType;
 import main.java.models.Transaction;
 
 /**
@@ -24,7 +27,10 @@ public class MyMoneyDriver extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		// Create and Insert a sample element into the Transaction table
+		/*// Create and Insert a sample element into the Transaction table
+		AccountDao adao = new AccountDao();
+		adao.insert(new Account("Sample Account", 12345L, AccountType.debit,14));
+		adao.insert(new Account("Sample Account2", 12345L, AccountType.credit,3));*/
 		TransactionDao dao = new TransactionDao();
 		dao.insert(new Transaction("Sample Transaction", "Sample Description", new Date(),
 				Math.round(Math.random() * 50)));

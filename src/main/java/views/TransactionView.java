@@ -18,9 +18,10 @@ public class TransactionView extends VBox {
 	private EventHandler<MouseEvent> onAction;
 	private ObjectProperty<EventHandler<MouseEvent>> propertyOnAction = new SimpleObjectProperty<EventHandler<MouseEvent>>();
 
-	public TransactionView(Transaction transaction) {
+	public TransactionView(Transaction transaction, EventHandler<MouseEvent> onAction) {
 		super();
 		this.transaction = transaction;
+		this.setOnAction(onAction);
 		styleComponent();
 		setContent();
 	}

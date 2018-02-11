@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.ScrollPane?>
+<?import main.java.controllers.AccountListController?>
 
-<GridPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
-</GridPane>
+<ScrollPane xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="main.java.controllers.AccountListController">
+ 	<Button text="Add Account" fx:id="NewAccountButton"
+	minWidth="60" minHeight="20" />
+	<VBox fx:id="AccountListcontainer" styleClass="account-container">
+		<children>
+		</children>
+	</VBox>
+</ScrollPane>
 

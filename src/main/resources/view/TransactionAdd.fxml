@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.text.Text?>
+<?import main.java.controllers.TransactionListController?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox fx:id="addPane" visible="false" xmlns="http://javafx.com/javafx/9"
+	xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controllers.TransactionAddController">
+	<HBox>
+		<Label>Name: </Label>
+		<TextField fx:id="nameField" value="${controller.transaction.name}" />
+	</HBox>
+	<HBox>
+		<Label>Amount</Label>
+		<TextField fx:id="amountField" value="${controller.transaction.amount}" />
+	</HBox>
+	<HBox>
+		<Label>Description: </Label>
+		<TextField fx:id="descriptionField" value="${controller.transaction.description}" />
+	</HBox>
+	<Button fx:id="addTransactionButton" mnemonicParsing="false"
+		onMouseClicked="#addTransaction" text="Add Transaction" />
+	<Button onMouseClicked="#clearTransaction" text="Clear" />
+</VBox>
