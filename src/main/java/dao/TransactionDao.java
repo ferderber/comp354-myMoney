@@ -1,8 +1,11 @@
 package main.java.dao;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.dao.DaoManager;
@@ -56,6 +59,24 @@ public class TransactionDao {
 	}
 
 	/**
+	 * Retrieves a transaction from the database by the associated account's ID.
+	 * 
+	 * @param id
+	 *            Transaction's ID.
+	 * @return Transaction object
+	 */
+	public List<Transaction> getTransactionsByAccount(int accountId){
+		try {
+			HashMap<String, Object> map = new HashMap<String, Object>();
+			map.put("accountID", accountId);
+			return transactionDao.queryForFieldValuesArgs(map);
+		}catch(SQLException ex) {
+			ex.printStackTrace();
+		}
+		return null;
+	}
+	
+	/**
 	 * Retrieves all transactions from the database.
 	 * 
 	 * @return List of transactions
@@ -69,7 +90,19 @@ public class TransactionDao {
 		return new ArrayList<Transaction>();
 
 	}
-
+	/**
+	 * Creates item if it doesn't exist, or updates it if it does. For convenience and easy testing whether or not field exists.
+	 * @param transaction
+	 * @return A status object indicating whether the row was created or updated,
+	 */
+	public Dao.CreateOrUpdateStatus createOrUpdate(Transaction transaction) {
+			try {
+				return transactionDao.createOrUpdate(transaction);
+			} catch (SQLException ex) {
+				ex.printStackTrace();
+			}
+			return null;
+	}
 	/**
 	 * Updates a transaction in the database.
 	 * 
@@ -117,4 +150,13 @@ public class TransactionDao {
 		}
 		return -1;
 	}
+	/**
+	 * Closes underlying connection to the database.
+	 * @throws IOException
+	 */
+	public void close() throws IOException{
+		connection.close();
+	}
+	
+
 }

@@ -9,6 +9,14 @@
 <BorderPane prefHeight="400.0" prefWidth="600.0"
 	xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1"
 	fx:controller="main.java.controllers.MainController" fx:id="mainView">
+	<top>
+		<StackPane maxHeight="50" prefHeight="50" minHeight="50"
+			prefWidth="Infinity" fx:id="accInfoPane" styleClass="acc-info-pane">
+			<children>
+				<fx:include fx:id="accInfo" source="/main/resources/view/AccountInfo.fxml" />
+			</children>
+		</StackPane>
+	</top>
 	<left>
 		<FlowPane minWidth="200" orientation="VERTICAL" alignment="CENTER">
 			<children>

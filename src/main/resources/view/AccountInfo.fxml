@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<!-- -->
+
+<GridPane fx:id="content_container" maxHeight="-Infinity"
+	maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+	prefHeight="43.0" prefWidth="605.0" xmlns="http://javafx.com/javafx/8"
+	xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controllers.AccountInfoController">
+	<columnConstraints>
+		<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"
+			prefWidth="100.0" />
+		<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"
+			prefWidth="100.0" />
+	</columnConstraints>
+	<rowConstraints>
+		<RowConstraints maxHeight="39.0" minHeight="7.0"
+			prefHeight="20.0" vgrow="SOMETIMES" />
+		<RowConstraints maxHeight="121.0" minHeight="10.0"
+			prefHeight="23.0" vgrow="SOMETIMES" />
+	</rowConstraints>
+	<children>
+		<Label alignment="CENTER" prefHeight="17.0" prefWidth="313.0"
+			text="Logged in as:" />
+		<Label alignment="CENTER" prefHeight="17.0" prefWidth="302.0"
+			text="Balance:" GridPane.columnIndex="1" />
+		<Text fx:id="accountName" textAlignment="CENTER"
+			GridPane.rowIndex="1" />
+		<Text fx:id="accountTotal" textAlignment="CENTER"
+			GridPane.columnIndex="1" GridPane.rowIndex="1" />
+	</children>
+</GridPane>

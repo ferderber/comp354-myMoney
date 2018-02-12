@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<!-- Sortable container for Transcations. This should be in line with the 
+	start of the button panel, and take up the maximum possible amount of space 
+	in the window. -->
+<AnchorPane fx:id="anchor" maxHeight="400.0" maxWidth="600.0"
+	styleClass="transaction-list" xmlns="http://javafx.com/javafx/8"
+	xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controllers.TransactionListControllerTable">
+	<children>
+		<TableView fx:id="transacDataTable" prefHeight="400"
+			prefWidth="590" styleClass="transaction-list" stylesheets="@../css/application.css">
+			<columns>
+				<TableColumn fx:id="nameCol" prefWidth="301.0"
+					styleClass="transaction-list" text="Name" />
+				<TableColumn fx:id="amountCol" prefWidth="103.0"
+					styleClass="transaction-list" text="Amount" />
+			</columns>
+		</TableView>
+	</children>
+</AnchorPane>

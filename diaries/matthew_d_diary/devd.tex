@@ -1,0 +1,97 @@
+\documentclass[letterpaper,12pt,oneside,titlepage,onecolumn]{article}
+
+\usepackage{ucs}
+\usepackage[utf8]{inputenc}
+\usepackage{fontenc}
+\usepackage{graphicx}
+
+\usepackage[dvips]{hyperref}
+
+\author{Matthew Dugal, 40000361}
+\date{2/7/2018}
+
+\begin{document}
+
+\begin{tabbing}
+I believe my biggest problem is the fact that I have no idea about any of the\\ architecture. I haven't ever heard of JavaFX, and never learned about SQLite, and\\ have never made anything with a GUI before. I don't know about how to separate\\ the Controller from the View. I'm very confused, and I know it will show in my\\ work. I've never even used LaTeX before, so I don't even know what I'm doing in my\\
+diary.\\
+
+ID: 00000003\\
+Use Case Name: TransactionView\\
+Purpose: User wants to view list of transactions, sorted by most recent first.\\
+Primary Actor: User.\\
+Secondary Actors: Locally stored SQL database, system itself, TransactionView view module,\\ TransactionView controller, TransactionView model.\\
+Preconditions: Database exists in expected location,\\
+Postconditions: Account’s transactions displayed on screen.\\
+\\
+Main Flow:\\
+\=1)\=User asks controller to display transaction history.\\
+\=2)\=Controller asks model’s API to check database.\\
+\=3)\=Model uses “connect to database” and requests the user’s transactions.\\
+\=4)\=System sorts info by date.\\
+\=5)\=Model passes sorted transaction info to view module.\\
+\=6)\=View displays the info to a user.\\
+\\
+Alternate Flow:
+\\
+Exception Flow:\\
+\=1)\=The program, at any time, crashes.\\
+\end{tabbing}
+
+Use Case Name: RemoveTransaction
+Purpose: User wants to remove one or more transactions from the database.
+
+Unit tests for TransactionListController
+1)	Test button 
+
+Unit tests for TransactionView
+1)	Test list sorting
+a.	Create list of transactions with the following long millisecond values:
+\begin{tabbing}
+1517371119086\=2018/01/31 03:58:39\\
+311029991000\=1979/11/09 21:13:11\\
+-976848409000\=1939/01/17 21:13:11\\
+1517371861776\=2018/01/31 04:11:01\\
+1517371861776\=2018/01/31 04:11:01\\
+361192621000\=1981/06/12 11:17:01\\
+982857471000\=2001/02/22 15:57:51\\
+-976848409000\=1939/01/17 21:13:11\\
+b.	Run sort on list.\\
+c.	Test against manually sorted list:\\
+-976848409000\=1939/01/17 21:13:11\\
+-976848409000\=1939/01/17 21:13:11\\
+311029991000\=1979/11/09 21:13:11\\
+361192621000\=1981/06/12 11:17:01\\
+982857471000\=2001/02/22 15:57:51\\
+1517371119086\=2018/01/31 03:58:39\\
+1517371861776\=2018/01/31 04:11:01\\
+1517371861776\=2018/01/31 04:11:01\\
+\end{tabbing}
+\begin{tabbing}
+2)\=Test view\\
+\=a.\=Make test database.\\
+\=b.\=Insert above list into database.\\
+\=c.\=Retrieve it.\\
+\=d.\=Run sort test.\\
+\=e.\=Compare each element in the list of elements in the view.
+\=f.\=Delete test database.\\
+3)\=Test that table is equal in size to the containing pane.\\
+\end{tabbing}
+\par Each TransactionView is an interactable row containing a Transaction object.
+My reasoning for implementing with the table is that in JavaFX, the user can automatically sort by clicking the column headers. I want to allow the  user to switch between different orderings – Date first (newest first or oldest first), amount first (least first or most first), or descriptions (lexicographically, with option for reverse.) I figured that the best way to do this is to insert transaction data into 3 panels.\par
+The table should auto-resize with the parent flow pane.\\
+My main struggle is figuring out what to do and separating the modules. It seems like the way the system is set up, the controller does the same as the view. Worst part is I can’t change it because I’ll just mess it up and no one else’s code will work with mine.
+\paragraph{Account}
+To implement Account, I added an ID for the associated account in Transactions.\\
+I still need to fix the database setup. As it is, it's just a bunch of mini-tables for transactions unassociated with the account.
+While Account should not be a singleton, it is important that MainView remember the active account. That way, account addition should have a created item.
+\\Tests
+\begin{tabbing}
+ 1)\=Test 
+\end{tabbing}
+I added a pane on the main view in the FXML file which will hold the currently active account's transaction total. While it appears fine, the actual account data isn't appearing in the gridview.\par
+I was bothered by the white-on-white in the tableview, so I added a stylesheet rule that makes it so that the items in the transaction list will have a black text fill.\par
+In order to center the text, I found out I could set the grid aligment.
+One difficulty I realized exists is the fact that it's not possible to actually test a controller class outside of the context of JavaFX. Therefore, I can't see a way to use JUnit for this. I will simply log tests for the controllers in my diary.\par
+I created the AccountDao, and the ability to retrieve transcations by account. I added a new test for it in JUnit.
+\end{document}

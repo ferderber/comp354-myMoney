@@ -7,8 +7,10 @@ import com.j256.ormlite.table.DatabaseTable;
 
 @DatabaseTable
 public class Transaction {
-	@DatabaseField(generatedId = true)
+	@DatabaseField(generatedId = true, unique = true)
 	private int id;
+	@DatabaseField
+	private int accountId;//The ID of the associated account.
 	@DatabaseField
 	private String name;
 	@DatabaseField
@@ -22,8 +24,9 @@ public class Transaction {
 
 	}
 
-	public Transaction(String name, String description, Date date, double amount) {
+	public Transaction(String name, int accId, String description, Date date, double amount) {
 		this.name = name;
+		this.accountId = accId;
 		this.description = description;
 		this.date = date;
 		this.amount = amount;

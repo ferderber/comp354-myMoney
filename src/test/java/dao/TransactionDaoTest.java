@@ -18,8 +18,8 @@ import main.java.models.Transaction;
 public class TransactionDaoTest {
 
 	private static boolean dbExists = false;
-	private static final String PROJECT_PATH = System.getProperty("user.dir");
-	private static final String DB_PATH = PROJECT_PATH + "/my_money.db";
+	private static final String PROJECT_PATH = System.getProperty("user.dir") + File.separator;
+	private static final String DB_PATH = PROJECT_PATH + "my_money.db";
 
 	private static final Transaction testTransaction1 = new Transaction("sample transaction", "description", new Date(),
 			55);
@@ -32,10 +32,12 @@ public class TransactionDaoTest {
 	@BeforeClass
 	public static void setUpClass() throws Exception {
 		// Rename existing DB to backup
+		System.err.println(DB_PATH);
 		File f = new File(DB_PATH);
 		if (f.exists()) {
-			f.renameTo(new File(PROJECT_PATH + "/backup.db"));
+			f.renameTo(new File(PROJECT_PATH + "backup.db"));
 			dbExists = true;
+			System.err.println("Saved old database at " + f.toString());
 		}
 		dao = new TransactionDao();
 
@@ -44,12 +46,17 @@ public class TransactionDaoTest {
 	@AfterClass
 	public static void tearDownClass() throws Exception {
 		// Delete test DB and rename backup db
-		File realDB = new File(PROJECT_PATH + "/backup.db");
+		dao.close();//terminate database connection so that it may be modified by this.
+		// Delete test DB and rename backup db
 		File testDB = new File(DB_PATH);
+		File realDB = new File(PROJECT_PATH + "backup.db");
+		if(testDB.delete()) {
+			System.err.println("Deleted test database.");
+		}
+		else{
+			System.err.println("Couldn't delete test database.");
+		}
 		if (dbExists) {
-			if (testDB.exists()) {
-				testDB.delete();
-			}
 			realDB.renameTo(new File(DB_PATH));
 		}
 	}
@@ -64,6 +71,7 @@ public class TransactionDaoTest {
 
 	@After
 	public void tearDown() throws Exception {
+		dao.delete(testTransaction1);
 		dao.delete(testTransaction2);
 		dao.delete(testTransaction3);
 		dao.delete(testTransaction4);
@@ -75,6 +83,8 @@ public class TransactionDaoTest {
 		// DAO should insert one transaction
 		assertEquals(dao.insert(testTransaction1), 1);
 		assertEquals(dao.insert(testTransaction2), 1);
+		//Test uniqueness.
+		assertEquals(dao.createOrUpdate(testTransaction1).isCreated(), false);
 		// ID should not be 0 (that means it wasn't assigned an ID)
 		assertNotEquals(testTransaction1.getId(), 0);
 		// retrieved transaction should be the
