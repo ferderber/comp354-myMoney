@@ -1,5 +1,6 @@
 package main.java;
 
+import java.io.IOException;
 import java.util.Date;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -37,17 +38,21 @@ public class MyMoneyDriver extends Application {
 		TransactionDao dao = new TransactionDao();
 		dao.insert(new Transaction("Sample Transaction", "Sample Description", new Date(),
 				Math.round(Math.random() * 50)));
-		// Load MainView fxml object
+		// Set the title of the application
+		primaryStage.setTitle("MyMoney Application");
+		// Set the scene of the application to the new Scene
+		primaryStage.setScene(createScene());
+		primaryStage.setResizable(false);
+		// Display the Stage
+		primaryStage.show();
+	}
+
+	public Scene createScene() throws Exception {
 		Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("main/resources/view/MainView.fxml"));
 		// Add the fxml Object to a new scene
 		Scene scene = new Scene(root, 800, 600);
 		scene.getStylesheets().add("/main/resources/css/application.css");
-		// Set the title of the application
-		primaryStage.setTitle("MyMoney Application");
-		// Set the scene of the application to the new Scene
-		primaryStage.setScene(scene);
-		primaryStage.setResizable(false);
-		// Display the Stage
-		primaryStage.show();
+		return scene;
+
 	}
 }

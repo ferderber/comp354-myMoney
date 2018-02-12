@@ -13,7 +13,8 @@
 
 
 <GridPane xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1"
-	fx:controller="main.java.controllers.TransactionDetailController">
+	fx:controller="main.java.controllers.TransactionDetailController"
+	fx:id="transactionDetail">
 	<GridPane fx:id="detailPane" GridPane.columnIndex="0"
 		GridPane.rowIndex="0">
 		<Button fx:id="editTransactionButton" mnemonicParsing="false"

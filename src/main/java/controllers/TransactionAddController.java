@@ -16,7 +16,7 @@ public class TransactionAddController implements Initializable {
 	@FXML
 	private Button addTransactionButton;
 	@FXML
-	private GridPane addPane;
+	private GridPane transactionAdd;
 	@FXML
 	private TextField nameField;
 	@FXML

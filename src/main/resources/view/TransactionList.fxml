@@ -7,7 +7,7 @@
 
 <ScrollPane xmlns:fx="http://javafx.com/fxml/1"
 	fx:controller="main.java.controllers.TransactionListController"
-	styleClass="transaction-list" hbarPolicy="NEVER">
+	styleClass="transaction-list" hbarPolicy="NEVER" fx:id="transactionList">
 	<VBox fx:id="container" styleClass="transaction-container">
 		<children>
 		</children>
