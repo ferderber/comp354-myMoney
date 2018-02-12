@@ -6,11 +6,7 @@ import java.util.ResourceBundle;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import main.java.controllers.AccountAddController;
@@ -22,7 +18,7 @@ import main.java.controllers.AccountListController;;
  * @author Artem Khomich
  *
  */
-public class AccountController {
+public class AccountController implements Initializable {
 
 	@FXML
 	private Pane accountAdd;
@@ -34,31 +30,31 @@ public class AccountController {
 	private Pane accountContainer;
 	@FXML
 	private VBox accountList;
-/*	@FXML
-	private FlowPane accountAddPane;
-	
-	@FXML
-	private Button AddAccountButton;*/
-	
-	
+	/*
+	 * @FXML private FlowPane accountAddPane;
+	 * 
+	 * @FXML private Button AddAccountButton;
+	 */
 
-	@FXML
-	public void initialize() {
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
 		accountList.setVisible(true);
 		accountAdd.setVisible(false);
 		accountListController.AccountAddClick(new ViewChangeClickHandler());
 		accountAddController.setOnBackButtonClick(new ViewChangeClickHandler());
 	}
+
 	@FXML
 	public void switchAccountView() {
 		accountList.setVisible(!accountList.isVisible());
 		accountAdd.setVisible(!accountAdd.isVisible());
 	}
+
 	@FXML
 	public void AccountAddClick() {
 		switchAccountView();
 	}
-	
+
 	public class ViewChangeClickHandler implements EventHandler<MouseEvent> {
 
 		@Override

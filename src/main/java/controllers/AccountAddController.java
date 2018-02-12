@@ -12,7 +12,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.VBox;
 import main.java.dao.AccountDao;
 import main.java.models.Account;
 import main.java.models.Enumerator.AccountType;
@@ -23,15 +22,17 @@ import main.java.models.Enumerator.AccountType;
  * @author Artem Khomich
  *
  */
-public class AccountAddController{
-	
+public class AccountAddController implements Initializable {
+
 	private AccountDao dao;
 	@FXML
 	private Button backToAccountListButton;
-/*	@FXML
-	private Button saveAccountButton;*/
-/*	@FXML
-	private AccountController accountController;*/
+	/*
+	 * @FXML private Button saveAccountButton;
+	 */
+	/*
+	 * @FXML private AccountController accountController;
+	 */
 
 	@FXML
 	private TextField nameField;
@@ -41,28 +42,29 @@ public class AccountAddController{
 	private TextField typeField;
 	@FXML
 	private TextField balanceField;
-	
-/*	@FXML
-	private FlowPane singleAccountContainer;*/
+
+	/*
+	 * @FXML private FlowPane singleAccountContainer;
+	 */
 	@FXML
 	private ObjectProperty<Account> accountProperty = new SimpleObjectProperty<>();
-	
-	@FXML
-	public void initialize() {
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
 		dao = new AccountDao();
 	}
 
 	@FXML
 	public void saveAccount() {
 		Account a = accountProperty.get();
-		if(a == null) {
-		 a = new Account();
-		 a.setCreate(new Date());
-		 a.setEdit(null);
-		 a.setArchived(null);
+		if (a == null) {
+			a = new Account();
+			a.setCreate(new Date());
+			a.setEdit(null);
+			a.setArchived(null);
 		}
 		String name = nameField.getText();
-		
+
 		long number = 0L;
 		try {
 			number = Long.parseLong(numberField.getText());
@@ -72,9 +74,8 @@ public class AccountAddController{
 		AccountType type = null;
 		try {
 			type = AccountType.valueOf(typeField.getText());
-		}
-		catch(Exception ex) {
-			
+		} catch (Exception ex) {
+
 		}
 		double balance = 0.0;
 		try {
@@ -82,39 +83,37 @@ public class AccountAddController{
 		} catch (Exception ex) {
 			// TODO: Display validation error
 		}
-		
-		a.setName(name);	
+
+		a.setName(name);
 		a.setBalance(balance);
 		a.setNumber(number);
 		a.setType(type);
 		try {
-		if (accountProperty.get() == null) {
-			dao.insert(a);
-		} else {
-			dao.updateAccount(a);
+			if (accountProperty.get() == null) {
+				dao.insert(a);
+			} else {
+				dao.updateAccount(a);
+			}
+		} catch (Exception ex) {
+			// TODO
 		}
-		}
-		catch(Exception ex) {
-			//TODO
-		}
-		//AccountController b = new AccountController();b.switchAccountView();
-		//FXMLLoader loader = new FXMLLoader(getClass().getResource("AccountView.fxml"));
-		//AccountController controller = loader.getController();
-		//controller.setaccountView();
-		//AccountController.switchAccountView();
-	}
-/*	@FXML 
-	public void backToAccountList() {
-		//AccountController.switchAccountView();
-
-	}
-	public ObjectProperty<Account> accountProperty() {
-		return accountProperty;
+		// AccountController b = new AccountController();b.switchAccountView();
+		// FXMLLoader loader = new
+		// FXMLLoader(getClass().getResource("AccountView.fxml"));
+		// AccountController controller = loader.getController();
+		// controller.setaccountView();
+		// AccountController.switchAccountView();
 	}
 
-	public Account getAccount() {
-		return accountProperty.get();
-	}*/
+	/*
+	 * @FXML public void backToAccountList() {
+	 * //AccountController.switchAccountView();
+	 * 
+	 * } public ObjectProperty<Account> accountProperty() { return accountProperty;
+	 * }
+	 * 
+	 * public Account getAccount() { return accountProperty.get(); }
+	 */
 	/**
 	 * Sets the transactionClickHandler for each TransactionView
 	 * 
@@ -123,4 +122,5 @@ public class AccountAddController{
 	public void setOnBackButtonClick(EventHandler<MouseEvent> handler) {
 		backToAccountListButton.setOnMouseClicked(handler);
 	}
+
 }

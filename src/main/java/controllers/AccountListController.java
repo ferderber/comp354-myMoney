@@ -9,8 +9,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import main.java.dao.AccountDao;
 import main.java.models.Account;
@@ -22,7 +20,7 @@ import main.java.views.SingleAccountView;
  * @author Artem Khomich
  *
  */
-public class AccountListController{
+public class AccountListController implements Initializable {
 
 	@FXML
 	private Button NewAccountButton;
@@ -32,10 +30,11 @@ public class AccountListController{
 	private List<SingleAccountView> accountViews;
 	@FXML
 	private AccountController accountController;
-	@FXML
-	public void initialize() {
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
 		accountViews = new ArrayList<SingleAccountView>();
-		//AccountDao dao = new AccountDao();
+		// AccountDao dao = new AccountDao();
 		// Get all transactions from the database
 		List<Account> accounts = this.getAccounts();
 		// Create a TransactionView forEach transaction obj
@@ -45,7 +44,7 @@ public class AccountListController{
 		// Add all of the transactions to the list
 		AccountListcontainer.getChildren().addAll(accountViews);
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	/**
@@ -66,4 +65,5 @@ public class AccountListController{
 	public void AccountAddClick(EventHandler<MouseEvent> handler) {
 		NewAccountButton.setOnMouseClicked(handler);
 	}
+
 }
