@@ -78,7 +78,19 @@ public class MainController implements Initializable {
 		}
 
 	}
+	public class TransactionRowClickHandler implements EventHandler<MouseEvent> {
 
+		@SuppressWarnings("unchecked")
+		@Override
+		public void handle(MouseEvent event) {
+			TableRow<Transaction> row = (TableRow<Transaction>) event.getSource();//Row ends up being null.
+			Transaction t = row.getItem();
+			transactionDetailController.setTransaction(t);//DetailController is getting null.
+			switchDetailView();
+		
+		}
+
+	}
 	@FXML
 	public void handleTransactionListClick() {
 		transactionListController.createTransactionList();
