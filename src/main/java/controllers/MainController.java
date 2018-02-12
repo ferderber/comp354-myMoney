@@ -23,15 +23,19 @@ import main.java.views.TransactionView;
  */
 public class MainController implements Initializable {
 	@FXML
-	private TransactionListController transactionListController;
+	private TransactionListControllerTable transactionListController;
 	@FXML
 	private TransactionDetailController transactionDetailController;
+	@FXML
+	private AccountInfoController accountInfoController;
 	@FXML
 	private AccountController accountController;
 	@FXML
 	private ScrollPane transactionList;
 	@FXML
 	private Pane transactionDetail;
+	@FXML
+	private StackPane accInfoPane;
 	@FXML
 	private Pane accountView;
 	@FXML
@@ -47,7 +51,9 @@ public class MainController implements Initializable {
 	public void initialize(URL location, ResourceBundle resources) {
 		setAllViewsInvisible();
 		accountView.setVisible(true);
+		transactionListController.setHandler(new TransactionRowClickHandler());
 		transactionListController.setOnTransactionViewClick(new TransactionViewClickHandler());
+		//transactionListController.setOnTransactionViewClick(new TransactionViewClickHandler());
 	}
 
 	/**
@@ -101,6 +107,7 @@ public class MainController implements Initializable {
 	 * Makes all views Invisible (useful for changing between views)
 	 */
 	public void setAllViewsInvisible() {
+		accInfoPane.setVisible(false);
 		transactionAdd.setVisible(false);
 		accountView.setVisible(false);
 		transactionList.setVisible(false);

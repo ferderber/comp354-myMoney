@@ -15,6 +15,7 @@
 .transaction-list {
 	-fx-background-color: transparent;
 	-fx-control-inner-background: transparent;
+	-fx-text-fill: black;
 }
 .detail-pane {
 	-fx-padding: 10.0;

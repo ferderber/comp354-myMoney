@@ -2,6 +2,8 @@ package main.java.models;
 
 import java.util.Date;
 
+import java.util.ArrayList;
+import java.text.NumberFormat;//for currencyFormat
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
@@ -9,7 +11,7 @@ import main.java.models.Enumerator;
  
 @DatabaseTable
 public class Account {
-	@DatabaseField(generatedId = true)
+	@DatabaseField(generatedId = true, unique = true)
 	private int ID;
 	@DatabaseField
 	private String Name;
@@ -19,6 +21,8 @@ public class Account {
 	private Enumerator.AccountType Type;
 	@DatabaseField
 	private double Balance;
+	//Fill with DAO Select statement
+	private ArrayList<Transaction> associatedTransactions;
 	//@DatabaseField
 	//private String Description;
 
@@ -116,6 +120,16 @@ public class Account {
 	
 	public void setArchived(Date archived) {
 		this.Archived = archived;
+	}
+	
+	private void addTransactions(Transaction... trs){
+		this.associatedTransactions.addAll(trs);
+	}
+	
+	//Here to standardize formatting of currency strings across code. Default behavior is to round to the nearest cent.
+	public static String currencyFormat(double amount) {
+		NumberFormat formatter = NumberFormat.getCurrencyInstance(Locale.CANADA);
+		return formatter.format(amount);
 	}
 
 }
