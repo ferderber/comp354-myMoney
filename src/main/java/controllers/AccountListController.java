@@ -22,7 +22,7 @@ import main.java.views.SingleAccountView;
  * @author Artem Khomich
  *
  */
-public class AccountListController implements Initializable {
+public class AccountListController{
 
 	@FXML
 	private Button NewAccountButton;
@@ -30,8 +30,10 @@ public class AccountListController implements Initializable {
 	private VBox AccountListcontainer;
 
 	private List<SingleAccountView> accountViews;
-	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
+	@FXML
+	private AccountController accountController;
+	@FXML
+	public void initialize() {
 		accountViews = new ArrayList<SingleAccountView>();
 		//AccountDao dao = new AccountDao();
 		// Get all transactions from the database
@@ -45,7 +47,7 @@ public class AccountListController implements Initializable {
 		// TODO Auto-generated method stub
 		
 	}
-	
+
 	/**
 	 * Sets the transactionClickHandler for each TransactionView
 	 * 

@@ -13,6 +13,8 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import main.java.controllers.AccountAddController;
+import main.java.controllers.AccountListController;;
 
 /**
  * Provides an Account Controller.
@@ -20,32 +22,32 @@ import javafx.scene.layout.VBox;
  * @author Artem Khomich
  *
  */
-public class AccountController implements Initializable {
+public class AccountController {
+
 	@FXML
-	private AccountSingleController accountSingleController;
+	private Pane accountAdd;
+	@FXML
+	private AccountAddController accountAddController;
 	@FXML
 	private AccountListController accountListController;
 	@FXML
 	private Pane accountContainer;
 	@FXML
-	private ScrollPane accountList;
-	@FXML
-	private Pane accountAdd;
-	@FXML
+	private VBox accountList;
+/*	@FXML
 	private FlowPane accountAddPane;
 	
 	@FXML
-	private Button AddAccountButton;
+	private Button AddAccountButton;*/
 	
 	
 
-	@Override
-	public void initialize(URL location, ResourceBundle resources) {
-		accountList.setVisible(false);
-		accountAdd.setVisible(true);
-		//accountSingleController.setOnBackButtonClick(new ViewChangeClickHandler());
+	@FXML
+	public void initialize() {
+		accountList.setVisible(true);
+		accountAdd.setVisible(false);
 		accountListController.AccountAddClick(new ViewChangeClickHandler());
-
+		accountAddController.setOnBackButtonClick(new ViewChangeClickHandler());
 	}
 	@FXML
 	public void switchAccountView() {

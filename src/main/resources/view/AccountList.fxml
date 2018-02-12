@@ -5,15 +5,16 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.control.ScrollPane?>
-<?import main.java.controllers.AccountListController?>
-
-<ScrollPane xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1"
+<!-- <?import main.java.controllers.AccountListController?>
+ -->
+<VBox xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1"
 	fx:controller="main.java.controllers.AccountListController">
  	<Button text="Add Account" fx:id="NewAccountButton"
 	minWidth="60" minHeight="20" />
-	<VBox fx:id="AccountListcontainer" styleClass="account-container">
-		<children>
-		</children>
-	</VBox>
-</ScrollPane>
-
+	<ScrollPane>
+		<VBox fx:id="AccountListcontainer" styleClass="account-container">
+			<children>
+			</children>
+		</VBox>
+	</ScrollPane>
+</VBox>
