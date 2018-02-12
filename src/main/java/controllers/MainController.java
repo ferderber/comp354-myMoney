@@ -7,10 +7,13 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TableRow;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
+import main.java.models.Account;
 import main.java.models.Transaction;
 import main.java.views.TransactionView;
 
@@ -31,7 +34,7 @@ public class MainController implements Initializable {
 	@FXML
 	private AccountController accountController;
 	@FXML
-	private ScrollPane transactionList;
+	private AnchorPane transactionList;
 	@FXML
 	private Pane transactionDetail;
 	@FXML
@@ -41,6 +44,7 @@ public class MainController implements Initializable {
 	@FXML
 	private Pane transactionAdd;
 
+	private Account currentAccount;
 	@FXML
 	private BorderPane mainView;
 
@@ -52,7 +56,6 @@ public class MainController implements Initializable {
 		setAllViewsInvisible();
 		accountView.setVisible(true);
 		transactionListController.setHandler(new TransactionRowClickHandler());
-		transactionListController.setOnTransactionViewClick(new TransactionViewClickHandler());
 		//transactionListController.setOnTransactionViewClick(new TransactionViewClickHandler());
 	}
 
@@ -78,6 +81,9 @@ public class MainController implements Initializable {
 		}
 
 	}
+	public int getCurrentAccountId() {
+		return currentAccount.getId();
+	}
 	public class TransactionRowClickHandler implements EventHandler<MouseEvent> {
 
 		@SuppressWarnings("unchecked")
@@ -93,7 +99,7 @@ public class MainController implements Initializable {
 	}
 	@FXML
 	public void handleTransactionListClick() {
-		transactionListController.createTransactionList();
+		//transactionListController.createTransactionList();
 		setAllViewsInvisible();
 		transactionList.setVisible(true);
 	}

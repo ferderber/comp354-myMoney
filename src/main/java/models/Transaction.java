@@ -32,8 +32,9 @@ public class Transaction {
 		this.amount = amount;
 	}
 
-	public Transaction(int id, String name, String description, Date date, double amount) {
+	public Transaction(int id, String name, int accId, String description, Date date, double amount) {
 		this.id = id;
+		this.accountId = accId;
 		this.name = name;
 		this.description = description;
 		this.date = date;

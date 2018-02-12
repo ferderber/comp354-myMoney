@@ -1,7 +1,7 @@
 package main.java.models;
 
 import java.util.Date;
-
+import java.util.Locale;
 import java.util.ArrayList;
 import java.text.NumberFormat;//for currencyFormat
 import com.j256.ormlite.field.DatabaseField;
@@ -122,14 +122,21 @@ public class Account {
 		this.Archived = archived;
 	}
 	
-	private void addTransactions(Transaction... trs){
-		this.associatedTransactions.addAll(trs);
+	public void addTransactions(Transaction... trs){
+		for(Transaction t : trs) {
+			this.associatedTransactions.add(t);
+		}
 	}
 	
 	//Here to standardize formatting of currency strings across code. Default behavior is to round to the nearest cent.
 	public static String currencyFormat(double amount) {
 		NumberFormat formatter = NumberFormat.getCurrencyInstance(Locale.CANADA);
 		return formatter.format(amount);
+	}
+
+	public double getTotal() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }

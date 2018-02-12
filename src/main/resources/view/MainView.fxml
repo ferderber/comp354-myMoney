@@ -35,7 +35,7 @@
 		<StackPane fx:id="detailPane" prefWidth="400.0" styleClass="detail-pane">
 			<children>
 				<fx:include fx:id="transactionList"
-					source="/main/resources/view/TransactionList.fxml" />
+					source="/main/resources/view/TransactionTable.fxml" />
 				<fx:include fx:id="transactionDetail"
 					source="/main/resources/view/TransactionDetail.fxml" />
 				<fx:include fx:id="transactionAdd"

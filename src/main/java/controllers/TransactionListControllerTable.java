@@ -51,4 +51,6 @@ public class TransactionListControllerTable implements Initializable{
 	protected void setHandler(TransactionRowClickHandler handler){
 		this.handler = handler;
 	}
+
+
 }
