@@ -21,12 +21,11 @@ public class TransactionDaoTest {
 	private static final String PROJECT_PATH = System.getProperty("user.dir");
 	private static final String DB_PATH = PROJECT_PATH + "/my_money.db";
 
-	private static final Transaction testTransaction1 = new Transaction("sample transaction", "description", new Date(),
-			55);
-	private static final Transaction testTransaction2 = new Transaction(55, "name", "description", new Date(), 2);
-	private static final Transaction testTransaction3 = new Transaction("test", "d", new Date(), 3);
-	private static final Transaction testTransaction4 = new Transaction("test", "d", new Date(), 4);
-	private static final Transaction testTransaction5 = new Transaction("test", "d", new Date(), 5);
+	private static final Transaction testTransaction1 = new Transaction("sample transaction", "sample type", 55, "description", new Date());
+	private static final Transaction testTransaction2 = new Transaction(55, "name", "type", 2, "description", new Date());
+	private static final Transaction testTransaction3 = new Transaction("test", "t", 3, "d", new Date());
+	private static final Transaction testTransaction4 = new Transaction("test", "t", 4, "d", new Date());
+	private static final Transaction testTransaction5 = new Transaction("test", "t", 5, "d", new Date());
 	private static TransactionDao dao;
 
 	@BeforeClass

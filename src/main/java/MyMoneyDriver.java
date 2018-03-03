@@ -36,8 +36,7 @@ public class MyMoneyDriver extends Application {
 		// Create and Insert a sample element into the Transaction table
 
 		TransactionDao dao = new TransactionDao();
-		dao.insert(new Transaction("Sample Transaction", "Sample Description", new Date(),
-				Math.round(Math.random() * 50)));
+		dao.insert(new Transaction("Sample Transaction", "Sample Type", Math.round(Math.random() * 50), "Sample Description", new Date()));
 		// Set the title of the application
 		primaryStage.setTitle("MyMoney Application");
 		// Set the scene of the application to the new Scene

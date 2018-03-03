@@ -35,9 +35,11 @@ public class TransactionDetailController implements Initializable {
 	@FXML
 	private TextField nameField;
 	@FXML
-	private TextField amountField;
+	private TextField typeField;
 	@FXML
 	private TextField descriptionField;
+	@FXML
+	private TextField amountField;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -57,16 +59,18 @@ public class TransactionDetailController implements Initializable {
 		TransactionDao dao = new TransactionDao();
 		Transaction t = transactionProperty.get();
 		String name = nameField.getText();
-		String description = descriptionField.getText();
+		String type = typeField.getText();
 		double amount = 0.0;
+		String description = descriptionField.getText();
 		try {
 			amount = Double.parseDouble(amountField.getText());
 		} catch (Exception ex) {
 			// TODO: Display validation error
 		}
 		t.setName(name);
-		t.setDescription(description);
+		t.setType(type);
 		t.setAmount(amount);
+		t.setDescription(description);
 
 		if (transactionProperty.get() == null) {
 			dao.insert(t);
@@ -90,8 +94,9 @@ public class TransactionDetailController implements Initializable {
 		Transaction t = transactionProperty.get();
 		if (t != null) {
 			nameField.setText(t.getName());
-			descriptionField.setText(t.getDescription());
+			typeField.setText(t.getType());
 			amountField.setText(String.valueOf(t.getAmount()));
+			descriptionField.setText(t.getDescription());
 		}
 	}
 

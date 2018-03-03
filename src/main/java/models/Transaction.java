@@ -12,9 +12,11 @@ public class Transaction {
 	@DatabaseField
 	private String name;
 	@DatabaseField
-	private String description;
+	private String type;
 	@DatabaseField
 	private double amount;
+	@DatabaseField
+	private String description;
 	@DatabaseField
 	private Date date;
 
@@ -22,26 +24,28 @@ public class Transaction {
 
 	}
 
-	public Transaction(String name, String description, Date date, double amount) {
+	public Transaction(String name, String type, double amount, String description, Date date) {
 		this.name = name;
+		this.type = type;
+		this.amount = amount;
 		this.description = description;
 		this.date = date;
-		this.amount = amount;
 	}
 
-	public Transaction(int id, String name, String description, Date date, double amount) {
+	public Transaction(int id, String name, String type, double amount, String description, Date date) {
 		this.id = id;
 		this.name = name;
+		this.type = type;
+		this.amount = amount;
 		this.description = description;
 		this.date = date;
-		this.amount = amount;
 	}
 
 	@Override
 	public boolean equals(Object obj) {
 		Transaction t = (Transaction) obj;
-		return t != null && amount == t.amount && id == t.id && name.equals(t.name) && description.equals(t.description)
-				&& date.equals(t.date);
+		return t != null && id == t.id && name.equals(t.name) && type.equals(t.type) && description.equals(t.description)
+				&& amount == t.amount && date.equals(t.date);
 	}
 
 	public int getId() {
@@ -58,6 +62,14 @@ public class Transaction {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
 	}
 
 	public String getDescription() {

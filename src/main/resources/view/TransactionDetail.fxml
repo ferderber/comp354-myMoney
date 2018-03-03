@@ -15,39 +15,61 @@
 <GridPane xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1"
 	fx:controller="main.java.controllers.TransactionDetailController"
 	fx:id="transactionDetail">
+	
+	
 	<GridPane fx:id="detailPane" GridPane.columnIndex="0"
 		GridPane.rowIndex="0">
 		<Button fx:id="editTransactionButton" mnemonicParsing="false"
 			onMouseClicked="#editTransaction" text="Edit Transaction"
 			GridPane.columnIndex="0" GridPane.rowIndex="0" />
 
-		<Text text="Title:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+		<Text text="Name:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
 		<Text id="transactionName" text="${controller.transaction.name}"
 			GridPane.columnIndex="1" GridPane.rowIndex="1" />
-		<Text text="Amount: " GridPane.columnIndex="0" GridPane.rowIndex="2" />
-		<Text text="${controller.transaction.amount}"
+			
+		<Text text="Type:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+		<Text id="transactionType" text="${controller.transaction.type}"
 			GridPane.columnIndex="1" GridPane.rowIndex="2" />
-		<Text text="Date: " GridPane.columnIndex="0" GridPane.rowIndex="3" />
-		<Text text="${controller.transaction.date}" GridPane.columnIndex="1"
-			GridPane.rowIndex="3" />
+			
+		<Text text="Amount: " GridPane.columnIndex="0" GridPane.rowIndex="3" />
+		<Text text="${controller.transaction.amount}"
+			GridPane.columnIndex="1" GridPane.rowIndex="3" />
+			
+		<Text text="Description: " GridPane.columnIndex="0" GridPane.rowIndex="4" />
+		<Text text="${controller.transaction.description}" 
+			GridPane.columnIndex="1" GridPane.rowIndex="4" />
+			
+		<Text text="Date: " GridPane.columnIndex="0" GridPane.rowIndex="5" />
+		<Text text="${controller.transaction.date}" 
+			GridPane.columnIndex="1" GridPane.rowIndex="5" />
 	</GridPane>
+
+
 
 	<GridPane fx:id="editPane" visible="false">
 		<Label GridPane.columnIndex="0" GridPane.rowIndex="0">Name:</Label>
 		<TextField fx:id="nameField" value="${controller.transaction.name}"
 			GridPane.columnIndex="1" GridPane.rowIndex="0" />
-		<Label GridPane.columnIndex="0" GridPane.rowIndex="1">Amount:
-		</Label>
-		<TextField fx:id="amountField" value="${controller.transaction.amount}"
+			
+		<Label GridPane.columnIndex="0" GridPane.rowIndex="1">Type:</Label>
+		<TextField fx:id="typeField" value="${controller.transaction.type}"
 			GridPane.columnIndex="1" GridPane.rowIndex="1" />
-		<Label GridPane.columnIndex="0" GridPane.rowIndex="2">Description:
-		</Label>
-		<TextField fx:id="descriptionField" value="${controller.transaction.description}"
+			
+		<Label GridPane.columnIndex="0" GridPane.rowIndex="2">Amount:</Label>
+		<TextField fx:id="amountField" value="${controller.transaction.amount}"
 			GridPane.columnIndex="1" GridPane.rowIndex="2" />
+			
+		<Label GridPane.columnIndex="0" GridPane.rowIndex="3">Description:</Label>
+		<TextField fx:id="descriptionField" value="${controller.transaction.description}"
+			GridPane.columnIndex="1" GridPane.rowIndex="3" />
+			
 		<Button fx:id="saveTransactionButton" mnemonicParsing="false"
 			onMouseClicked="#saveTransaction" text="Save Transaction"
-			GridPane.columnIndex="0" GridPane.rowIndex="3" />
+			GridPane.columnIndex="0" GridPane.rowIndex="4" />
+			
 		<Button onMouseClicked="#cancelUpdate" text="Cancel"
-			GridPane.columnIndex="1" GridPane.rowIndex="3" />
+			GridPane.columnIndex="1" GridPane.rowIndex="4" />
 	</GridPane>
+	
+	
 </GridPane>

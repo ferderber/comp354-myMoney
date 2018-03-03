@@ -20,6 +20,8 @@ public class TransactionAddController implements Initializable {
 	@FXML
 	private TextField nameField;
 	@FXML
+	private TextField typeField;
+	@FXML
 	private TextField amountField;
 	@FXML
 	private TextField descriptionField;
@@ -33,6 +35,7 @@ public class TransactionAddController implements Initializable {
 	private void addTransaction() {
 		TransactionDao dao = new TransactionDao();
 		String name = nameField.getText();
+		String type = typeField.getText();
 		String description = descriptionField.getText();
 		double amount = 0.0;
 		try {
@@ -40,7 +43,7 @@ public class TransactionAddController implements Initializable {
 		} catch (Exception ex) {
 			// TODO: Display validation error
 		}
-		Transaction t = new Transaction(name, description, new Date(), amount);
+		Transaction t = new Transaction(name, type, amount, description, new Date());
 		dao.insert(t);
 		clearTransaction();
 	}
@@ -48,6 +51,7 @@ public class TransactionAddController implements Initializable {
 	@FXML
 	private void clearTransaction() {
 		nameField.setText("");
+		typeField.setText("");
 		descriptionField.setText("");
 		amountField.setText("");
 	}
