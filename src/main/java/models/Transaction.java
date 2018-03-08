@@ -11,8 +11,8 @@ public class Transaction {
 	private int id;
 	@DatabaseField
 	private String name;
-	@DatabaseField
-	private String type;
+	@DatabaseField(foreign = true)
+	private Type type;
 	@DatabaseField
 	private double amount;
 	@DatabaseField
@@ -24,7 +24,7 @@ public class Transaction {
 
 	}
 
-	public Transaction(String name, String type, double amount, String description, Date date) {
+	public Transaction(String name, Type type, double amount, String description, Date date) {
 		this.name = name;
 		this.type = type;
 		this.amount = amount;
@@ -32,7 +32,7 @@ public class Transaction {
 		this.date = date;
 	}
 
-	public Transaction(int id, String name, String type, double amount, String description, Date date) {
+	public Transaction(int id, String name, Type type, double amount, String description, Date date) {
 		this.id = id;
 		this.name = name;
 		this.type = type;
@@ -64,11 +64,11 @@ public class Transaction {
 		this.name = name;
 	}
 	
-	public String getType() {
+	public Type getType() {
 		return type;
 	}
 
-	public void setType(String type) {
+	public void setType(Type type) {
 		this.type = type;
 	}
 

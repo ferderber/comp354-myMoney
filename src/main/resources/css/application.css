@@ -12,6 +12,9 @@
 .transaction-container {
 	-fx-background-color: rgba(0.0,0.0,0.0,0.2);
 }
+.transaction-container-2 {
+   -fx-background-color: rgba(200,0.0,0.0,0.5);
+}
 .transaction-list {
 	-fx-background-color: transparent;
 	-fx-control-inner-background: transparent;

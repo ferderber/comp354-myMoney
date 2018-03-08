@@ -7,6 +7,7 @@ import java.util.Date;
 import org.junit.Test;
 
 import main.java.models.Transaction;
+import main.java.models.Type;
 
 public class TransactionTest {
 
@@ -14,7 +15,7 @@ public class TransactionTest {
 	public void testFullContructor() {
 		int id = 0;
 		String name = "name";
-		String type = "type";
+		Type type = new Type("type");
 		double amount = 10;
 		String description = "description";
 		Date date = new Date();
@@ -28,7 +29,7 @@ public class TransactionTest {
 	@Test
 	public void testPartialConstructor() {
 		String name = "name";
-		String type = "type";
+		Type type = new Type("type");
 		double amount = 10;
 		String description = "description";
 		Date date = new Date();
