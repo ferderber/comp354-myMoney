@@ -27,7 +27,9 @@ public class MyMoneyDriver extends Application {
 	}
 
 	@Override
+	
 	public void start(Stage primaryStage) throws Exception {
+		
 		/*
 		 * AccountDao adao = new AccountDao(); adao.insert(new Account("Sample Account",
 		 * 12345L, AccountType.debit,14)); adao.insert(new Account("Sample Account2",
