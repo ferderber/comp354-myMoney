@@ -1,5 +1,69 @@
 
+
 .button {
+	-fx-background-color: #D0EFB0;
+	-fx-font-size: 20px;
+	-fx-pref-width: 150.0;
+	-fx-pref-height: 300px;
+}
+
+#mainView{
+	-fx-font-family: 'Open Sans';
+}
+
+#transactionList{
+	-fx-background: transparent;
+}
+
+#accountList{   
+	/*-fx-background: #ff00ff;*/
+}
+
+#transactionList{
+	/*-fx-background: #FFBF00;*/ 
+}
+
+#NewAccountButton{
+	-fx-font-size: 14px;
+	-fx-pref-width: 120.0;
+	-fx-pref-height: 20.0;
+}
+
+#addTransactionButton{
+	-fx-font-family: 'Open Sans';
+	-fx-font-size: 14px;
+	-fx-pref-height: 20.0;
+}
+
+#clearTransactionButton{
+	-fx-font-family: 'Open Sans';
+	-fx-font-size: 14px;
+	-fx-pref-height: 20.0;
+}
+
+#backToAccountListButton{
+	-fx-font-family: 'Open Sans';
+	-fx-font-size: 14px;
+	-fx-pref-height: 20.0;
+}
+
+#saveAccountButton{
+	-fx-font-family: 'Open Sans';
+	-fx-font-size: 14px;
+	-fx-pref-height: 20.0;
+}
+
+#transactionAdd{
+	-fx-font-family:'Comfortaa';
+}
+#accountAdd{
+	-fx-font-family:'Comfortaa';
+}
+
+.button:hover{
+	-fx-background-color: #F6FDEF;
+	-fx-scale-x: 1.05;
+	-fx-scale-y: 1.05;
 }
 .transaction-view {
 	-fx-pref-width: 200.0;
@@ -16,6 +80,9 @@
 	-fx-background-color: transparent;
 	-fx-control-inner-background: transparent;
 }
+
+.text-input, .text-input:focused { -fx-prompt-text-fill:darkgray; }
+
 .detail-pane {
 	-fx-padding: 10.0;
 }

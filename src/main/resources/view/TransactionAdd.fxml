@@ -11,12 +11,12 @@
 <?import javafx.scene.layout.VBox?>
 
 
-<GridPane fx:id="transactionAdd" visible="false" xmlns="http://javafx.com/javafx/9"
+<GridPane fx:id="transactionAdd" visible="false" alignment = "CENTER" xmlns="http://javafx.com/javafx/9"
 	xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controllers.TransactionAddController">
 	
 	<Label GridPane.columnIndex="0" GridPane.rowIndex="0">Name:</Label>
 	<TextField fx:id="nameField" value="${controller.transaction.name}"
-		GridPane.columnIndex="1" GridPane.rowIndex="0" />
+	 GridPane.columnIndex="1" GridPane.rowIndex="0" />
 		
 	<Label GridPane.columnIndex="0" GridPane.rowIndex="1">Type:</Label>
 	<TextField fx:id="typeField" value="${controller.transaction.type}"
@@ -33,6 +33,6 @@
 	<Button fx:id="addTransactionButton" mnemonicParsing="false"
 		onMouseClicked="#addTransaction" text="Add Transaction"
 		GridPane.columnIndex="0" GridPane.rowIndex="4" />
-	<Button onMouseClicked="#clearTransaction" text="Clear"
+	<Button fx:id = "clearTransactionButton" onMouseClicked="#clearTransaction" text="Clear"
 		GridPane.columnIndex="1" GridPane.rowIndex="4" />
 </GridPane>
