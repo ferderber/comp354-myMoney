@@ -30,12 +30,11 @@ public class TransactionView extends VBox {
 		setContent();
 	}
 	
-	public TransactionView(Type type, EventHandler<MouseEvent> onAction) {
+	public TransactionView(Type type) {
 		super();
 		this.type = type;
-		this.setOnAction(onAction);
 		styleComponent();
-		setContentByType();
+		setContentType();
 	}
 
 	private void styleComponent() {
@@ -50,17 +49,9 @@ public class TransactionView extends VBox {
 
 	}
 	
-	private void setContentByType() {
-		NumberFormat formatter = NumberFormat.getCurrencyInstance();
+	private void setContentType() {
 		ObservableList<Node> children = this.getChildren();
-		
-		ForeignCollection<Transaction> allTrans = type.getTransactions();
 		children.add(new Text(type.getId()));	// the type
-		for (Transaction t : allTrans) {	// each transaction of that type
-			children.add(new Text(formatter.format(t.getAmount())));
-			children.add(new Text(t.getName()));
-		}
-
 	}
 
 	public void setOnAction(EventHandler<MouseEvent> eventHandler) {

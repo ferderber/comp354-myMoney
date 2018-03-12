@@ -4,11 +4,15 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+
+import com.j256.ormlite.dao.ForeignCollection;
+
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import main.java.dao.TransactionDao;
 import main.java.dao.TypeDao;
 import main.java.models.Transaction;
@@ -68,9 +72,15 @@ public class TransactionListController implements Initializable {
 		transactions.forEach((transaction) -> {
 			transactionViews.add(new TransactionView(transaction, transactionViewActionHandler));
 		});
+		
 		types.forEach((type) -> {
-			transactionViewsByType.add(new TransactionView(type, transactionViewActionHandler));
+			transactionViewsByType.add(new TransactionView(type));
+			ForeignCollection<Transaction> allTrans = type.getTransactions();
+			for (Transaction t : allTrans) {	// each transaction of that type
+				transactionViewsByType.add(new TransactionView(t, transactionViewActionHandler));
+			}
 		});
+		
 		
 		// Add all of the transactions to the list
 		container.getChildren().addAll(transactionViews);
