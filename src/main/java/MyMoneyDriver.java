@@ -40,19 +40,14 @@ public class MyMoneyDriver extends Application {
 		 */
 		// Create and Insert a sample element into the Transaction table
 
-		
+		/*
 		TypeDao typeDao = new TypeDao();
 		Type type = new Type("one");
 		typeDao.insert(type);
-		
-		/*
 		TransactionDao dao = new TransactionDao();
 		dao.insert(new Transaction("Sample Transaction", type, Math.round(Math.random() * 50), "Sample Description", new Date()));
 		*/
-		
-		Type typeResult = typeDao.getTypeById(type.getId());
-		ForeignCollection<Transaction> trans = typeResult.getTransactions();
-		System.out.println(trans.size());
+
 
 		
 		// Set the title of the application

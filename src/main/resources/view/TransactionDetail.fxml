@@ -52,7 +52,7 @@
 			GridPane.columnIndex="1" GridPane.rowIndex="0" />
 			
 		<Label GridPane.columnIndex="0" GridPane.rowIndex="1">Type:</Label>
-		<TextField fx:id="typeField" value="${controller.transaction.type}"
+		<TextField fx:id="typeField" value="${controller.transaction.type.id}"
 			GridPane.columnIndex="1" GridPane.rowIndex="1" />
 			
 		<Label GridPane.columnIndex="0" GridPane.rowIndex="2">Amount:</Label>

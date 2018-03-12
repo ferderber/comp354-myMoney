@@ -1,6 +1,7 @@
 package main.java.controllers;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
@@ -80,6 +81,14 @@ public class TransactionDetailController implements Initializable {
 		} else {
 			dao.updateTransaction(t);
 		}
+		
+		ArrayList<Type> allTypes = (ArrayList<Type>) typeDao.getAllTypes();
+		for (Type y : allTypes) {
+			if (y.getTransactions().size() < 1) {	// if an edit caused a type to no longer have any transactions, delete it
+				typeDao.delete(y);
+			}
+		}
+		
 		editPane.setVisible(false);
 		detailPane.setVisible(true);
 	}
