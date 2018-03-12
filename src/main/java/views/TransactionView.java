@@ -26,19 +26,19 @@ public class TransactionView extends VBox {
 		super();
 		this.transaction = transaction;
 		this.setOnAction(onAction);
-		styleComponent();
+		styleComponent("transaction-view");
 		setContent();
 	}
 	
 	public TransactionView(Type type) {
 		super();
 		this.type = type;
-		styleComponent();
+		styleComponent("transaction-title");
 		setContentType();
 	}
 
-	private void styleComponent() {
-		this.getStyleClass().add("transaction-view"); // add class name to component
+	private void styleComponent(String style) {
+		this.getStyleClass().add(style); // add class name to component
 	}
 
 	private void setContent() {
@@ -51,7 +51,7 @@ public class TransactionView extends VBox {
 	
 	private void setContentType() {
 		ObservableList<Node> children = this.getChildren();
-		children.add(new Text(type.getId()));	// the type
+		children.add(new Text(type.getId()));
 	}
 
 	public void setOnAction(EventHandler<MouseEvent> eventHandler) {

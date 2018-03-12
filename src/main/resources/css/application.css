@@ -6,6 +6,12 @@
 	-fx-pref-height: 20.0;
 	-fx-padding: 5.0;
 }
+.transaction-title {
+   -fx-background-color: rgba(100,200,250,1.0);
+   -fx-pref-width: 200.0;
+   -fx-pref-height: 20.0;
+   -fx-padding: 5.0;
+}
 .transaction-view:hover {
 	-fx-background-color: rgba(0.0,0.0,0.0,0.2);
 }
@@ -13,7 +19,7 @@
 	-fx-background-color: rgba(0.0,0.0,0.0,0.2);
 }
 .transaction-container-2 {
-   -fx-background-color: rgba(200,0.0,0.0,0.5);
+   -fx-background-color: rgba(100,200,250,0.5);
 }
 .transaction-list {
 	-fx-background-color: transparent;
