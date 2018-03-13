@@ -2,6 +2,9 @@ package main.java;
 
 import java.io.IOException;
 import java.util.Date;
+
+import com.j256.ormlite.dao.ForeignCollection;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,9 +13,11 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import main.java.dao.AccountDao;
 import main.java.dao.TransactionDao;
+import main.java.dao.TypeDao;
 import main.java.models.Account;
 import main.java.models.Enumerator.AccountType;
 import main.java.models.Transaction;
+import main.java.models.Type;
 
 /**
  * Main class for the application. Initializes the MainView and displays the
@@ -39,8 +44,16 @@ public class MyMoneyDriver extends Application {
 		 */
 		// Create and Insert a sample element into the Transaction table
 
+		/*
+		TypeDao typeDao = new TypeDao();
+		Type type = new Type("one");
+		typeDao.insert(type);
 		TransactionDao dao = new TransactionDao();
-		dao.insert(new Transaction("Sample Transaction", "Sample Type", Math.round(Math.random() * 50), "Sample Description", new Date()));
+		dao.insert(new Transaction("Sample Transaction", type, Math.round(Math.random() * 50), "Sample Description", new Date()));
+		*/
+
+
+		
 		// Set the title of the application
 		primaryStage.setTitle("MyMoney Application");
 		// Set the scene of the application to the new Scene

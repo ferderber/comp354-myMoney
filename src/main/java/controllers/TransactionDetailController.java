@@ -1,6 +1,7 @@
 package main.java.controllers;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
@@ -10,7 +11,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import main.java.dao.TransactionDao;
+import main.java.dao.TypeDao;
 import main.java.models.Transaction;
+import main.java.models.Type;
 
 /**
  * Displays a detailed view of a transaction. Allows the user to update the
@@ -57,9 +60,10 @@ public class TransactionDetailController implements Initializable {
 	@FXML
 	private void saveTransaction() {
 		TransactionDao dao = new TransactionDao();
+		TypeDao typeDao = new TypeDao();
 		Transaction t = transactionProperty.get();
 		String name = nameField.getText();
-		String type = typeField.getText();
+		Type type = typeDao.insert(new Type(typeField.getText()));	// if the type is not currently in the Type table, add it
 		double amount = 0.0;
 		String description = descriptionField.getText();
 		try {
@@ -77,6 +81,14 @@ public class TransactionDetailController implements Initializable {
 		} else {
 			dao.updateTransaction(t);
 		}
+		
+		ArrayList<Type> allTypes = (ArrayList<Type>) typeDao.getAllTypes();
+		for (Type y : allTypes) {
+			if (y.getTransactions().size() < 1) {	// if an edit caused a type to no longer have any transactions, delete it
+				typeDao.delete(y);
+			}
+		}
+		
 		editPane.setVisible(false);
 		detailPane.setVisible(true);
 	}
@@ -94,7 +106,7 @@ public class TransactionDetailController implements Initializable {
 		Transaction t = transactionProperty.get();
 		if (t != null) {
 			nameField.setText(t.getName());
-			typeField.setText(t.getType());
+			typeField.setText(t.getType().getId());
 			amountField.setText(String.valueOf(t.getAmount()));
 			descriptionField.setText(t.getDescription());
 		}

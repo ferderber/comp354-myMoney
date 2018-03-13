@@ -9,7 +9,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import main.java.dao.TransactionDao;
+import main.java.dao.TypeDao;
 import main.java.models.Transaction;
+import main.java.models.Type;
 
 public class TransactionAddController implements Initializable {
 
@@ -33,9 +35,11 @@ public class TransactionAddController implements Initializable {
 
 	@FXML
 	private void addTransaction() {
-		TransactionDao dao = new TransactionDao();
+		TransactionDao transDao = new TransactionDao();
+		TypeDao typeDao = new TypeDao();
+		
 		String name = nameField.getText();
-		String type = typeField.getText();
+		Type type = new Type(typeField.getText());
 		String description = descriptionField.getText();
 		double amount = 0.0;
 		try {
@@ -43,8 +47,10 @@ public class TransactionAddController implements Initializable {
 		} catch (Exception ex) {
 			// TODO: Display validation error
 		}
-		Transaction t = new Transaction(name, type, amount, description, new Date());
-		dao.insert(t);
+		
+		Transaction t = new Transaction(name, typeDao.insert(type), amount, description, new Date());
+		transDao.insert(t);
+		
 		clearTransaction();
 	}
 

@@ -82,4 +82,23 @@ https://www.sharelatex.com/learn/Lists
 		\item Reviewed basic Git commands such as branching and merging to prepare to 					start adding to the code. 
 	\end{itemize}
 	
+	\datesec{2018-03-03}{Adding New Fields}
+	\begin{itemize}
+		\item Added a new field "Type" to the database for transactions to be used later 			for sorting.
+		\item Researched and discussed with Matt best ways of categorizing a database 					table. 
+	\end{itemize}
+	
+	\datesec{2018-03-07}{New Model/DAO for Type}
+	\begin{itemize}
+		\item Began implementation of the Type database table, basing the classes of 					those already created for Transactions and Accounts.
+		\item Utilizing the ForeignCollections property of OrmLite, I got a successful 					test working of creating a new database table of Types that contains a 							collections of Transactions that are all of that Type.
+		\item After a lot of troubleshooting, I was able to get all transactions to display 			grouped by type in the transactions viewing window.
+	\end{itemize}
+	
+	\datesec{2018-03-12}{Cleaning Up}
+	\begin{itemize}
+		\item Fixed an issue where the sorted transactions would not have their JavaFX onClick 		methods working properly.
+		\item Edited the CSS to displays the lists more clearly. 
+	\end{itemize}
+	
 \end{document}
