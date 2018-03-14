@@ -12,6 +12,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.GridPane;
 import main.java.dao.AccountDao;
 import main.java.models.Account;
 import main.java.models.Enumerator.AccountType;
@@ -27,9 +28,10 @@ public class AccountAddController implements Initializable {
 	private AccountDao dao;
 	@FXML
 	private Button backToAccountListButton;
-	/*
-	 * @FXML private Button saveAccountButton;
-	 */
+
+	@FXML 
+	private Button saveAccountButton;
+	 
 	/*
 	 * @FXML private AccountController accountController;
 	 */
@@ -43,9 +45,9 @@ public class AccountAddController implements Initializable {
 	@FXML
 	private TextField balanceField;
 
-	/*
-	 * @FXML private FlowPane singleAccountContainer;
-	 */
+	@FXML 
+	private GridPane singleAccountContainer;
+	 
 	@FXML
 	private ObjectProperty<Account> accountProperty = new SimpleObjectProperty<>();
 

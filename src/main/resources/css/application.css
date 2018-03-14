@@ -7,20 +7,18 @@
 	-fx-pref-height: 1000px;
 }
 
+.innerMenuButton{
+	-fx-font-family: 'Open Sans';
+	-fx-font-size: 14px;
+	-fx-pref-height: 20.0;
+}
+
 #mainView{
 	-fx-font-family: 'Open Sans';
 }
 
-#transactionList{
-	-fx-background: transparent;
-}
-
-#accountList{   
-	/*-fx-background: #ff00ff;*/
-}
-
-#transactionList{
-	/*-fx-background: #FFBF00;*/ 
+#AccountListcontainer{   
+	-fx-background: #ff00ff;
 }
 
 #NewAccountButton{
@@ -29,29 +27,6 @@
 	-fx-pref-height: 20.0;
 }
 
-#addTransactionButton{
-	-fx-font-family: 'Open Sans';
-	-fx-font-size: 14px;
-	-fx-pref-height: 20.0;
-}
-
-#clearTransactionButton{
-	-fx-font-family: 'Open Sans';
-	-fx-font-size: 14px;
-	-fx-pref-height: 20.0;
-}
-
-#backToAccountListButton{
-	-fx-font-family: 'Open Sans';
-	-fx-font-size: 14px;
-	-fx-pref-height: 20.0;
-}
-
-#saveAccountButton{
-	-fx-font-family: 'Open Sans';
-	-fx-font-size: 14px;
-	-fx-pref-height: 20.0;
-}
 
 #transactionAdd{
 	-fx-font-family:'Comfortaa';

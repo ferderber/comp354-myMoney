@@ -8,7 +8,7 @@
 
 <ScrollPane xmlns:fx="http://javafx.com/fxml/1"
 	fx:controller="main.java.controllers.TransactionListController"
-	styleClass="transaction-list" hbarPolicy="NEVER" fx:id="transactionList">
+	styleClass="transaction-list" hbarPolicy="NEVER">
 	
 	<GridPane GridPane.columnIndex="0" GridPane.rowIndex="0">
 		<VBox fx:id="container" styleClass="transaction-container" GridPane.columnIndex="1" GridPane.rowIndex="0">

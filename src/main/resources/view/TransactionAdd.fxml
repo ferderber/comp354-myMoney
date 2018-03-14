@@ -32,7 +32,7 @@
 		
 	<Button fx:id="addTransactionButton" mnemonicParsing="false"
 		onMouseClicked="#addTransaction" text="Add Transaction"
-		GridPane.columnIndex="0" GridPane.rowIndex="4" />
+		GridPane.columnIndex="0" GridPane.rowIndex="4" styleClass = "innerMenuButton" />
 	<Button fx:id = "clearTransactionButton" onMouseClicked="#clearTransaction" text="Clear"
-		GridPane.columnIndex="1" GridPane.rowIndex="4" />
+		GridPane.columnIndex="1" GridPane.rowIndex="4" styleClass = "innerMenuButton"/>
 </GridPane>

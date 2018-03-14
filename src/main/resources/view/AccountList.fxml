@@ -8,9 +8,9 @@
 <VBox xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1"
 	fx:controller="main.java.controllers.AccountListController">
 	<Button text="Add Account" fx:id="NewAccountButton" minWidth="60"
-		minHeight="20" />
+		minHeight="30" styleClass = "innerMenuButton" />
 	<ScrollPane>
-		<VBox fx:id="AccountListcontainer" styleClass="account-container">
+		<VBox fx:id="AccountListcontainer">
 			<children>
 			</children>
 		</VBox>
