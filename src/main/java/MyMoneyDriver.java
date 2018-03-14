@@ -31,7 +31,7 @@ public class MyMoneyDriver extends Application {
 	public static void main(String[] args) {
 		
 		Font.loadFont(MyMoneyDriver.class.getResource("/main/resources/css/OpenSans-CondLight.ttf").toExternalForm(), 12);
-		Font.loadFont(MyMoneyDriver.class.getResource("/main/resources/css/Comfortaa_Regular.ttf").toExternalForm(), 12);
+		Font.loadFont(MyMoneyDriver.class.getResource("/main/resources/css/Comfortaa_Thin.ttf").toExternalForm(), 12);
 		launch(args);
 	}
 

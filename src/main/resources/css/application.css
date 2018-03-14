@@ -17,6 +17,10 @@
 	-fx-font-family: 'Open Sans';
 }
 
+#transactionDetail{
+	-fx-font-family:'Comfortaa';
+}
+
 #AccountListcontainer{   
 	-fx-background: #ff00ff;
 }
@@ -30,6 +34,7 @@
 
 #transactionAdd{
 	-fx-font-family:'Comfortaa';
+	-fx-padding: 10.0;
 }
 #accountAdd{
 	-fx-font-family:'Comfortaa';
