@@ -17,12 +17,17 @@
 	-fx-font-family: 'Open Sans';
 }
 
+#singleAccountContainer{
+	-fx-font-family: 'Comfortaa';
+}
+
 #transactionDetail{
 	-fx-font-family:'Comfortaa';
+	-fx-padding: 10px;
 }
 
 #AccountListcontainer{   
-	-fx-background: #ff00ff;
+	-fx-background: #EBF2E0;
 }
 
 #NewAccountButton{
@@ -46,32 +51,35 @@
 	-fx-scale-y: 1.05;
 }
 .transaction-view {
-	-fx-pref-width: 200.0;
 	-fx-pref-height: 20.0;
 	-fx-padding: 5.0;
 }
 .transaction-title {
-   -fx-background-color: rgba(100,200,250,1.0);
+   -fx-background-color: #D6E4BF;
    -fx-pref-width: 200.0;
    -fx-pref-height: 20.0;
    -fx-padding: 5.0;
 }
 .transaction-view:hover {
-	-fx-background-color: rgba(0.0,0.0,0.0,0.2);
+	-fx-background-color: rgba(0,0,0,.05);
 }
 .transaction-container {
-	-fx-background-color: rgba(0.0,0.0,0.0,0.2);
+	-fx-background-color: #EBF2E0;
 }
 .transaction-container-2 {
-   -fx-background-color: rgba(100,200,250,0.5);
+   -fx-background-color: #F7F9F5;
 }
 .transaction-list {
 	-fx-background-color: transparent;
 	-fx-control-inner-background: transparent;
 }
 
+.transactionListGrid{
+	-fx-pref-width: 100%;
+}
+
 .text-input, .text-input:focused { -fx-prompt-text-fill:darkgray; }
 
 .detail-pane {
-	-fx-padding: 10.0;
+	-fx-padding: 5.0;
 }

@@ -2,24 +2,31 @@
 
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Text?>
 <?import main.java.controllers.TransactionListController?>
 
 <ScrollPane xmlns:fx="http://javafx.com/fxml/1"
 	fx:controller="main.java.controllers.TransactionListController"
-	styleClass="transaction-list" hbarPolicy="NEVER">
+	styleClass="transaction-list" hbarPolicy="NEVER" >
 	
-	<GridPane GridPane.columnIndex="0" GridPane.rowIndex="0">
-		<VBox fx:id="container" styleClass="transaction-container" GridPane.columnIndex="1" GridPane.rowIndex="0">
-			<children>
-			</children>
+	<GridPane styleClass = "transactionListGrid" alignment = "center">
+		<columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="150.0" percentWidth="50.0" />
+        </columnConstraints>
+        <rowConstraints>
+        <RowConstraints vgrow="SOMETIMES" />
+      </rowConstraints>
+        
+		<children>
+		<VBox fx:id="container" styleClass="transaction-container" GridPane.columnIndex="0" GridPane.rowIndex="0">
+			
 		</VBox>
 
-		<VBox fx:id="containerType" styleClass="transaction-container-2" GridPane.columnIndex="2" GridPane.rowIndex="0">
-			<children>
-			</children>
+		<VBox fx:id="containerType" styleClass="transaction-container-2" GridPane.columnIndex="1" GridPane.rowIndex="0">
+			
 		</VBox>
+		</children>
 	</GridPane>
 	
 </ScrollPane>

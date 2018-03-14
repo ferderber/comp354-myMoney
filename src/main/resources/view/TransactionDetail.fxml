@@ -32,7 +32,7 @@
 		<Text text="${controller.transaction.amount}"
 			GridPane.columnIndex="1" GridPane.rowIndex="3" />
 			
-		<Text text="Description: " GridPane.columnIndex="0" GridPane.rowIndex="4" />
+		<Text text="Description:    " GridPane.columnIndex="0" GridPane.rowIndex="4" />
 		<Text text="${controller.transaction.description}" 
 			GridPane.columnIndex="1" GridPane.rowIndex="4" />
 			

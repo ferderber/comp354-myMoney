@@ -25,7 +25,7 @@
 		</VBox>
 	</left>
 	<center>
-		<StackPane fx:id="detailPane" prefWidth="400.0" styleClass="detail-pane">
+		<StackPane fx:id="detailPane" prefWidth="400.0" styleClass="detail-pane" alignment = "center">
 			<children>
 				<fx:include fx:id="transactionList"
 					source="/main/resources/view/TransactionList.fxml" />
