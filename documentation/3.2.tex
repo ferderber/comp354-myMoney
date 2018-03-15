@@ -1,0 +1,1572 @@
+\documentclass[12pt]{article}
+
+\pagestyle{empty}
+\setcounter{secnumdepth}{2}
+
+\usepackage{graphicx}
+\usepackage{xcolor,colortbl, wrapfig}
+\usepackage{array}
+\iffalse 
+https://tex.stackexchange.com/questions/94799/how-do-i-color-table-columns
+\fi
+
+\newcolumntype{a}{>{\columncolor{Gray}}c}
+\newcolumntype{b}{>{\columncolor{white}}c}
+
+\topmargin=0cm
+\oddsidemargin=0cm
+\textheight=22.0cm
+\textwidth=16cm
+\parindent=0cm
+\parskip=0.15cm
+\topskip=0truecm
+\raggedbottom
+\abovedisplayskip=3mm
+\belowdisplayskip=3mm
+\abovedisplayshortskip=0mm
+\belowdisplayshortskip=2mm
+\normalbaselineskip=12pt
+\normalbaselines
+
+\begin{document}
+
+\vspace*{0.5in}
+\centerline{\bf\Large Design Document}
+
+\vspace*{0.5in}
+\centerline{\bf\Large Team X}
+
+\vspace*{0.5in}
+\centerline{\bf\Large 7 february 2012}
+
+\vspace*{1.5in}
+\begin{table}[htbp]
+\caption{Team}
+\begin{center}
+\begin{tabular}{|r | c|}
+\hline
+Name & ID Number \\
+\hline\hline
+X & Y \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\clearpage
+
+\section{Introduction}
+
+The introduction of the document provides an overview of the entire document,
+briefly introducing what are its goals, and what information is to be found in it.
+
+\section{Architectural Design} \label{sec:arch}
+
+This section must give a high-level description of the system in terms of its modules
+and their respective purpose and exact interfaces.
+
+\subsection{Architectural Diagram}
+
+A UML class diagram or package diagram depicting the high-level structure of the system,
+accompanied by a one-paragraph text describing the rationale of this design.
+It is mandatory that the system be divided into at least two subsystems,
+and that the purpose of each of these subsystems be exposed here.
+
+\subsection{Subsystem Interface Specifications}
+
+Specification of the software interfaces between the subsystems,
+i.e. specific messages (or function calls) that are exchanged by the subsystems.
+These are also often called ``Module Interface Specifications''.
+Description of the parameters to be passed into these function calls in order to have a service fulfilled,
+including valid and invalid ranges of values.
+Each subsystem interface must be presented in a separate subsection.
+
+\section{Detailed Design} \label{sec:detail}
+
+Complete description of the system design, describing one subsystem separately in respective subsection.
+UML class diagrams are to be used, as well as a short textual description describing the purpose of each class.
+
+\subsection{Drop Down Menu - Categories}
+
+\subsubsection{Detailed Design Diagram}
+
+UML class diagram depicting the internal structure of the subsystem,
+accompanied by a paragraph of text describing the rationale of this design.
+
+\subsubsection{Units Description}
+
+\subsubsection{Detailed Design Diagram}
+
+\subsubsection{Units Description}
+
+\newcommand{\mc}[2]{\multicolumn{#1}{c}{#2}}
+\newcolumntype{L}{>{\centering\arraybackslash}m{3cm}}
+\definecolor{Gray}{gray}{0.85}
+\definecolor{LightCyan}{rgb}{0.88,1,1}
+
+\setcounter{secnumdepth}{4}
+
+\subsubsection{Statistics$\langle Scene \rangle$}
+\begin{table}
+	\begin{tabular}{|a|p{15cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		\mc{0}{Class Name} & \mc{0}{Statistics} \\
+		\hline
+		Description & User experience depends on tools to properly visualize monetary data. This class contains methods to process data for being used in display classes. Using this class involves calls of getters to acquire processed data. \\
+		\hline
+			Attributes & 
+					 	\begin{tabular}{| p{2cm} | p{2cm} | p{3cm} | p{6.45cm} |}
+							\hline
+							\rowcolor{gray}
+							Visibility & Data Type & Name & Description \\
+						\end{tabular} \\
+					\hline
+		 Methods & 		 
+							 	\begin{tabular}{| p{2cm} | p{5cm} | p{6.9cm} |}
+							 		\hline
+							 		\rowcolor{gray}
+							 		\mc{1}{Visibility} &\mc{1}{Name} & \mc{1}{Description} \\
+						 			\hline
+						 			\rowcolor{white}
+						 			public &  getAllTransactions() & Return the transaction Dao records\\
+						 			\hline
+						 			public &  getTotalMonths() & Return the total months of records\\
+						 									 			\hline
+						 			public &  getMonthsTransactions(int number) & Return the Transaction list matching a time\\
+						 									 			\hline
+						 			public &  getTotalAverage() & Return the average of all transactions\\
+						 									 			\hline
+						 			public &  getMonthsAverage(int number) &  Return the average of all transactions in a month\\
+						 									 			\hline
+						 			public &  getAverageOut() & Return the average of all negative transactions\\
+						 									 			\hline
+						 			public &  getAverageInMonth(int number) & Return the average in a month\\
+						 									 			\hline
+						 			public &  getAverageOutMonth(int number) & Return the average of all negative transactions in a month\\
+						 									 			\hline
+						 			public &  getTotalMedian() & Return the median of all\\
+						 									 			\hline
+						 			public &  getMonthsMedian(int number) & Return the median of months\\
+						 									 			\hline
+						 			public &  getMedianIn() & \\
+						 									 			\hline
+						 			public &  getMedianOut() & \\
+						 									 			\hline
+						 			public &  getMedianInMonth(int number) & \\
+						 									 			\hline
+						 			public &  getMedianOutMonth(int number) & \\
+						 									 			\hline
+						 			public &  getRecurring() & \\
+						 									 			\hline
+						 			public &  getMaxIn() & Return the largest tranaction\\
+						 									 			\hline
+						 			public &  getMaxOut() & Return the max withdrawn\\
+						 									 			\hline
+						 			public &  getMaxRecurring() & \\
+						 									 			\hline
+						 			
+							 	\end{tabular}								 
+	\end{tabular}
+\end{table}
+
+Methods:
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name & getAllTransactions()\\
+		Description & desc\\
+		Input & None \\
+		Output & List of transactions\\
+Return Type & Generic type of Dao  \\
+		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name & getTotalMonths()\\
+		Description &  Return the total months of records\\
+		Input & None \\
+		Output & Total months \\
+		Return Type & Integer \\
+	\end{tabular}
+\end{table} 
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name & getMonthsTransactions(int number)\\
+		Description & Return the Transaction list matching a time\\
+		Input & integer month number \\
+		Output & List of transactions\\
+		Return Type & Generic type of Dao  \\
+		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name & getTotalAverage()\\
+		Description &  Return the average of all transactions\\
+		Input & None \\
+		Output & Output average \\
+		Return Type & double \\
+		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name & getMonthsAverage(int number)\\
+		Description & return the average of all transactions in a month\\
+		Input & int month number \\
+		Output & average at a time \\
+		Return Type & double \\
+		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name & getAverageIn()\\
+		Description &  Return the average of all possitive transactions\\
+		Input & None \\
+		Output & positive average \\
+		Return Type & double \\
+		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name & getAverageOut()\\
+		Description & Return the average of all negative transactions\\
+		Input & None \\
+		Output & negative transaction average \\
+		Return Type & double \\
+		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name & getAverageInMonth(int number)\\
+		Description & Return the average in a month\\
+		Input & int month number \\
+		Output & average in a month \\
+		Return Type & double \\
+		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name & getAverageOutMonth(int number)\\
+		Description & Return the average of all negative transactions in a month\\
+		Input & integer month number \\
+		Output & average aquired in month\\
+		Return Type & double \\	
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name & getTotalMedian()\\
+		Description & desc\\
+		Input & None \\
+		Output & None \\
+		Return Type & None \\
+		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name & getTotalMedian()\\
+		Description & Return the median of all\\
+		Input & - \\
+		Output & - \\
+		Return Type & - \\
+		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name & getMonthsMedian(int number)\\
+		Description & Return the median of months\\
+		Input & integer month number \\
+		Output & median of month\\
+		Return Type & double \\	
+
+		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name & getMedianIn()\\
+		Description & desc\\	
+		Input & - \\
+		Output & - \\
+		Return Type & - \\		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name & getMedianOut()\\
+		Description & desc\\	
+Input & - \\
+Output & - \\
+Return Type & - \\	
+		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name & getMedianInMonth()\\
+		Description & desc\\	
+Input & - \\
+Output & - \\
+Return Type & - \\	
+		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name & getMedianOutMonth()\\
+		Description & desc\\	
+Input & - \\
+Output & - \\
+Return Type & - \\	
+		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name & getRecurring()\\
+		Description & desc\\
+		Input & None \\
+		Output & None \\
+		Return Type & None \\
+		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name & getMaxIn()\\
+		Description & Return the largest tranaction\\
+		Input & None \\
+		Output &  single Transaction \\
+		Return Type & Transaction  \\
+		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name & getMaxOut()\\
+		Description & Return the max withdrawn\\
+		Input & None \\
+		Output &  single Transaction \\
+		Return Type & Transaction  \\
+		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name & getMaxRecurring()\\
+		Description & desc\\
+		Input & - \\
+		Output & - \\
+		Return Type & - \\
+		
+	\end{tabular}
+\end{table}
+
+\subsubsection{Transaction $\langle Scene\rangle$:}
+\begin{table}
+	\begin{tabular}{|a|p{15cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		\mc{0}{Class Name} & \mc{0}{Transaction(String name, String type, double amount, String description, Date date)} \\
+		\hline
+		Description & The Transaction class holds information on financial data that is to be sent to the server, processed by statistics, deleted or anything requiring data manipulation. \\
+		\hline
+		Attributes & 
+		\begin{tabular}{| p{2cm} | p{2cm} | p{3cm} | p{6.45cm} |}
+			\hline
+			\rowcolor{gray}
+			Visibility & Data Type & Name & Description \\
+			
+			Private & int & id & an id of the transaction \\
+			Private & String & name & Name of user\\
+			Private & String & type & the type of action done \\
+			Private & double & amount & the quantity acted on \\
+			Private & String & description & a description of what it is \\
+			Private & Date & date & The date of the transaction \\
+		\end{tabular} \\
+		\hline
+		Methods & 		 
+		\begin{tabular}{| p{2cm} | p{5cm} | p{6.9cm} |}
+			\hline
+			\rowcolor{gray}
+			\mc{1}{Visibility} &\mc{1}{Name} & \mc{1}{Description} \\
+			\hline
+			\rowcolor{white}
+			public &  Transaction() & default constructor\\
+			\hline
+			public &  Transaction(String name, String type, double amount, String description, Date date) & argument constructor\\
+			\hline
+			public & Transaction(int id, String name, String type, double amount, String description, Date date) & argument constructor with given id\\
+			\hline
+			public &   getId() & return ID\\
+			\hline
+			public &  setId(int id) &  set the ID\\
+			\hline
+			public &  getName()  & get the name\\
+			\hline
+			public &  setName(String name)  & set the name\\
+			\hline
+			public &  getType() & get the type\\
+			\hline
+			public &  setType(String type) & set the type\\
+			\hline
+			public &  getDescription() & get the description\\
+			\hline
+			public & setDescription(String description) & set the description\\
+			\hline
+			public &  getDate() & get the date\\
+			\hline
+			public &  setDate(Date date)  & set the date\\
+			\hline
+			public &  getAmount() & get the amount\\
+			\hline
+			public &   setAmount(double amount) & set the amount\\
+			\hline
+			public &  toString() & Return a string representation of data\\
+			\hline
+			
+		\end{tabular}								 
+	\end{tabular}
+\end{table}
+Methods:
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name &  Transaction()\\ 
+		Description & default constructor\\
+		Input & None \\
+		Output & None\\
+		Return Type & None \\
+		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name &  Transaction()\\ 
+Description & default constructor\\
+Input & None \\
+Output & None\\
+Return Type & None \\
+	\end{tabular}
+\end{table} 
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name &  Transaction()\\ 
+Description & default constructor\\
+Input & None \\
+Output & None\\
+Return Type & None \\
+		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name &  Transaction()\\ 
+Description & default constructor\\
+Input & None \\
+Output & None\\
+Return Type & None \\
+		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name &  Transaction()\\ 
+Description & default constructor\\
+Input & None \\
+Output & None\\
+Return Type & None \\
+		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name &  Transaction()\\ 
+Description & default constructor\\
+Input & None \\
+Output & None\\
+Return Type & None \\
+		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name &  Transaction()\\ 
+Description & default constructor\\
+Input & None \\
+Output & None\\
+Return Type & None \\
+		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name &  Transaction()\\ 
+Description & default constructor\\
+Input & None \\
+Output & None\\
+Return Type & None \\
+		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name &  Transaction()\\ 
+Description & default constructor\\
+Input & None \\
+Output & None\\
+Return Type & None \\
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name &  Transaction()\\ 
+Description & default constructor\\
+Input & None \\
+Output & None\\
+Return Type & None \\
+		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name &  Transaction()\\ 
+Description & default constructor\\
+Input & None \\
+Output & None\\
+Return Type & None \\
+		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name &  Transaction()\\ 
+Description & default constructor\\
+Input & None \\
+Output & None\\
+Return Type & None \\
+		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name &  Transaction()\\ 
+Description & default constructor\\
+Input & None \\
+Output & None\\
+Return Type & None \\	
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name &  Transaction()\\ 
+Description & default constructor\\
+Input & None \\
+Output & None\\
+Return Type & None \\
+		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name &  Transaction()\\ 
+Description & default constructor\\
+Input & None \\
+Output & None\\
+Return Type & None \\
+		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name &  Transaction()\\ 
+Description & default constructor\\
+Input & None \\
+Output & None\\
+Return Type & None \\
+		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name &  Transaction()\\ 
+Description & default constructor\\
+Input & None \\
+Output & None\\
+Return Type & None \\
+		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name &  Transaction()\\ 
+Description & default constructor\\
+Input & None \\
+Output & None\\
+Return Type & None \\
+		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name &  Transaction()\\ 
+Description & default constructor\\
+Input & None \\
+Output & None\\
+Return Type & None \\
+		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name &  Transaction()\\ 
+Description & default constructor\\
+Input & None \\
+Output & None\\
+Return Type & None \\
+		
+	\end{tabular}
+\end{table}
+\pagebreak
+
+
+\subsubsection{TransactionDao $\langle Scene\rangle$:}
+\begin{table}
+	\begin{tabular}{|a|p{15cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		\mc{0}{Class Name} & \mc{0}{Transaction(String name, String type, double amount, String description, Date date)} \\
+		\hline
+		Description & A transaction Dao is the way that transaction connect to the database. a Transaction Dao has reference to a set of Transaction objects and performs operations on networks with them.\\
+		\hline
+		Attributes & 
+		\begin{tabular}{| p{2cm} | p{3.5cm} | p{1.5cm} | p{6.45cm} |}
+			\hline
+			\rowcolor{gray}
+			Visibility & Data Type & Name & Description \\
+			private & ConnectionSource & connection & The address of a connection \\
+			private & Dao $\langle Transaction, Integer \rangle$ & transactionDao & the Transaction it is connected to \\
+			
+		\end{tabular} \\
+		\hline
+		Methods & 		 
+		\begin{tabular}{| p{2cm} | p{5cm} | p{6.9cm} |}
+			\hline
+			\rowcolor{gray}
+			\mc{1}{Visibility} &\mc{1}{Name} & \mc{1}{Description} \\
+			\hline
+			\rowcolor{white}			
+			public &  TransactionDao() & Default constructor\\
+			\hline
+			public &  getTransactionById() & Return the record with a certain ID\\
+			\hline
+			public &  getAllTransactions(int number) & Return all Transaction objects contained\\
+			\hline
+			public &  updateTransaction(Transaction transaction) & updates an sql record\\
+			\hline
+			public &  insert(Transaction transaction) &  inserts a transaction\\
+			\hline
+			public &  delete(Transaction transaction) & Removes a transaction\\
+			\hline
+		
+		\end{tabular}								 
+	\end{tabular}
+\end{table}
+
+
+Methods:
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name & TransactionDao()\\
+		Description & desc\\
+		Input & None \\
+		Output & List of transactions\\
+		Return Type & Generic type of Dao  \\
+		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name & getTransactionById()\\
+		Description &  Return the total months of records\\
+		Input & None \\
+		Output & Total months \\
+		Return Type & Integer \\
+	\end{tabular}
+\end{table} 
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name & getAllTransactions(int number)\\
+		Description & Return the Transaction list matching a time\\
+		Input & integer month number \\
+		Output & List of transactions\\
+		Return Type & Generic type of Dao  \\
+		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name & updateTransaction(Transaction transaction)\\
+		Description &  Return the average of all transactions\\
+		Input & None \\
+		Output & Output average \\
+		Return Type & double \\
+		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name & insert(Transaction transaction)\\
+		Description & return the average of all transactions in a month\\
+		Input & int month number \\
+		Output & average at a time \\
+		Return Type & double \\
+		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name & delete(Transaction transaction)\\
+		Description &  Return the average of all possitive transactions\\
+		Input & None \\
+		Output & positive average \\
+		Return Type & double \\
+		
+	\end{tabular}
+\end{table}
+
+\pagebreak
+
+\subsubsection{TransactionView $\langle Scene\rangle$:}
+\begin{table}
+	\begin{tabular}{|a|p{15cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		\mc{0}{Class Name} & \mc{0}{Transaction(String name, String type, double amount, String description, Date date)} \\
+		\hline
+		Description & User experience depends on tools to properly visualize monetary data. This class contains methods to process data for being used in display classes. Using this class involves calls of getters to acquire processed data. \\
+		\hline
+		
+		Attributes & 
+		\begin{tabular}{| p{2cm} | p{2cm} | p{3cm} | p{6.45cm} |}
+			\hline
+			\rowcolor{gray}
+			Visibility & Data Type & Name & Description \\
+			private & Transaction & transaction  & Description \\
+			private & EventHandler$\rangle MouseEvent\rangle$  & onAction  & Description\\
+			private & ObjectProperty$\rangle EventHandler\rangle MouseEvent\rangle\rangle$ & propertyOnAction & Description \\
+		\end{tabular} \\
+		\hline
+		Methods & 		 
+		\begin{tabular}{| p{2cm} | p{5cm} | p{6.9cm} |}
+			\hline
+			\rowcolor{gray}
+			\mc{1}{Visibility} &\mc{1}{Name} & \mc{1}{Description} \\
+			\hline
+			\rowcolor{white}			
+			public &  TransactionView(Transaction transaction, EventHandler$\langle MouseEvent\rangle$ onAction)  & default constructor\\
+			\hline
+			public &  styleComponent() & Return the total months of records\\
+			\hline
+			public &  setContent(int number) & Return the Transaction list matching a time\\
+			\hline
+			public &  setOnAction(EventHandler$\langle MouseEvent\rangle$ eventHandler)  & Return the average of all transactions\\
+			\hline
+			public &  getOnAction(int number) &  Return the average of all transactions in a month\\
+			\hline
+			public &  getTransaction() & Return the average of all negative transactions\\
+			\hline
+		\end{tabular}								 
+	\end{tabular}
+\end{table}
+Methods:
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name & getAllTransactions()\\
+		Description & desc\\
+		Input & None \\
+		Output & List of transactions\\
+		Return Type & Generic type of Dao  \\
+		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name & getTotalMonths()\\
+		Description &  Return the total months of records\\
+		Input & None \\
+		Output & Total months \\
+		Return Type & Integer \\
+	\end{tabular}
+\end{table} 
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name & getMonthsTransactions(int number)\\
+		Description & Return the Transaction list matching a time\\
+		Input & integer month number \\
+		Output & List of transactions\\
+		Return Type & Generic type of Dao  \\
+		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name & getTotalAverage()\\
+		Description &  Return the average of all transactions\\
+		Input & None \\
+		Output & Output average \\
+		Return Type & double \\
+		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name & getMonthsAverage(int number)\\
+		Description & return the average of all transactions in a month\\
+		Input & int month number \\
+		Output & average at a time \\
+		Return Type & double \\
+		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name & getAverageIn()\\
+		Description &  Return the average of all possitive transactions\\
+		Input & None \\
+		Output & positive average \\
+		Return Type & double \\
+		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name & getAverageOut()\\
+		Description & Return the average of all negative transactions\\
+		Input & None \\
+		Output & negative transaction average \\
+		Return Type & double \\
+		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name & getAverageInMonth(int number)\\
+		Description & Return the average in a month\\
+		Input & int month number \\
+		Output & average in a month \\
+		Return Type & double \\
+		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name & getAverageOutMonth(int number)\\
+		Description & Return the average of all negative transactions in a month\\
+		Input & integer month number \\
+		Output & average aquired in month\\
+		Return Type & double \\	
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name & getTotalMedian()\\
+		Description & desc\\
+		Input & None \\
+		Output & None \\
+		Return Type & None \\
+		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name & getTotalMedian()\\
+		Description & Return the median of all\\
+		Input & - \\
+		Output & - \\
+		Return Type & - \\
+		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name & getMonthsMedian(int number)\\
+		Description & Return the median of months\\
+		Input & integer month number \\
+		Output & median of month\\
+		Return Type & double \\	
+		
+		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name & getMedianIn()\\
+		Description & desc\\	
+		Input & - \\
+		Output & - \\
+		Return Type & - \\		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name & getMedianOut()\\
+		Description & desc\\	
+		Input & - \\
+		Output & - \\
+		Return Type & - \\	
+		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name & getMedianInMonth()\\
+		Description & desc\\	
+		Input & - \\
+		Output & - \\
+		Return Type & - \\	
+		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name & getMedianOutMonth()\\
+		Description & desc\\	
+		Input & - \\
+		Output & - \\
+		Return Type & - \\	
+		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name & getRecurring()\\
+		Description & desc\\
+		Input & None \\
+		Output & None \\
+		Return Type & None \\
+		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name & getMaxIn()\\
+		Description & Return the largest tranaction\\
+		Input & None \\
+		Output &  single Transaction \\
+		Return Type & Transaction  \\
+		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name & getMaxOut()\\
+		Description & Return the max withdrawn\\
+		Input & None \\
+		Output &  single Transaction \\
+		Return Type & Transaction  \\
+		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|a|p{5cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		Method Name & getMaxRecurring()\\
+		Description & desc\\
+		Input & - \\
+		Output & - \\
+		Return Type & - \\
+		
+	\end{tabular}
+\end{table}
+\pagebreak
+
+
+\subsubsection{TransactionListController}
+\begin{table}
+	\begin{tabular}{|a|p{15cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		\mc{0}{Class Name} & \mc{0}{Transaction(String name, String type, double amount, String description, Date date)} \\
+		\hline
+		Description & A transaction Dao is the way that transaction connect to the database. a Transaction Dao has reference to a set of Transaction objects and performs operations on networks with them.\\
+		\hline
+		Attributes & 
+		\begin{tabular}{| p{2cm} | p{3.5cm} | p{1.5cm} | p{6.45cm} |}
+			\hline
+			\rowcolor{gray}
+			Visibility & Data Type & Name & Description \\
+			private & ConnectionSource & connection & The address of a connection \\
+			private & Dao $\langle Transaction, Integer \rangle$ & transactionDao & the Transaction it is connected to \\
+			
+		\end{tabular} \\
+		\hline
+		Methods & 		 
+		\begin{tabular}{| p{2cm} | p{5cm} | p{6.9cm} |}
+			\hline
+			\rowcolor{gray}
+			\mc{1}{Visibility} &\mc{1}{Name} & \mc{1}{Description} \\
+			\hline
+			\rowcolor{white}			
+			public &  TransactionDao() & Default constructor\\
+			\hline
+			public &  getTransactionById() & Return the record with a certain ID\\
+			\hline
+			public &  getAllTransactions(int number) & Return all Transaction objects contained\\
+			\hline
+			public &  updateTransaction(Transaction transaction) & updates an sql record\\
+			\hline
+			public &  insert(Transaction transaction) &  inserts a transaction\\
+			\hline
+			public &  delete(Transaction transaction) & Removes a transaction\\
+			\hline
+			
+		\end{tabular}								 
+	\end{tabular}
+\end{table}
+
+\subsubsection{TransactionDetailController}
+\begin{table}
+	\begin{tabular}{|a|p{15cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		\mc{0}{Class Name} & \mc{0}{Transaction(String name, String type, double amount, String description, Date date)} \\
+		\hline
+		Description & A transaction Dao is the way that transaction connect to the database. a Transaction Dao has reference to a set of Transaction objects and performs operations on networks with them.\\
+		\hline
+		Attributes & 
+		\begin{tabular}{| p{2cm} | p{3.5cm} | p{1.5cm} | p{6.45cm} |}
+			\hline
+			\rowcolor{gray}
+			Visibility & Data Type & Name & Description \\
+			private & ConnectionSource & connection & The address of a connection \\
+			private & Dao $\langle Transaction, Integer \rangle$ & transactionDao & the Transaction it is connected to \\
+			
+		\end{tabular} \\
+		\hline
+		Methods & 		 
+		\begin{tabular}{| p{2cm} | p{5cm} | p{6.9cm} |}
+			\hline
+			\rowcolor{gray}
+			\mc{1}{Visibility} &\mc{1}{Name} & \mc{1}{Description} \\
+			\hline
+			\rowcolor{white}			
+			public &  TransactionDao() & Default constructor\\
+			\hline
+			public &  getTransactionById() & Return the record with a certain ID\\
+			\hline
+			public &  getAllTransactions(int number) & Return all Transaction objects contained\\
+			\hline
+			public &  updateTransaction(Transaction transaction) & updates an sql record\\
+			\hline
+			public &  insert(Transaction transaction) &  inserts a transaction\\
+			\hline
+			public &  delete(Transaction transaction) & Removes a transaction\\
+			\hline
+			
+		\end{tabular}								 
+	\end{tabular}
+\end{table}
+
+\subsubsection{MainController}
+\begin{table}
+	\begin{tabular}{|a|p{15cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		\mc{0}{Class Name} & \mc{0}{Transaction(String name, String type, double amount, String description, Date date)} \\
+		\hline
+		Description & A transaction Dao is the way that transaction connect to the database. a Transaction Dao has reference to a set of Transaction objects and performs operations on networks with them.\\
+		\hline
+		Attributes & 
+		\begin{tabular}{| p{2cm} | p{3.5cm} | p{1.5cm} | p{6.45cm} |}
+			\hline
+			\rowcolor{gray}
+			Visibility & Data Type & Name & Description \\
+			private & ConnectionSource & connection & The address of a connection \\
+			private & Dao $\langle Transaction, Integer \rangle$ & transactionDao & the Transaction it is connected to \\
+			
+		\end{tabular} \\
+		\hline
+		Methods & 		 
+		\begin{tabular}{| p{2cm} | p{5cm} | p{6.9cm} |}
+			\hline
+			\rowcolor{gray}
+			\mc{1}{Visibility} &\mc{1}{Name} & \mc{1}{Description} \\
+			\hline
+			\rowcolor{white}			
+			public &  TransactionDao() & Default constructor\\
+			\hline
+			public &  getTransactionById() & Return the record with a certain ID\\
+			\hline
+			public &  getAllTransactions(int number) & Return all Transaction objects contained\\
+			\hline
+			public &  updateTransaction(Transaction transaction) & updates an sql record\\
+			\hline
+			public &  insert(Transaction transaction) &  inserts a transaction\\
+			\hline
+			public &  delete(Transaction transaction) & Removes a transaction\\
+			\hline
+			
+		\end{tabular}								 
+	\end{tabular}
+\end{table}
+
+\subsubsection{Database}
+\begin{table}
+	\begin{tabular}{|a|p{15cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		\mc{0}{Class Name} & \mc{0}{Transaction(String name, String type, double amount, String description, Date date)} \\
+		\hline
+		Description & A transaction Dao is the way that transaction connect to the database. a Transaction Dao has reference to a set of Transaction objects and performs operations on networks with them.\\
+		\hline
+		Attributes & 
+		\begin{tabular}{| p{2cm} | p{3.5cm} | p{1.5cm} | p{6.45cm} |}
+			\hline
+			\rowcolor{gray}
+			Visibility & Data Type & Name & Description \\
+			private & ConnectionSource & connection & The address of a connection \\
+			private & Dao $\langle Transaction, Integer \rangle$ & transactionDao & the Transaction it is connected to \\
+			
+		\end{tabular} \\
+		\hline
+		Methods & 		 
+		\begin{tabular}{| p{2cm} | p{5cm} | p{6.9cm} |}
+			\hline
+			\rowcolor{gray}
+			\mc{1}{Visibility} &\mc{1}{Name} & \mc{1}{Description} \\
+			\hline
+			\rowcolor{white}			
+			public &  TransactionDao() & Default constructor\\
+			\hline
+			public &  getTransactionById() & Return the record with a certain ID\\
+			\hline
+			public &  getAllTransactions(int number) & Return all Transaction objects contained\\
+			\hline
+			public &  updateTransaction(Transaction transaction) & updates an sql record\\
+			\hline
+			public &  insert(Transaction transaction) &  inserts a transaction\\
+			\hline
+			public &  delete(Transaction transaction) & Removes a transaction\\
+			\hline
+			
+		\end{tabular}								 
+	\end{tabular}
+\end{table}
+
+\subsubsection{AccountController}
+\begin{table}
+	\begin{tabular}{|a|p{15cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		\mc{0}{Class Name} & \mc{0}{Transaction(String name, String type, double amount, String description, Date date)} \\
+		\hline
+		Description & A transaction Dao is the way that transaction connect to the database. a Transaction Dao has reference to a set of Transaction objects and performs operations on networks with them.\\
+		\hline
+		Attributes & 
+		\begin{tabular}{| p{2cm} | p{3.5cm} | p{1.5cm} | p{6.45cm} |}
+			\hline
+			\rowcolor{gray}
+			Visibility & Data Type & Name & Description \\
+			private & ConnectionSource & connection & The address of a connection \\
+			private & Dao $\langle Transaction, Integer \rangle$ & transactionDao & the Transaction it is connected to \\
+			
+		\end{tabular} \\
+		\hline
+		Methods & 		 
+		\begin{tabular}{| p{2cm} | p{5cm} | p{6.9cm} |}
+			\hline
+			\rowcolor{gray}
+			\mc{1}{Visibility} &\mc{1}{Name} & \mc{1}{Description} \\
+			\hline
+			\rowcolor{white}			
+			public &  TransactionDao() & Default constructor\\
+			\hline
+			public &  getTransactionById() & Return the record with a certain ID\\
+			\hline
+			public &  getAllTransactions(int number) & Return all Transaction objects contained\\
+			\hline
+			public &  updateTransaction(Transaction transaction) & updates an sql record\\
+			\hline
+			public &  insert(Transaction transaction) &  inserts a transaction\\
+			\hline
+			public &  delete(Transaction transaction) & Removes a transaction\\
+			\hline
+			
+		\end{tabular}								 
+	\end{tabular}
+\end{table}
+
+\subsubsection{AccountAddController}
+\begin{table}
+	\begin{tabular}{|a|p{15cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		\mc{0}{Class Name} & \mc{0}{Transaction(String name, String type, double amount, String description, Date date)} \\
+		\hline
+		Description & A transaction Dao is the way that transaction connect to the database. a Transaction Dao has reference to a set of Transaction objects and performs operations on networks with them.\\
+		\hline
+		Attributes & 
+		\begin{tabular}{| p{2cm} | p{3.5cm} | p{1.5cm} | p{6.45cm} |}
+			\hline
+			\rowcolor{gray}
+			Visibility & Data Type & Name & Description \\
+			private & ConnectionSource & connection & The address of a connection \\
+			private & Dao $\langle Transaction, Integer \rangle$ & transactionDao & the Transaction it is connected to \\
+			
+		\end{tabular} \\
+		\hline
+		Methods & 		 
+		\begin{tabular}{| p{2cm} | p{5cm} | p{6.9cm} |}
+			\hline
+			\rowcolor{gray}
+			\mc{1}{Visibility} &\mc{1}{Name} & \mc{1}{Description} \\
+			\hline
+			\rowcolor{white}			
+			public &  TransactionDao() & Default constructor\\
+			\hline
+			public &  getTransactionById() & Return the record with a certain ID\\
+			\hline
+			public &  getAllTransactions(int number) & Return all Transaction objects contained\\
+			\hline
+			public &  updateTransaction(Transaction transaction) & updates an sql record\\
+			\hline
+			public &  insert(Transaction transaction) &  inserts a transaction\\
+			\hline
+			public &  delete(Transaction transaction) & Removes a transaction\\
+			\hline
+			
+		\end{tabular}								 
+	\end{tabular}
+\end{table}
+
+\subsubsection{AccountDao}
+\begin{table}
+	\begin{tabular}{|a|p{15cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		\mc{0}{Class Name} & \mc{0}{Transaction(String name, String type, double amount, String description, Date date)} \\
+		\hline
+		Description & A transaction Dao is the way that transaction connect to the database. a Transaction Dao has reference to a set of Transaction objects and performs operations on networks with them.\\
+		\hline
+		Attributes & 
+		\begin{tabular}{| p{2cm} | p{3.5cm} | p{1.5cm} | p{6.45cm} |}
+			\hline
+			\rowcolor{gray}
+			Visibility & Data Type & Name & Description \\
+			private & ConnectionSource & connection & The address of a connection \\
+			private & Dao $\langle Transaction, Integer \rangle$ & transactionDao & the Transaction it is connected to \\
+			
+		\end{tabular} \\
+		\hline
+		Methods & 		 
+		\begin{tabular}{| p{2cm} | p{5cm} | p{6.9cm} |}
+			\hline
+			\rowcolor{gray}
+			\mc{1}{Visibility} &\mc{1}{Name} & \mc{1}{Description} \\
+			\hline
+			\rowcolor{white}			
+			public &  TransactionDao() & Default constructor\\
+			\hline
+			public &  getTransactionById() & Return the record with a certain ID\\
+			\hline
+			public &  getAllTransactions(int number) & Return all Transaction objects contained\\
+			\hline
+			public &  updateTransaction(Transaction transaction) & updates an sql record\\
+			\hline
+			public &  insert(Transaction transaction) &  inserts a transaction\\
+			\hline
+			public &  delete(Transaction transaction) & Removes a transaction\\
+			\hline
+			
+		\end{tabular}								 
+	\end{tabular}
+\end{table}
+
+\subsubsection{Account}
+\begin{table}
+	\begin{tabular}{|a|p{15cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		\mc{0}{Class Name} & \mc{0}{Transaction(String name, String type, double amount, String description, Date date)} \\
+		\hline
+		Description & A transaction Dao is the way that transaction connect to the database. a Transaction Dao has reference to a set of Transaction objects and performs operations on networks with them.\\
+		\hline
+		Attributes & 
+		\begin{tabular}{| p{2cm} | p{3.5cm} | p{1.5cm} | p{6.45cm} |}
+			\hline
+			\rowcolor{gray}
+			Visibility & Data Type & Name & Description \\
+			private & ConnectionSource & connection & The address of a connection \\
+			private & Dao $\langle Transaction, Integer \rangle$ & transactionDao & the Transaction it is connected to \\
+			
+		\end{tabular} \\
+		\hline
+		Methods & 		 
+		\begin{tabular}{| p{2cm} | p{5cm} | p{6.9cm} |}
+			\hline
+			\rowcolor{gray}
+			\mc{1}{Visibility} &\mc{1}{Name} & \mc{1}{Description} \\
+			\hline
+			\rowcolor{white}			
+			public &  TransactionDao() & Default constructor\\
+			\hline
+			public &  getTransactionById() & Return the record with a certain ID\\
+			\hline
+			public &  getAllTransactions(int number) & Return all Transaction objects contained\\
+			\hline
+			public &  updateTransaction(Transaction transaction) & updates an sql record\\
+			\hline
+			public &  insert(Transaction transaction) &  inserts a transaction\\
+			\hline
+			public &  delete(Transaction transaction) & Removes a transaction\\
+			\hline
+			
+		\end{tabular}								 
+	\end{tabular}
+\end{table}
+
+\subsubsection{MyMoneyDriver}
+\begin{table}
+	\begin{tabular}{|a|p{15cm}|}
+		\hline
+		\rowcolor{LightCyan}
+		\mc{0}{Class Name} & \mc{0}{Transaction(String name, String type, double amount, String description, Date date)} \\
+		\hline
+		Description & A transaction Dao is the way that transaction connect to the database. a Transaction Dao has reference to a set of Transaction objects and performs operations on networks with them.\\
+		\hline
+		Attributes & 
+		\begin{tabular}{| p{2cm} | p{3.5cm} | p{1.5cm} | p{6.45cm} |}
+			\hline
+			\rowcolor{gray}
+			Visibility & Data Type & Name & Description \\
+			private & ConnectionSource & connection & The address of a connection \\
+			private & Dao $\langle Transaction, Integer \rangle$ & transactionDao & the Transaction it is connected to \\
+			
+		\end{tabular} \\
+		\hline
+		Methods & 		 
+		\begin{tabular}{| p{2cm} | p{5cm} | p{6.9cm} |}
+			\hline
+			\rowcolor{gray}
+			\mc{1}{Visibility} &\mc{1}{Name} & \mc{1}{Description} \\
+			\hline
+			\rowcolor{white}			
+			public &  TransactionDao() & Default constructor\\
+			\hline
+			public &  getTransactionById() & Return the record with a certain ID\\
+			\hline
+			public &  getAllTransactions(int number) & Return all Transaction objects contained\\
+			\hline
+			public &  updateTransaction(Transaction transaction) & updates an sql record\\
+			\hline
+			public &  insert(Transaction transaction) &  inserts a transaction\\
+			\hline
+			public &  delete(Transaction transaction) & Removes a transaction\\
+			\hline
+			
+		\end{tabular}								 
+	\end{tabular}
+\end{table}
+
+\end{document}

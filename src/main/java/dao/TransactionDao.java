@@ -102,6 +102,19 @@ public class TransactionDao {
 		return -1;
 	}
 
+	public int insert(Transaction[] transaction) {
+		try {
+				for(int i=0; i<transaction.length-1; i++)
+				{
+					transactionDao.create(transaction[i]);
+				}
+			return transactionDao.create(transaction[transaction.length-1]);
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+		}
+		return -1;
+	}
+	
 	/**
 	 * Deletes a transaction from the database.
 	 * 

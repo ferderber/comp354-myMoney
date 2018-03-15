@@ -18,9 +18,15 @@
 				<Button text="Add Transaction" onAction="#handleAddTransactionClick"
 					minWidth="200" minHeight="60" />
 				<Button text="View Transaction History" onAction="#handleTransactionListClick"
+<<<<<<< HEAD
 					minWidth="200" minHeight="60" />
 				<Button text="Settings" onAction="#handleSettingsClick"
 					minWidth="200" minHeight="60" />
+=======
+					minWidth="180" minHeight="100" />
+				<Button text="Statistics" onAction="#handleStatisticsClick"
+					minWidth="180" minHeight="100" />
+>>>>>>> master
 			</children>
 		</VBox>
 	</left>
@@ -34,6 +40,7 @@
 				<fx:include fx:id="transactionAdd"
 					source="/main/resources/view/TransactionAdd.fxml" />
 				<fx:include fx:id="accountView" source="/main/resources/view/AccountView.fxml" />
+				<fx:include fx:id="statisticsView" source="/main/resources/view/Statistics.fxml" />
 			</children>
 		</StackPane>
 	</center>

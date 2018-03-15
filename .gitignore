@@ -50,5 +50,10 @@ hs_err_pid*
 *.pdf
 /bin/
 /target/
+<<<<<<< HEAD
 # for mac users
+=======
+
+#for mac users
+>>>>>>> master
 .DS_Store

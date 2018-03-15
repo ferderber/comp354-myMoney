@@ -36,7 +36,9 @@ public class MainController implements Initializable {
 	private Pane accountView;
 	@FXML
 	private Pane transactionAdd;
-
+	
+	@FXML
+	private Pane statisticsView;
 	@FXML
 	private BorderPane mainView;
 
@@ -87,8 +89,10 @@ public class MainController implements Initializable {
 	}
 
 	@FXML
-	public void handleSettingsClick() {
-		// TODO: Implement action
+	public void handleStatisticsClick() {
+		setAllViewsInvisible();
+		statisticsView.setVisible(true);
+		//statisticsView.updateStatistics();
 	}
 
 	@FXML
@@ -105,6 +109,7 @@ public class MainController implements Initializable {
 		accountView.setVisible(false);
 		transactionList.setVisible(false);
 		transactionDetail.setVisible(false);
+		statisticsView.setVisible(false);
 	}
 
 }

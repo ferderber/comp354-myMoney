@@ -117,16 +117,4 @@ public class TypeDao {
 		}
 		return -1;
 	}
-	
-/*	
-	public List<Transaction> getAllofType(String type) {
-		try {
-			TransactionDao transDao = new TransactionDao();
-			return transDao.queryForEq("type", type);
-		} catch (SQLException ex) {
-			ex.printStackTrace();
-		}
-		return new ArrayList<Transaction>();	
-	}
-*/
 }
