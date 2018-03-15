@@ -31,6 +31,8 @@ public class TransactionDetailController implements Initializable {
 	@FXML
 	private Button saveTransactionButton;
 	@FXML
+	private Button deleteTransactionButton;
+	@FXML
 	private GridPane editPane;
 	@FXML
 	private GridPane detailPane;
@@ -109,6 +111,24 @@ public class TransactionDetailController implements Initializable {
 			typeField.setText(t.getType().getId());
 			amountField.setText(String.valueOf(t.getAmount()));
 			descriptionField.setText(t.getDescription());
+		}
+	}
+	
+	/*
+	 * deletes transaction, still need to remove type from transaction list
+	 * if type is empty after removal + redirect to transaction list
+	 */
+	
+	@FXML
+	private void deleteTransaction() {
+		editPane.setVisible(true);
+		detailPane.setVisible(false);
+		Transaction t = transactionProperty.get();
+		if (t != null) {
+			TransactionDao transDao = new TransactionDao();
+			transDao.delete(t);
+			editPane.setVisible(false);
+			detailPane.setVisible(true);
 		}
 	}
 

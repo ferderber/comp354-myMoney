@@ -39,6 +39,9 @@
 		<Text text="Date: " GridPane.columnIndex="0" GridPane.rowIndex="5" />
 		<Text text="${controller.transaction.date}" 
 			GridPane.columnIndex="1" GridPane.rowIndex="5" />
+		<Button fx:id="deleteTransactionButton" mnemonicParsing="false"
+			onMouseClicked="#deleteTransaction" text="Delete Transaction"
+			GridPane.columnIndex="0" GridPane.rowIndex="6" styleClass = "innerMenuButton"/>
 		<Button fx:id="editTransactionButton" mnemonicParsing="false"
 			onMouseClicked="#editTransaction" text="Edit Transaction"
 			GridPane.columnIndex="1" GridPane.rowIndex="6" styleClass = "innerMenuButton"/>
