@@ -50,3 +50,5 @@ hs_err_pid*
 *.pdf
 /bin/
 /target/
+# for mac users
+.DS_Store
