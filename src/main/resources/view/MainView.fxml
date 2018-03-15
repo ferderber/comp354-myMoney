@@ -18,15 +18,10 @@
 				<Button text="Add Transaction" onAction="#handleAddTransactionClick"
 					minWidth="200" minHeight="60" />
 				<Button text="View Transaction History" onAction="#handleTransactionListClick"
-<<<<<<< HEAD
 					minWidth="200" minHeight="60" />
-				<Button text="Settings" onAction="#handleSettingsClick"
-					minWidth="200" minHeight="60" />
-=======
-					minWidth="180" minHeight="100" />
 				<Button text="Statistics" onAction="#handleStatisticsClick"
-					minWidth="180" minHeight="100" />
->>>>>>> master
+					minWidth="200" minHeight="60" />
+
 			</children>
 		</VBox>
 	</left>

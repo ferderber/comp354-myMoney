@@ -52,7 +52,7 @@
 			
 						<Button fx:id="updateStatisticsButton" mnemonicParsing="false"
 							onAction="#updateStatistics" text="Submit"
-							GridPane.columnIndex="0" GridPane.rowIndex="9" />
+							GridPane.columnIndex="0" GridPane.rowIndex="9" StyleClass = "innerMenuButton"/>
 						
 						<Text text="" GridPane.columnIndex="0" GridPane.rowIndex="10" />	
 						<Text fx:id="transactionName" 
