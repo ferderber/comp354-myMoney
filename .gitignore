@@ -51,9 +51,14 @@ hs_err_pid*
 /bin/
 /target/
 <<<<<<< HEAD
+<<<<<<< HEAD
 # for mac users
 =======
 
 #for mac users
 >>>>>>> master
+=======
+
+#for mac users
+>>>>>>> def11d15847da555a7c0cead6fed8c169ba8938c
 .DS_Store
