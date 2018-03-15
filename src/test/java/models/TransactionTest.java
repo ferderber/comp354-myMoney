@@ -22,6 +22,7 @@ public class TransactionTest {
 		Transaction t = new Transaction(id, name, type, amount, description, date);
 		assertEquals(t.getId(), id);
 		assertEquals(t.getName(), name);
+		assertEquals(t.getType(), type);
 		assertEquals(t.getDescription(), description);
 		assertEquals(t.getDate(), date);
 	}
@@ -36,6 +37,7 @@ public class TransactionTest {
 		Transaction t = new Transaction(name, type, amount, description, date);
 		assertEquals(t.getId(), 0);
 		assertEquals(t.getName(), name);
+		assertEquals(t.getType(), type);
 		assertEquals(t.getDescription(), description);
 		assertEquals(t.getDate(), date);
 	}
