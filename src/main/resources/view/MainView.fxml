@@ -18,7 +18,7 @@
 					minWidth="180" minHeight="100" />
 				<Button text="View Transaction History" onAction="#handleTransactionListClick"
 					minWidth="180" minHeight="100" />
-				<Button text="Settings" onAction="#handleSettingsClick"
+				<Button text="Statistics" onAction="#handleStatisticsClick"
 					minWidth="180" minHeight="100" />
 			</children>
 		</FlowPane>
@@ -33,6 +33,7 @@
 				<fx:include fx:id="transactionAdd"
 					source="/main/resources/view/TransactionAdd.fxml" />
 				<fx:include fx:id="accountView" source="/main/resources/view/AccountView.fxml" />
+				<fx:include fx:id="statisticsView" source="/main/resources/view/Statistics.fxml" />
 			</children>
 		</StackPane>
 	</center>
