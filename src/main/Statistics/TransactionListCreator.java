@@ -49,7 +49,7 @@ public class TransactionListCreator
 			
 			date = new Date(year, month, day, 12, 0, 0);
 			
-			trans = new Transaction(name+i, type, amount, description, date);
+			trans = new Transaction(name+i, type, amount, description, date,1);
 			
 			arr[i] = trans;
 		}

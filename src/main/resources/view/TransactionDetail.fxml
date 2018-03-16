@@ -38,10 +38,14 @@
 		<Text text="Description: " GridPane.columnIndex="0" GridPane.rowIndex="4" />
 		<Text text="${controller.transaction.description}" 
 			GridPane.columnIndex="1" GridPane.rowIndex="4" />
-			
-		<Text text="Date: " GridPane.columnIndex="0" GridPane.rowIndex="5" />
-		<Text text="${controller.transaction.date}" 
+		<!-- vik -->
+		<Text text="Account: " GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+		<Text text="${controller.transaction.idAccount}"
 			GridPane.columnIndex="1" GridPane.rowIndex="5" />
+			
+		<Text text="Date: " GridPane.columnIndex="0" GridPane.rowIndex="6" />
+		<Text text="${controller.transaction.date}" 
+			GridPane.columnIndex="1" GridPane.rowIndex="6" />
 	</GridPane>
 
 

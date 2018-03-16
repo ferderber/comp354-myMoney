@@ -63,7 +63,10 @@ public class AccountAddController implements Initializable {
 			a.setEdit(null);
 			a.setArchived(null);
 		}
+		
 		String name = nameField.getText();
+		if(name.equals(""))
+			name="No Name";
 
 		long number = 0L;
 		try {
@@ -71,12 +74,17 @@ public class AccountAddController implements Initializable {
 		} catch (Exception ex) {
 			// TODO: Display validation error
 		}
+		
 		AccountType type = null;
+		String typeName = "";
 		try {
-			type = AccountType.valueOf(typeField.getText());
+			typeName=typeField.getText();
+			type = AccountType.valueOf(typeName);
 		} catch (Exception ex) {
-
+		if (typeName.equals(""))
+			typeName="Undefined";
 		}
+		
 		double balance = 0.0;
 		try {
 			balance = Double.parseDouble(balanceField.getText());
@@ -88,6 +96,7 @@ public class AccountAddController implements Initializable {
 		a.setBalance(balance);
 		a.setNumber(number);
 		a.setType(type);
+		a.setTypeName(typeName);
 		try {
 			if (accountProperty.get() == null) {
 				dao.insert(a);

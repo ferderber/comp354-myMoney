@@ -25,36 +25,45 @@ public class AccountListController implements Initializable {
 	@FXML
 	private Button NewAccountButton;
 	@FXML
-	private VBox AccountListcontainer;
+	private VBox accountListContainer;
 
 	private List<SingleAccountView> accountViews;
 	@FXML
 	private AccountController accountController;
+	
+	private EventHandler<MouseEvent> accountViewActionHandler;
+	@FXML
+	private Button returnToMainViewButton;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		accountViews = new ArrayList<SingleAccountView>();
-		// AccountDao dao = new AccountDao();
-		// Get all transactions from the database
-		List<Account> accounts = this.getAccounts();
-		// Create a TransactionView forEach transaction obj
-		accounts.forEach((account) -> {
-			accountViews.add(new SingleAccountView(account));
-		});
-		// Add all of the transactions to the list
-		AccountListcontainer.getChildren().addAll(accountViews);
-		// TODO Auto-generated method stub
-
 	}
+	
+	/* Sets the ToAccountDetailHandler for each SingleAccountView
+	 * @param handler
+	 */
+	public void setupAccounts(EventHandler<MouseEvent> handler){
+		accountViewActionHandler = handler;
+		// remove all previous accountViews
+		accountViews.clear();
+		accountListContainer.getChildren().clear();
+		List<Account> accounts = this.getAccounts(); 			// accounts from database 
+		accounts.forEach((account) -> {				 			// Create a SingleAccountView forEach account
+			accountViews.add(new SingleAccountView(account, accountViewActionHandler)); });
+		accountListContainer.getChildren().addAll(accountViews);//add accounts to container
+	}
+	
+	
 
 	/**
 	 * Sets the transactionClickHandler for each TransactionView
 	 * 
 	 * @param handler
 	 */
-	public void setOnAccountViewClick(EventHandler<MouseEvent> handler) {
+/*	public void setOnAccountViewClick(EventHandler<MouseEvent> handler) {
 		accountViews.forEach((tView) -> tView.setOnAction(handler));
-	}
+	}*/
 
 	@FXML
 	private List<Account> getAccounts() {

@@ -130,4 +130,15 @@ public class TransactionDao {
 		}
 		return -1;
 	}
+	
+	//vik- get all transactions associated with given account number
+		public List<Transaction> getAllTransactionsById(int num){
+			List <Transaction> all = getAllTransactions();
+			List<Transaction> filtered = new ArrayList<>();
+			for (Transaction item: all){
+				if (item.getIdAccount()==num){
+					filtered.add(item);}
+			}
+			return filtered;
+		}
 }

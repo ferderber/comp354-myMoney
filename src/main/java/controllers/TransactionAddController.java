@@ -6,10 +6,13 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import main.java.dao.AccountDao;
 import main.java.dao.TransactionDao;
 import main.java.dao.TypeDao;
+import main.java.models.Account;
 import main.java.models.Transaction;
 import main.java.models.Type;
 
@@ -27,10 +30,14 @@ public class TransactionAddController implements Initializable {
 	private TextField amountField;
 	@FXML
 	private TextField descriptionField;
+	@FXML
+	private ComboBox<String> comboBox;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-
+		AccountDao dbAccount=new AccountDao();
+		for (Account e: dbAccount.getAllAccounts())
+			comboBox.getItems().add(e.getId()+". "+e.getName());
 	}
 
 	@FXML
@@ -47,8 +54,19 @@ public class TransactionAddController implements Initializable {
 		} catch (Exception ex) {
 			// TODO: Display validation error
 		}
+		//vik: retrieves & converts selected item from drop menu Account to the ID of the associated account
+				int account = 1;
+				
+				try{
+					String currentSelection= comboBox.getSelectionModel().getSelectedItem().toString();
+					String ID= currentSelection.substring(0,1);
+					account=Integer.parseInt(ID);   }
+				catch(Exception e){
+					System.out.println();
+					System.out.println("transactionAddController--> drop down menu value not converted to int");
+				}
 		
-		Transaction t = new Transaction(name, typeDao.insert(type), amount, description, new Date());
+		Transaction t = new Transaction(name, typeDao.insert(type), amount, description, new Date(),account);
 		transDao.insert(t);
 		
 		clearTransaction();
@@ -60,6 +78,7 @@ public class TransactionAddController implements Initializable {
 		typeField.setText("");
 		descriptionField.setText("");
 		amountField.setText("");
+		comboBox.getSelectionModel().clearSelection();
 	}
 
 }

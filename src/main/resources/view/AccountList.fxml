@@ -10,7 +10,7 @@
 	<Button text="Add Account" fx:id="NewAccountButton" minWidth="60"
 		minHeight="20" />
 	<ScrollPane>
-		<VBox fx:id="AccountListcontainer" styleClass="account-container">
+		<VBox fx:id="accountListContainer" styleClass="account-container">
 			<children>
 			</children>
 		</VBox>

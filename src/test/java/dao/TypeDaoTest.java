@@ -93,7 +93,7 @@ public class TypeDaoTest {
 	
 	@Test
 	public void testGetForeign() {
-		test6 = new Transaction("test", test1, 5, "d", new Date());
+		test6 = new Transaction("test", test1, 5, "d", new Date(),1);
 		
 		// test that adding new transactions with a type matching one in the Type table are added to that Type's ForeignCollection
 		tranDao.insert(test6);

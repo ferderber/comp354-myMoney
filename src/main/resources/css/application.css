@@ -28,3 +28,14 @@
 .detail-pane {
 	-fx-padding: 10.0;
 }
+.account-list, .accDetailScroll{
+	-fx-background-color: transparent;
+	-fx-padding:20.0;
+}
+.account-container{
+	-fx-padding:10.0;
+	-fx-background-color: rgba(0.0,0.0,0.0,0.2);
+}
+.account-view:hover{
+		-fx-background-color: rgba(0.0,0.0,0.0,0.4);
+}

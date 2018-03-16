@@ -22,7 +22,7 @@
 		GridPane.columnIndex="1" GridPane.rowIndex="2" />
 	<Label GridPane.columnIndex="0" GridPane.rowIndex="3">Balance:
 	</Label>
-	<TextField fx:id="typeField" value="${controller.account.balance}"
+	<TextField fx:id="balanceField" value="${controller.account.balance}"
 		GridPane.columnIndex="1" GridPane.rowIndex="3" />
 	<Button fx:id="backToAccountListButton" mnemonicParsing="false"
 		text="Back" GridPane.columnIndex="0" GridPane.rowIndex="4" />
