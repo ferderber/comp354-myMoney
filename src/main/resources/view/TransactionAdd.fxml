@@ -38,14 +38,14 @@
 	<Label GridPane.columnIndex="0" GridPane.rowIndex="3">Description:</Label>
 	<TextField fx:id="descriptionField" value="${controller.transaction.description}"
 		GridPane.columnIndex="1" GridPane.rowIndex="3" />
-	<!-- vik -->
-	<ComboBox fx:id="comboBox" GridPane.columnIndex="3"
-		promptText="Account" GridPane.rowIndex="0"> 
+	<Label GridPane.columnIndex="0" GridPane.rowIndex="4">Account:</Label>
+	<ComboBox fx:id="comboBox" GridPane.columnIndex="1"
+		promptText="Account" GridPane.rowIndex="4"> 
 	</ComboBox> 
 	
 	<Button fx:id="addTransactionButton" mnemonicParsing="false"
 		onMouseClicked="#addTransaction" text="Add Transaction"
-		GridPane.columnIndex="0" GridPane.rowIndex="4" styleClass = "innerMenuButton" />
+		GridPane.columnIndex="0" GridPane.rowIndex="5" styleClass = "innerMenuButton" />
 	<Button fx:id = "clearTransactionButton" onMouseClicked="#clearTransaction" text="Clear"
-		GridPane.columnIndex="1" GridPane.rowIndex="4" styleClass = "innerMenuButton"/>
+		GridPane.columnIndex="1" GridPane.rowIndex="5" styleClass = "innerMenuButton"/>
 </GridPane>

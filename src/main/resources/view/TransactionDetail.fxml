@@ -14,14 +14,11 @@
 
 <GridPane xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1"
 	fx:controller="main.java.controllers.TransactionDetailController"
-	fx:id="transactionDetail">
+	fx:id="transactionDetail" alignment = "center">
 	
 	
 	<GridPane fx:id="detailPane" GridPane.columnIndex="0"
-		GridPane.rowIndex="0">
-		<Button fx:id="editTransactionButton" mnemonicParsing="false"
-			onMouseClicked="#editTransaction" text="Edit Transaction"
-			GridPane.columnIndex="0" GridPane.rowIndex="0" />
+		GridPane.rowIndex="0" alignment = "center">
 
 		<Text text="Name:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
 		<Text id="transactionName" text="${controller.transaction.name}"
@@ -38,7 +35,6 @@
 		<Text text="Description: " GridPane.columnIndex="0" GridPane.rowIndex="4" />
 		<Text text="${controller.transaction.description}" 
 			GridPane.columnIndex="1" GridPane.rowIndex="4" />
-		<!-- vik -->
 		<Text text="Account: " GridPane.columnIndex="0" GridPane.rowIndex="5"/>
 		<Text text="${controller.transaction.idAccount}"
 			GridPane.columnIndex="1" GridPane.rowIndex="5" />
@@ -46,11 +42,18 @@
 		<Text text="Date: " GridPane.columnIndex="0" GridPane.rowIndex="6" />
 		<Text text="${controller.transaction.date}" 
 			GridPane.columnIndex="1" GridPane.rowIndex="6" />
+		
+		<Button fx:id="editTransactionButton" mnemonicParsing="false"
+			onMouseClicked="#editTransaction" text="Edit Transaction"
+			GridPane.columnIndex="1" GridPane.rowIndex="7" StyleClass ="innerMenuButton"/>
+		<Button fx:id="deleteTransactionButton" mnemonicParsing="false"
+			onMouseClicked="#deleteTransaction" text="Delete Transaction"
+			GridPane.columnIndex="0" GridPane.rowIndex="7" styleClass = "innerMenuButton"/>
 	</GridPane>
 
 
 
-	<GridPane fx:id="editPane" visible="false">
+	<GridPane fx:id="editPane" visible="false" alignment = "center">
 		<Label GridPane.columnIndex="0" GridPane.rowIndex="0">Name:</Label>
 		<TextField fx:id="nameField" value="${controller.transaction.name}"
 			GridPane.columnIndex="1" GridPane.rowIndex="0" />
@@ -69,10 +72,10 @@
 			
 		<Button fx:id="saveTransactionButton" mnemonicParsing="false"
 			onMouseClicked="#saveTransaction" text="Save Transaction"
-			GridPane.columnIndex="0" GridPane.rowIndex="4" />
+			GridPane.columnIndex="0" GridPane.rowIndex="4" StyleClass ="innerMenuButton" />
 			
 		<Button onMouseClicked="#cancelUpdate" text="Cancel"
-			GridPane.columnIndex="1" GridPane.rowIndex="4" />
+			GridPane.columnIndex="1" GridPane.rowIndex="4" StyleClass ="innerMenuButton"/>
 	</GridPane>
 	
 	

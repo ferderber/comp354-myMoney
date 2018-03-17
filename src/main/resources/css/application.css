@@ -39,7 +39,6 @@
 
 #transactionAdd{
 	-fx-font-family:'Comfortaa';
-	-fx-font-weight: bold;
 	-fx-padding: 10.0;
 }
 #accountAdd{
