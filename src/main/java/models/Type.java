@@ -14,17 +14,13 @@ public class Type {
 	@ForeignCollectionField
 	private ForeignCollection<Transaction> transactions;
 	
-	
 
 	protected Type() {
-
 	}
 
 	public Type(String type) {
 		this.id = type;
 	}
-	
-	
 
 	@Override
 	public boolean equals(Object obj) {

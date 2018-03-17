@@ -10,6 +10,15 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.VBox?>
 
+<!--  refactor -->
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.collections.*?>
+
 
 <GridPane fx:id="transactionAdd" visible="false" alignment = "CENTER" xmlns="http://javafx.com/javafx/9"
 	xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controllers.TransactionAddController">
@@ -29,7 +38,11 @@
 	<Label GridPane.columnIndex="0" GridPane.rowIndex="3">Description:</Label>
 	<TextField fx:id="descriptionField" value="${controller.transaction.description}"
 		GridPane.columnIndex="1" GridPane.rowIndex="3" />
-		
+	<!-- vik -->
+	<ComboBox fx:id="comboBox" GridPane.columnIndex="3"
+		promptText="Account" GridPane.rowIndex="0"> 
+	</ComboBox> 
+	
 	<Button fx:id="addTransactionButton" mnemonicParsing="false"
 		onMouseClicked="#addTransaction" text="Add Transaction"
 		GridPane.columnIndex="0" GridPane.rowIndex="4" styleClass = "innerMenuButton" />

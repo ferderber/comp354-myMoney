@@ -19,33 +19,38 @@ public class Transaction {
 	private String description;
 	@DatabaseField
 	private Date date;
+	@DatabaseField
+	private int idAccount;
+
 
 	protected Transaction() {
 
 	}
 
-	public Transaction(String name, Type type, double amount, String description, Date date) {
+	public Transaction(String name, Type type, double amount, String description, Date date,int AccId) {
 		this.name = name;
 		this.type = type;
 		this.amount = amount;
 		this.description = description;
 		this.date = date;
+		this.idAccount=AccId;
 	}
 
-	public Transaction(int id, String name, Type type, double amount, String description, Date date) {
+	public Transaction(int id, String name, Type type, double amount, String description, Date date,int AccId) {
 		this.id = id;
 		this.name = name;
 		this.type = type;
 		this.amount = amount;
 		this.description = description;
 		this.date = date;
+		this.idAccount=AccId;
 	}
 
 	@Override
 	public boolean equals(Object obj) {
 		Transaction t = (Transaction) obj;
 		return t != null && id == t.id && name.equals(t.name) && type.equals(t.type) && description.equals(t.description)
-				&& amount == t.amount && date.equals(t.date);
+				&& amount == t.amount && date.equals(t.date)&& idAccount==t.idAccount;
 	}
 
 	public int getId() {
@@ -94,6 +99,14 @@ public class Transaction {
 
 	public void setAmount(double amount) {
 		this.amount = amount;
+	}
+
+	public int getIdAccount() {
+		return idAccount;
+	}
+
+	public void setIdAccount(int idAccount) {
+		this.idAccount = idAccount;
 	}
 
 }

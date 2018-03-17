@@ -14,11 +14,14 @@
 
 <GridPane xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1"
 	fx:controller="main.java.controllers.TransactionDetailController"
-	fx:id="transactionDetail" alignment = "center">
+	fx:id="transactionDetail">
 	
 	
 	<GridPane fx:id="detailPane" GridPane.columnIndex="0"
 		GridPane.rowIndex="0">
+		<Button fx:id="editTransactionButton" mnemonicParsing="false"
+			onMouseClicked="#editTransaction" text="Edit Transaction"
+			GridPane.columnIndex="0" GridPane.rowIndex="0" />
 
 		<Text text="Name:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
 		<Text id="transactionName" text="${controller.transaction.name}"
@@ -32,19 +35,17 @@
 		<Text text="${controller.transaction.amount}"
 			GridPane.columnIndex="1" GridPane.rowIndex="3" />
 			
-		<Text text="Description:    " GridPane.columnIndex="0" GridPane.rowIndex="4" />
+		<Text text="Description: " GridPane.columnIndex="0" GridPane.rowIndex="4" />
 		<Text text="${controller.transaction.description}" 
 			GridPane.columnIndex="1" GridPane.rowIndex="4" />
-			
-		<Text text="Date: " GridPane.columnIndex="0" GridPane.rowIndex="5" />
-		<Text text="${controller.transaction.date}" 
+		<!-- vik -->
+		<Text text="Account: " GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+		<Text text="${controller.transaction.idAccount}"
 			GridPane.columnIndex="1" GridPane.rowIndex="5" />
-		<Button fx:id="deleteTransactionButton" mnemonicParsing="false"
-			onMouseClicked="#deleteTransaction" text="Delete Transaction"
-			GridPane.columnIndex="0" GridPane.rowIndex="6" styleClass = "innerMenuButton"/>
-		<Button fx:id="editTransactionButton" mnemonicParsing="false"
-			onMouseClicked="#editTransaction" text="Edit Transaction"
-			GridPane.columnIndex="1" GridPane.rowIndex="6" styleClass = "innerMenuButton"/>
+			
+		<Text text="Date: " GridPane.columnIndex="0" GridPane.rowIndex="6" />
+		<Text text="${controller.transaction.date}" 
+			GridPane.columnIndex="1" GridPane.rowIndex="6" />
 	</GridPane>
 
 
@@ -68,10 +69,10 @@
 			
 		<Button fx:id="saveTransactionButton" mnemonicParsing="false"
 			onMouseClicked="#saveTransaction" text="Save Transaction"
-			GridPane.columnIndex="0" GridPane.rowIndex="4" styleClass = "innerMenuButton"/>
+			GridPane.columnIndex="0" GridPane.rowIndex="4" />
 			
 		<Button onMouseClicked="#cancelUpdate" text="Cancel"
-			GridPane.columnIndex="1" GridPane.rowIndex="4" styleClass = "innerMenuButton"/>
+			GridPane.columnIndex="1" GridPane.rowIndex="4" />
 	</GridPane>
 	
 	
