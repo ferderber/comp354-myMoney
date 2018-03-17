@@ -14,13 +14,13 @@
 		<VBox minWidth="180" alignment="center">
 			<children>
 				<Button text="View Accounts" onAction="#handleAccountListClick"
-					minWidth="200" minHeight="60" />
+					minWidth="200" minHeight="60" StyleClass = "menuButton"/>
 				<Button text="Add Transaction" onAction="#handleAddTransactionClick"
-					minWidth="200" minHeight="60" />
+					minWidth="200" minHeight="60" StyleClass = "menuButton"/>
 				<Button text="View Transaction History" onAction="#handleTransactionListClick"
-					minWidth="200" minHeight="60" />
+					minWidth="200" minHeight="60" StyleClass = "menuButton"/>
 				<Button text="Statistics" onAction="#handleStatisticsClick"
-					minWidth="200" minHeight="60" />
+					minWidth="200" minHeight="60" StyleClass = "menuButton"/>
 
 			</children>
 		</VBox>
@@ -34,8 +34,10 @@
 					source="/main/resources/view/TransactionDetail.fxml" />
 				<fx:include fx:id="transactionAdd"
 					source="/main/resources/view/TransactionAdd.fxml" />
-				<fx:include fx:id="accountView" source="/main/resources/view/AccountView.fxml" />
-				<fx:include fx:id="statisticsView" source="/main/resources/view/Statistics.fxml" />
+				<fx:include fx:id="accountView" 
+					source="/main/resources/view/AccountView.fxml" />
+				<fx:include fx:id="statisticsView" 
+					source="/main/resources/view/Statistics.fxml" />
 			</children>
 		</StackPane>
 	</center>

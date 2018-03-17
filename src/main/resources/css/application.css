@@ -1,10 +1,17 @@
+.button{
+	-fx-background-color: #D0EFB0;
+	-fx-font-size: 14px;
+	-fx-pref-width: 120.0;
+	-fx-pref-height: 20.0;
+	-fx-font-family: 'Open Sans';
+}
 
-
-.button {
+.menuButton {
 	-fx-background-color: #D0EFB0;
 	-fx-font-size: 20px;
 	-fx-pref-width: 150.0;
 	-fx-pref-height: 1000px;
+	-fx-font-family: 'Open Sans';
 }
 
 .innerMenuButton{
@@ -14,7 +21,7 @@
 }
 
 #mainView{
-	-fx-font-family: 'Open Sans';
+	-fx-font-family: 'Comfortaa';
 }
 
 #singleAccountContainer{
@@ -75,13 +82,13 @@
 }
 
 .transactionListGrid{
-	-fx-pref-width: 100%;
+	-fx-background-color: transparent;
 }
 
 .text-input, .text-input:focused { -fx-prompt-text-fill:darkgray; }
 
 .detail-pane {
-	-fx-padding: 5.0;
+	-fx-padding: 0;
 	-fx-background-image: url('melonseed_opac5.png');
 	-fx-background-repeat: repeat;
 	-fx-background-size: 50 50;

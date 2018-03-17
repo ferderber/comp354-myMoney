@@ -47,7 +47,7 @@ public class AccountDetailController  implements Initializable {
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {	}
-
+	
 	//sets everything
 	public void setAccount(Account acc) {
 		this.accountProperty.set(acc);
@@ -82,7 +82,7 @@ public class AccountDetailController  implements Initializable {
 	    scroll.setHbarPolicy(ScrollBarPolicy.NEVER);
 		scroll.setVbarPolicy(ScrollBarPolicy.AS_NEEDED);
 		scroll.setContent(container);
-		accountDetailView.add(scroll, 0, 8);
+		accountDetailView.add(scroll, 1, 7);
 	}
 	
 	public void setVBox(){
@@ -99,7 +99,7 @@ public class AccountDetailController  implements Initializable {
 		accountDetailView.add(new Text (getAccount().getId()+""), 1, 4);
 		accountDetailView.add(new Text("Date of creation: "),0,5);
 		accountDetailView.add(new Text (getAccount().getCreate()+""), 1, 5);
-		accountDetailView.add(returnToMainViewButton, 2, 0);
+		accountDetailView.add(returnToMainViewButton, 0, 7);
 		accountDetailView.add(new Text("Last updated: "),0,6);
 		//if no changes, prints N/A rather than null
 		if (getAccount().getEdit()==null)

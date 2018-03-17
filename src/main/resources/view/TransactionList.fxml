@@ -10,7 +10,7 @@
 	fx:controller="main.java.controllers.TransactionListController"
 	styleClass="transaction-list" hbarPolicy="NEVER" >
 	
-	<GridPane styleClass = "transactionListGrid" alignment = "center">
+	<GridPane alignment = "center" prefWidth = "${node.child.width}">
 		<columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" minWidth="150.0" percentWidth="50.0" />
         </columnConstraints>
