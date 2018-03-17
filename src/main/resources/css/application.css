@@ -39,6 +39,7 @@
 
 #transactionAdd{
 	-fx-font-family:'Comfortaa';
+	-fx-font-weight: bold;
 	-fx-padding: 10.0;
 }
 #accountAdd{
@@ -82,4 +83,7 @@
 
 .detail-pane {
 	-fx-padding: 5.0;
+	-fx-background-image: url('melonseed_opac5.png');
+	-fx-background-repeat: repeat;
+	-fx-background-size: 50 50;
 }
