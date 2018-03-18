@@ -72,6 +72,7 @@
 }
 .transaction-container {
 	-fx-background-color: #EBF2E0;
+	
 }
 .transaction-container-2 {
    -fx-background-color: #F7F9F5;
@@ -88,7 +89,7 @@
 .text-input, .text-input:focused { -fx-prompt-text-fill:darkgray; }
 
 .detail-pane {
-	-fx-padding: 0;
+	-fx-padding: 5.0;
 	-fx-background-image: url('melonseed_opac5.png');
 	-fx-background-repeat: repeat;
 	-fx-background-size: 50 50;

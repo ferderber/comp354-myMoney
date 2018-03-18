@@ -9,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import main.java.dao.AccountDao;
 import main.java.models.Account;
@@ -26,6 +27,9 @@ public class AccountListController implements Initializable {
 	private Button NewAccountButton;
 	@FXML
 	private VBox accountListContainer;
+	
+	@FXML
+	private GridPane accountListGridPane;
 
 	private List<SingleAccountView> accountViews;
 	@FXML

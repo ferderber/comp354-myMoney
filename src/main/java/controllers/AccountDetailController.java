@@ -70,14 +70,13 @@ public class AccountDetailController  implements Initializable {
 		transactionsList.forEach((transaction) -> {
 			transactionViews.add(new TransactionView(transaction, null)); //to be changed if necessary
 		});    
-		container.setPrefHeight(460);
+		container.setPrefHeight(100);
 		container.getChildren().addAll(transactionViews);	
 	}
 	
 	public void setScrollPane(){
 		scroll.setContent(null);
-		scroll.setFitToWidth(true);
-	    scroll.setFitToHeight(true);
+		scroll.prefHeight(50.0);
 	    scroll.getStyleClass().add("accDetailScroll");
 	    scroll.setHbarPolicy(ScrollBarPolicy.NEVER);
 		scroll.setVbarPolicy(ScrollBarPolicy.AS_NEEDED);

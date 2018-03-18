@@ -7,6 +7,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import main.java.controllers.AccountAddController;
@@ -37,7 +38,7 @@ public class AccountController implements Initializable {
 	@FXML
 	private Pane accountDetail;
 	@FXML
-	private VBox accountList;
+	private GridPane accountList;
 	/*
 	 * @FXML private FlowPane accountAddPane;
 	 * 

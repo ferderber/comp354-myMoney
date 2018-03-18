@@ -10,20 +10,16 @@
 	fx:controller="main.java.controllers.TransactionListController"
 	styleClass="transaction-list" hbarPolicy="NEVER" >
 	
-	<GridPane alignment = "center" prefWidth = "${node.child.width}">
-		<columnConstraints>
-        <ColumnConstraints hgrow="SOMETIMES" minWidth="150.0" percentWidth="50.0" />
-        </columnConstraints>
-        <rowConstraints>
-        <RowConstraints vgrow="SOMETIMES" />
-      </rowConstraints>
+	<GridPane alignment = "center" prefHeight="600.0" prefWidth="400.0" maxHeight="Infinity" maxWidth="Infinity">
         
 		<children>
-		<VBox fx:id="container" styleClass="transaction-container" GridPane.columnIndex="0" GridPane.rowIndex="0">
+		<VBox fx:id="container" styleClass="transaction-container" GridPane.columnIndex="0" 
+			GridPane.rowIndex="0" minWidth="200" minHeight="60" GridPane.hgrow="always" GridPane.vgrow="always">
 			
 		</VBox>
 
-		<VBox fx:id="containerType" styleClass="transaction-container-2" GridPane.columnIndex="1" GridPane.rowIndex="0">
+		<VBox fx:id="containerType" styleClass="transaction-container-2" GridPane.columnIndex="1" 
+			GridPane.rowIndex="0" minWidth="200" minHeight="60" GridPane.hgrow="always" GridPane.vgrow="always">
 			
 		</VBox>
 		</children>
