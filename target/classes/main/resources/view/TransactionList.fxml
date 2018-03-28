@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.text.Text?>
+<?import main.java.controllers.TransactionListController?>
+
+<ScrollPane xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="main.java.controllers.TransactionListController"
+	styleClass="transaction-list" hbarPolicy="NEVER" fx:id="transactionList">
+	
+	<GridPane GridPane.columnIndex="0" GridPane.rowIndex="0">
+		<VBox fx:id="container" styleClass="transaction-container" GridPane.columnIndex="1" GridPane.rowIndex="0">
+			<children>
+			</children>
+		</VBox>
+
+		<VBox fx:id="containerType" styleClass="transaction-container-2" GridPane.columnIndex="2" GridPane.rowIndex="0">
+			<children>
+			</children>
+		</VBox>
+	</GridPane>
+	
+</ScrollPane>
+
