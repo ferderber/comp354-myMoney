@@ -9,6 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import main.java.models.Transaction;
@@ -29,7 +30,7 @@ public class MainController implements Initializable {
 	@FXML
 	private AccountController accountController;
 	@FXML
-	private ScrollPane transactionList;
+	private GridPane transactionList;
 	@FXML
 	private Pane transactionDetail;
 	@FXML
