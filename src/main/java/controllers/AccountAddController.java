@@ -21,6 +21,7 @@ import main.java.models.Enumerator.AccountType;
  * Provides a view for single controller.
  * 
  * @author Artem Khomich
+ * @author Viktoriya Malinova
  *
  */
 public class AccountAddController implements Initializable {
@@ -31,7 +32,7 @@ public class AccountAddController implements Initializable {
 
 	@FXML 
 	private Button saveAccountButton;
-	 
+
 	/*
 	 * @FXML private AccountController accountController;
 	 */
@@ -47,7 +48,6 @@ public class AccountAddController implements Initializable {
 
 	@FXML 
 	private GridPane singleAccountContainer;
-	 
 	@FXML
 	private ObjectProperty<Account> accountProperty = new SimpleObjectProperty<>();
 
@@ -65,7 +65,7 @@ public class AccountAddController implements Initializable {
 			a.setEdit(null);
 			a.setArchived(null);
 		}
-		
+
 		String name = nameField.getText();
 		if(name.equals(""))
 			name="No Name";
@@ -73,26 +73,22 @@ public class AccountAddController implements Initializable {
 		long number = 0L;
 		try {
 			number = Long.parseLong(numberField.getText());
-		} catch (Exception ex) {
-			// TODO: Display validation error
-		}
-		
+		} catch (Exception ex) {}
+
 		AccountType type = null;
 		String typeName = "";
 		try {
 			typeName=typeField.getText();
 			type = AccountType.valueOf(typeName);
 		} catch (Exception ex) {
-		if (typeName.equals(""))
-			typeName="Undefined";
+			if (typeName.equals(""))
+				typeName="Undefined";
 		}
-		
+
 		double balance = 0.0;
 		try {
 			balance = Double.parseDouble(balanceField.getText());
-		} catch (Exception ex) {
-			// TODO: Display validation error
-		}
+		} catch (Exception ex) {}
 
 		a.setName(name);
 		a.setBalance(balance);
@@ -105,31 +101,9 @@ public class AccountAddController implements Initializable {
 			} else {
 				dao.updateAccount(a);
 			}
-		} catch (Exception ex) {
-			// TODO
-		}
-		// AccountController b = new AccountController();b.switchAccountView();
-		// FXMLLoader loader = new
-		// FXMLLoader(getClass().getResource("AccountView.fxml"));
-		// AccountController controller = loader.getController();
-		// controller.setaccountView();
-		// AccountController.switchAccountView();
+		} catch (Exception ex) {}
 	}
 
-	/*
-	 * @FXML public void backToAccountList() {
-	 * //AccountController.switchAccountView();
-	 * 
-	 * } public ObjectProperty<Account> accountProperty() { return accountProperty;
-	 * }
-	 * 
-	 * public Account getAccount() { return accountProperty.get(); }
-	 */
-	/**
-	 * Sets the transactionClickHandler for each TransactionView
-	 * 
-	 * @param handler
-	 */
 	public void setOnBackButtonClick(EventHandler<MouseEvent> handler) {
 		backToAccountListButton.setOnMouseClicked(handler);
 	}

@@ -126,9 +126,10 @@ public class TransactionDetailController implements Initializable {
 		Transaction t = transactionProperty.get();
 		if (t != null) {
 			TransactionDao transDao = new TransactionDao();
+			t.delete();
 			transDao.delete(t);
 			editPane.setVisible(false);
-			detailPane.setVisible(true);
+			detailPane.setVisible(false);
 		}
 	}
 

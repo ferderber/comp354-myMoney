@@ -44,46 +44,51 @@ public class AccountDetailController  implements Initializable {
 	private ScrollPane scroll = new ScrollPane();
 	List<TransactionView> transactionViews;
 
-	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {	}
-	
+
 	//sets everything
 	public void setAccount(Account acc) {
 		this.accountProperty.set(acc);
 		this.setVBox();
-		this.getTransactions();
+		this.setTransactions();
 		this.setScrollPane();
 	}
-	
+
 	//gets transactions from database & adds them as views in transactionViews
-	public void getTransactions(){
-		
+	public List<Transaction> getTransactions(){
+
 		//initializing database and lists
 		TransactionDao dao = new TransactionDao();
 		List<Transaction> transactionsList = new ArrayList<>();
 		transactionViews= new ArrayList<TransactionView>();
 		//making sure both are empty
 		transactionViews.clear();
-		container.getChildren().clear();
 		transactionsList=dao.getAllTransactionsById(getAccount().getId());	//get 
-		transactionsList.forEach((transaction) -> {
-			transactionViews.add(new TransactionView(transaction, null)); //to be changed if necessary
-		});    
-		container.setPrefHeight(100);
-		container.getChildren().addAll(transactionViews);	
+		return transactionsList;
 	}
-	
+
+	//adds transactions into container and sets container
+	public void setTransactions(){
+		List<Transaction> transactionList= getTransactions();
+		container.getChildren().clear();
+		transactionList.forEach((transaction) -> {
+			transactionViews.add(new TransactionView(transaction, null)); //to be changed if necessary
+		});
+		container.setPrefHeight(100);
+		container.getChildren().addAll(transactionViews);
+	}
+
 	public void setScrollPane(){
 		scroll.setContent(null);
 		scroll.prefHeight(50.0);
-	    scroll.getStyleClass().add("accDetailScroll");
-	    scroll.setHbarPolicy(ScrollBarPolicy.NEVER);
+		scroll.getStyleClass().add("accDetailScroll");
+		scroll.setHbarPolicy(ScrollBarPolicy.NEVER);
 		scroll.setVbarPolicy(ScrollBarPolicy.AS_NEEDED);
 		scroll.setContent(container);
 		accountDetailView.add(scroll, 1, 7);
 	}
-	
+
 	public void setVBox(){
 		accountDetailView.getChildren().clear();
 		accountDetailView.add(new Text("Name: "),0,0);
@@ -105,7 +110,9 @@ public class AccountDetailController  implements Initializable {
 			accountDetailView.add(new Text ("N/A"), 1, 6);
 		else
 			accountDetailView.add(new Text (getAccount().getEdit()+""), 1, 6);
-		}
+	}
+
+
 	public String name(){
 		return getAccount().getName();
 	}
@@ -117,8 +124,8 @@ public class AccountDetailController  implements Initializable {
 	public Account getAccount() {
 		return accountProperty.get();
 	}
-	
-	//controlls return button
+
+	//controls return button
 	public void returnToMain(EventHandler<MouseEvent> handler) {
 		returnToMainViewButton.setOnMouseClicked(handler);	
 	}
