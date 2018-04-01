@@ -85,6 +85,12 @@ public class MainController implements Initializable {
 
 	@FXML
 	public void handleAccountListClick() {
+	/*	try{
+		accountController.updateAccounts();
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}*/
 		setAllViewsInvisible();
 		accountView.setVisible(true);
 	}

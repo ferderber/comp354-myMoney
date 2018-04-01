@@ -60,10 +60,14 @@ public class TransactionAddController implements Initializable {
 				try{
 					String currentSelection= comboBox.getSelectionModel().getSelectedItem().toString();
 					String ID= currentSelection.substring(0,1);
-					account=Integer.parseInt(ID);   }
+					account=Integer.parseInt(ID);
+					if (account==1){
+						ID=currentSelection.substring(0,2);
+						account=Integer.parseInt(ID);
+						}
+					}
 				catch(Exception e){
-					System.out.println();
-					System.out.println("transactionAddController--> drop down menu value not converted to int");
+					
 				}
 		
 		Transaction t = new Transaction(name, typeDao.insert(type), amount, description, new Date(),account);
