@@ -26,7 +26,7 @@ import main.java.views.TransactionView;
  * Displays a detailed view of a given Account & associated transactions
  * 
  * @author Viktoriya Malinova
- *
+ * @author Kai Nicoll-Griffith
  */
 
 public class AccountDetailController  implements Initializable {
