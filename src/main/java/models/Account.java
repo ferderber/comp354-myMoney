@@ -6,7 +6,7 @@ import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
 import main.java.models.Enumerator;
- 
+
 @DatabaseTable
 public class Account {
 	@DatabaseField(generatedId = true)
@@ -19,10 +19,10 @@ public class Account {
 	private Enumerator.AccountType Type;
 	@DatabaseField
 	private double Balance;
-	//@DatabaseField
-	//private String Description;
+	// @DatabaseField
+	// private String Description;
 
-	//Entity tracking properties
+	// Entity tracking properties
 	@DatabaseField
 	private Date Create;
 	@DatabaseField
@@ -31,14 +31,14 @@ public class Account {
 	private Date Archived;
 	@DatabaseField
 	private String typeName;
-	
+
 	public Account() {
 
 	}
 
 	public Account(String name, long number, Enumerator.AccountType type, double balance) {
 		this.Name = name;
-		//this.Description = description;
+		// this.Description = description;
 		this.Number = number;
 		this.Balance = balance;
 		this.Type = type;
@@ -46,6 +46,13 @@ public class Account {
 		this.Edit = new Date();
 		this.Archived = null;
 
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		Account a = (Account) obj;
+		return a != null && ID == a.ID && Name.equals(a.Name) && Type.equals(a.Type) && Number == a.Number
+				&& Create.equals(a.Create) && Edit.equals(a.Edit) && Balance == a.Balance;
 	}
 
 	public String getTypeName() {
@@ -72,14 +79,6 @@ public class Account {
 		this.Name = name;
 	}
 
-	//public String getDescription() {
-	//	return Description;
-	//}
-
-	//public void setDescription(String description) {
-	//	this.Description = description;
-	//}
-	
 	public Enumerator.AccountType getType() {
 		return Type;
 	}
@@ -87,7 +86,7 @@ public class Account {
 	public void setType(Enumerator.AccountType type) {
 		this.Type = type;
 	}
-	
+
 	public long getNumber() {
 		return Number;
 	}
@@ -95,7 +94,7 @@ public class Account {
 	public void setNumber(long number) {
 		this.Number = number;
 	}
-	
+
 	public double getBalance() {
 		return Balance;
 	}
@@ -103,7 +102,7 @@ public class Account {
 	public void setBalance(double balance) {
 		this.Balance = balance;
 	}
-	
+
 	public Date getCreate() {
 		return Create;
 	}
@@ -111,7 +110,7 @@ public class Account {
 	public void setCreate(Date create) {
 		this.Create = create;
 	}
-	
+
 	public Date getEdit() {
 		return Edit;
 	}
@@ -123,7 +122,7 @@ public class Account {
 	public Date getArchived() {
 		return Archived;
 	}
-	
+
 	public void setArchived(Date archived) {
 		this.Archived = archived;
 	}
