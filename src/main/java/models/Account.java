@@ -32,11 +32,18 @@ public class Account {
 	@DatabaseField
 	private String typeName;
 	
+	//budget goal properties
+	@DatabaseField
+	private String GoalBalance;
+	@DatabaseField
+	private String DateBy;
+	@DatabaseField
+	private String Salary;
+	
 	public Account() {
-
 	}
 
-	public Account(String name, long number, Enumerator.AccountType type, double balance) {
+	public Account(String name, long number, Enumerator.AccountType type, double balance, String goalBalance, String dateBy, String salary) {
 		this.Name = name;
 		//this.Description = description;
 		this.Number = number;
@@ -45,7 +52,10 @@ public class Account {
 		this.Create = new Date();
 		this.Edit = new Date();
 		this.Archived = null;
-
+		
+		this.GoalBalance = goalBalance;
+		this.DateBy = dateBy;
+		this.Salary = salary;
 	}
 
 	public String getTypeName() {
@@ -66,6 +76,16 @@ public class Account {
 
 	public String getName() {
 		return Name;
+	}
+	
+	public Budget getBudgetProperties() {
+		return new Budget(getId(), this.GoalBalance, this.DateBy, this.Salary);
+	}
+	
+	public void setBudgetProperties(Budget budget) {
+		this.GoalBalance = budget.getGoalBalance();
+		this.DateBy =  budget.getDateBalance();
+		this.Salary = budget.getSalary();
 	}
 
 	public void setName(String name) {
@@ -127,5 +147,4 @@ public class Account {
 	public void setArchived(Date archived) {
 		this.Archived = archived;
 	}
-
 }
