@@ -10,6 +10,7 @@
 		<fx:include fx:id="accountList" source="/main/resources/view/AccountList.fxml" />
 		<fx:include fx:id="accountAdd" source="/main/resources/view/AccountAdd.fxml" />
 		<fx:include fx:id="accountDetail" source="/main/resources/view/AccountDetail.fxml" />
+		<fx:include fx:id="budgetSet" source="/main/resources/view/BudgetSetView.fxml" />
 	</children>
 </StackPane>
 

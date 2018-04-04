@@ -35,9 +35,13 @@ public class AccountController implements Initializable {
 	@FXML
 	private AccountDetailController accountDetailController;
 	@FXML
+	private BudgetSetController budgetSetController;
+	@FXML
 	private Pane accountContainer;
 	@FXML
 	private Pane accountDetail;
+	@FXML
+	private Pane budgetSet;
 	@FXML
 	private GridPane accountList;
 
@@ -47,10 +51,12 @@ public class AccountController implements Initializable {
 		accountList.setVisible(true);
 		accountAdd.setVisible(false);
 		accountDetail.setVisible(false);
+		budgetSet.setVisible(false);
 		accountListController.AccountAddClick(new ToAccountAddHandler());
 		updateAccounts();	
 		accountAddController.setOnBackButtonClick(new ToMainHandler());
 		accountDetailController.returnToMain(new ToMainHandler());
+		accountDetailController.switchToBudgetView(new ToBudgetSetHandler());
 	}
 
 	@FXML //sets eventHandler to each account
@@ -67,6 +73,7 @@ public class AccountController implements Initializable {
 			Account t = accountView.getAccount();
 			try{
 				accountDetailController.setAccount(t);
+				budgetSetController.setAccountDetailController(accountDetailController);
 			}
 			catch(Exception e){
 				e.printStackTrace();
@@ -74,6 +81,7 @@ public class AccountController implements Initializable {
 			//see accountDetail.fxml for setup of  accountDetailView
 			accountList.setVisible(false);
 			accountAdd.setVisible(false);
+			budgetSet.setVisible(false);
 			accountDetail.setVisible(true);			
 		}
 	}
@@ -85,6 +93,15 @@ public class AccountController implements Initializable {
 			accountList.setVisible(true);
 			accountAdd.setVisible(false);
 			accountDetail.setVisible(false);
+			updateAccounts();	
+		}
+
+	}
+	
+	public class ToBudgetSetHandler implements EventHandler<MouseEvent> {
+		@Override
+		public void handle(MouseEvent event) {
+			budgetSet.setVisible(true);
 			updateAccounts();	
 		}
 

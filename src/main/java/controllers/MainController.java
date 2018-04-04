@@ -37,7 +37,6 @@ public class MainController implements Initializable {
 	private Pane accountView;
 	@FXML
 	private Pane transactionAdd;
-	
 	@FXML
 	private Pane statisticsView;
 	@FXML
