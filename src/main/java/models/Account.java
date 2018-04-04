@@ -57,6 +57,17 @@ public class Account {
 		this.DateBy = dateBy;
 		this.Salary = salary;
 	}
+	
+	public Account(String name, long number, Enumerator.AccountType type, double balance) {
+		this.Name = name;
+		// this.Description = description;
+		this.Number = number;
+		this.Balance = balance;
+		this.Type = type;
+		this.Create = new Date();
+		this.Edit = new Date();
+		this.Archived = null;
+	}
 
 	@Override
 	public boolean equals(Object obj) {
