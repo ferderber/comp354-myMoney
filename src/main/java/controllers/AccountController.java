@@ -48,20 +48,20 @@ public class AccountController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+		updateAccounts();	
+	}
+
+	@FXML //sets eventHandler to each account
+	public void updateAccounts() {
 		accountList.setVisible(true);
 		accountAdd.setVisible(false);
 		accountDetail.setVisible(false);
 		budgetSet.setVisible(false);
 		accountListController.AccountAddClick(new ToAccountAddHandler());
-		updateAccounts();	
+		accountListController.setupAccounts(new ToAccountDetailHandler());
 		accountAddController.setOnBackButtonClick(new ToMainHandler());
 		accountDetailController.returnToMain(new ToMainHandler());
 		accountDetailController.switchToBudgetView(new ToBudgetSetHandler());
-	}
-
-	@FXML //sets eventHandler to each account
-	public void updateAccounts() {
-		accountListController.setupAccounts(new ToAccountDetailHandler());
 	}
 
 	//handles clicking on the listed accounts -> see AccountDetailController

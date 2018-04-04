@@ -122,7 +122,7 @@ public class Transaction {
 		AccountDao dao = new AccountDao();
 		Account a = dao.getAccountById(idAccount);
 		if (a != null) {
-			a.setBalance(a.getBalance() - newAmount);
+			a.setBalance(a.getBalance() +amount - newAmount);
 		}
 		dao.updateAccount(a);
 	}
@@ -131,7 +131,7 @@ public class Transaction {
 		AccountDao dao = new AccountDao();
 		ObjectProperty<Account> accountProperty = new SimpleObjectProperty<>();
 		accountProperty.set(dao.getAccountById(idAccount));
-		accountProperty.get().setBalance((accountProperty.get().getBalance() - amount));
+		accountProperty.get().setBalance((accountProperty.get().getBalance() + amount));
 		dao.updateAccount(accountProperty.get());
 	}
 

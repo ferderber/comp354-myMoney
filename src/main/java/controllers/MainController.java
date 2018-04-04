@@ -28,7 +28,7 @@ public class MainController implements Initializable {
 	@FXML
 	private TransactionDetailController transactionDetailController;
 	@FXML
-	private AccountController accountController;
+	private AccountController accountViewController;
 	@FXML
 	private GridPane transactionList;
 	@FXML
@@ -84,12 +84,7 @@ public class MainController implements Initializable {
 
 	@FXML
 	public void handleAccountListClick() {
-	/*	try{
-		accountController.updateAccounts();
-		}
-		catch(Exception e){
-			e.printStackTrace();
-		}*/
+		accountViewController.updateAccounts();
 		setAllViewsInvisible();
 		accountView.setVisible(true);
 	}
