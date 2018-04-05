@@ -9,6 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import main.java.models.Transaction;
@@ -27,16 +28,15 @@ public class MainController implements Initializable {
 	@FXML
 	private TransactionDetailController transactionDetailController;
 	@FXML
-	private AccountController accountController;
+	private AccountController accountViewController;
 	@FXML
-	private ScrollPane transactionList;
+	private GridPane transactionList;
 	@FXML
 	private Pane transactionDetail;
 	@FXML
 	private Pane accountView;
 	@FXML
 	private Pane transactionAdd;
-	
 	@FXML
 	private Pane statisticsView;
 	@FXML
@@ -84,6 +84,7 @@ public class MainController implements Initializable {
 
 	@FXML
 	public void handleAccountListClick() {
+		accountViewController.updateAccounts();
 		setAllViewsInvisible();
 		accountView.setVisible(true);
 	}

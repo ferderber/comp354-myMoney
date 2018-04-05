@@ -9,8 +9,8 @@
 
 <GridPane xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1"
 	fx:controller="main.java.controllers.AccountListController" fx:id = "accountListGridPane">
-	<ScrollPane prefWidth = "200.0" prefHeight = "1000.0">
-		<VBox fx:id="accountListContainer" styleClass="account-container" GridPane.rowIndex="0">
+	<ScrollPane prefWidth = "200.0" prefHeight = "1000.0" >
+		<VBox fx:id="accountListContainer" styleClass="account-container" GridPane.rowIndex="0" >
 			<children>
 			</children>
 		</VBox>

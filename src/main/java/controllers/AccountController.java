@@ -19,8 +19,9 @@ import main.java.views.SingleAccountView;;
  * Provides an Account Controller. Switches between Account-add pane, account-list pane 
  * and account-detail pane
  * 
- * @author Artem Khomich 
  * @author Viktoriya Malinova
+ * @author Artem Khomich 
+ *
  *
  */
 public class AccountController implements Initializable {
@@ -34,69 +35,57 @@ public class AccountController implements Initializable {
 	@FXML
 	private AccountDetailController accountDetailController;
 	@FXML
+	private BudgetSetController budgetSetController;
+	@FXML
 	private Pane accountContainer;
 	@FXML
 	private Pane accountDetail;
 	@FXML
+	private Pane budgetSet;
+	@FXML
 	private GridPane accountList;
-	/*
-	 * @FXML private FlowPane accountAddPane;
-	 * 
-	 * @FXML private Button AddAccountButton;
-	 */
+
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+		updateAccounts();	
+	}
+
+	@FXML //sets eventHandler to each account
+	public void updateAccounts() {
 		accountList.setVisible(true);
 		accountAdd.setVisible(false);
 		accountDetail.setVisible(false);
+		budgetSet.setVisible(false);
 		accountListController.AccountAddClick(new ToAccountAddHandler());
+		accountListController.setupAccounts(new ToAccountDetailHandler());
 		accountAddController.setOnBackButtonClick(new ToMainHandler());
-		
-		accountListController.setupAccounts(new ToAccountDetailHandler());	//sets eventHandler to ech account
 		accountDetailController.returnToMain(new ToMainHandler());
+		accountDetailController.switchToBudgetView(new ToBudgetSetHandler());
 	}
 
-/*	@FXML
-	public void switchAccountView() {
-		accountList.setVisible(!accountList.isVisible());
-		accountAdd.setVisible(!accountAdd.isVisible());
-	}*/
-	
-	//viktos- handles clicking on the listed accounts -> see AccountDetailController
-		public class ToAccountDetailHandler implements EventHandler<MouseEvent>{
-			@Override
-			public void handle(MouseEvent event){
-				SingleAccountView accountView= (SingleAccountView)event.getSource();
-				Account t = accountView.getAccount();
-				try{
-				accountDetailController.setAccount(t);
-				}
-				catch(Exception e){
-					e.printStackTrace();
-				}
-				 //see accountDetail.fxml for setup of  accountDetailView
-				accountList.setVisible(false);
-				accountAdd.setVisible(false);
-				accountDetail.setVisible(true);			
-			}
-		}
-
-/*	@FXML
-	public void AccountAddClick() {
-		switchAccountView();
-	}
-
-	public class ViewChangeClickHandler implements EventHandler<MouseEvent> {
-
+	//handles clicking on the listed accounts -> see AccountDetailController
+	public class ToAccountDetailHandler implements EventHandler<MouseEvent>{
 		@Override
-		public void handle(MouseEvent event) {
-			switchAccountView();
+		public void handle(MouseEvent event){
+			updateAccounts();
+			SingleAccountView accountView= (SingleAccountView)event.getSource();
+			Account t = accountView.getAccount();
+			try{
+				accountDetailController.setAccount(t);
+				budgetSetController.setAccountDetailController(accountDetailController);
+			}
+			catch(Exception e){
+				e.printStackTrace();
+			}
+			//see accountDetail.fxml for setup of  accountDetailView
+			accountList.setVisible(false);
+			accountAdd.setVisible(false);
+			budgetSet.setVisible(false);
+			accountDetail.setVisible(true);			
 		}
+	}
 
-	}*/
-	
-	
 	public class ToMainHandler implements EventHandler<MouseEvent> {
 
 		@Override
@@ -104,6 +93,16 @@ public class AccountController implements Initializable {
 			accountList.setVisible(true);
 			accountAdd.setVisible(false);
 			accountDetail.setVisible(false);
+			updateAccounts();	
+		}
+
+	}
+	
+	public class ToBudgetSetHandler implements EventHandler<MouseEvent> {
+		@Override
+		public void handle(MouseEvent event) {
+			budgetSet.setVisible(true);
+			updateAccounts();	
 		}
 
 	}

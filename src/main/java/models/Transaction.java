@@ -1,9 +1,14 @@
 package main.java.models;
 
 import java.util.Date;
+import java.util.List;
 
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
+
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
+import main.java.dao.AccountDao;
 
 @DatabaseTable
 public class Transaction {
@@ -14,7 +19,7 @@ public class Transaction {
 	@DatabaseField(foreign = true)
 	private Type type;
 	@DatabaseField
-	private double amount;
+	private double amount = 0;
 	@DatabaseField
 	private String description;
 	@DatabaseField
@@ -22,35 +27,38 @@ public class Transaction {
 	@DatabaseField
 	private int idAccount;
 
-
 	protected Transaction() {
 
 	}
 
-	public Transaction(String name, Type type, double amount, String description, Date date,int AccId) {
+	public Transaction(String name, Type type, double amount, String description, Date date, int AccId) {
+		this.idAccount = AccId;
+		updateBalance(amount);
 		this.name = name;
 		this.type = type;
 		this.amount = amount;
 		this.description = description;
 		this.date = date;
-		this.idAccount=AccId;
+
 	}
 
-	public Transaction(int id, String name, Type type, double amount, String description, Date date,int AccId) {
+	public Transaction(int id, String name, Type type, double amount, String description, Date date, int AccId) {
+		this.idAccount = AccId;
+		updateBalance(amount);
 		this.id = id;
 		this.name = name;
 		this.type = type;
 		this.amount = amount;
 		this.description = description;
 		this.date = date;
-		this.idAccount=AccId;
 	}
 
 	@Override
 	public boolean equals(Object obj) {
 		Transaction t = (Transaction) obj;
-		return t != null && id == t.id && name.equals(t.name) && type.equals(t.type) && description.equals(t.description)
-				&& amount == t.amount && date.equals(t.date)&& idAccount==t.idAccount;
+		return t != null && id == t.id && name.equals(t.name) && type.equals(t.type)
+				&& description.equals(t.description) && amount == t.amount && date.equals(t.date)
+				&& idAccount == t.idAccount;
 	}
 
 	public int getId() {
@@ -68,7 +76,7 @@ public class Transaction {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	public Type getType() {
 		return type;
 	}
@@ -98,6 +106,7 @@ public class Transaction {
 	}
 
 	public void setAmount(double amount) {
+		updateBalance(amount);
 		this.amount = amount;
 	}
 
@@ -107,6 +116,23 @@ public class Transaction {
 
 	public void setIdAccount(int idAccount) {
 		this.idAccount = idAccount;
+	}
+
+	public void updateBalance(double newAmount) {
+		AccountDao dao = new AccountDao();
+		Account a = dao.getAccountById(idAccount);
+		if (a != null) {
+			a.setBalance(a.getBalance() +amount - newAmount);
+		}
+		dao.updateAccount(a);
+	}
+
+	public void delete() {
+		AccountDao dao = new AccountDao();
+		ObjectProperty<Account> accountProperty = new SimpleObjectProperty<>();
+		accountProperty.set(dao.getAccountById(idAccount));
+		accountProperty.get().setBalance((accountProperty.get().getBalance() + amount));
+		dao.updateAccount(accountProperty.get());
 	}
 
 }

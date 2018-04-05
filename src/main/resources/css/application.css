@@ -1,6 +1,6 @@
 .button{
 	-fx-background-color: #D0EFB0;
-	-fx-font-size: 14px;
+	-fx-font-size: 14.0px;
 	-fx-pref-width: 120.0;
 	-fx-pref-height: 20.0;
 	-fx-font-family: 'Open Sans';
@@ -8,15 +8,15 @@
 
 .menuButton {
 	-fx-background-color: #D0EFB0;
-	-fx-font-size: 20px;
+	-fx-font-size: 20.0px;
 	-fx-pref-width: 150.0;
-	-fx-pref-height: 1000px;
+	-fx-pref-height: 1000.0px;
 	-fx-font-family: 'Open Sans';
 }
 
 .innerMenuButton{
 	-fx-font-family: 'Open Sans';
-	-fx-font-size: 14px;
+	-fx-font-size: 14.0px;
 	-fx-pref-height: 20.0;
 }
 
@@ -30,7 +30,7 @@
 
 #transactionDetail{
 	-fx-font-family:'Comfortaa';
-	-fx-padding: 10px;
+	-fx-padding: 10.0px;
 }
 
 #AccountListcontainer{   
@@ -38,7 +38,7 @@
 }
 
 #NewAccountButton{
-	-fx-font-size: 14px;
+	-fx-font-size: 14.0px;
 	-fx-pref-width: 120.0;
 	-fx-pref-height: 20.0;
 }
@@ -68,7 +68,7 @@
    -fx-padding: 5.0;
 }
 .transaction-view:hover {
-	-fx-background-color: rgba(0,0,0,.05);
+	-fx-background-color: rgba(0.0,0.0,0.0,0.05);
 }
 .transaction-container {
 	-fx-background-color: #EBF2E0;
@@ -92,5 +92,5 @@
 	-fx-padding: 5.0;
 	-fx-background-image: url('melonseed_opac5.png');
 	-fx-background-repeat: repeat;
-	-fx-background-size: 50 50;
+	-fx-background-size: 50.0 50.0;
 }

@@ -5,25 +5,28 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Text?>
 <?import main.java.controllers.TransactionListController?>
-
-<ScrollPane xmlns:fx="http://javafx.com/fxml/1"
+<GridPane xmlns:fx="http://javafx.com/fxml/1" alignment="center"
+	prefHeight="600.0" prefWidth="400.0"
 	fx:controller="main.java.controllers.TransactionListController"
-	styleClass="transaction-list" hbarPolicy="NEVER" >
-	
-	<GridPane alignment = "center" prefHeight="600.0" prefWidth="400.0" maxHeight="Infinity" maxWidth="Infinity">
-        
-		<children>
-		<VBox fx:id="container" styleClass="transaction-container" GridPane.columnIndex="0" 
-			GridPane.rowIndex="0" minWidth="200" minHeight="60" GridPane.hgrow="always" GridPane.vgrow="always">
-			
-		</VBox>
-
-		<VBox fx:id="containerType" styleClass="transaction-container-2" GridPane.columnIndex="1" 
-			GridPane.rowIndex="0" minWidth="200" minHeight="60" GridPane.hgrow="always" GridPane.vgrow="always">
-			
-		</VBox>
-		</children>
-	</GridPane>
-	
-</ScrollPane>
-
+	styleClass="transaction-list">
+	<children>
+		<ScrollPane GridPane.columnIndex="0" GridPane.rowIndex="0"
+			hbarPolicy="NEVER" minWidth="200" minHeight="60" GridPane.hgrow="always"
+			GridPane.vgrow="always">
+			<VBox fx:id="container" styleClass="transaction-container">
+			</VBox>
+		</ScrollPane>
+		<ScrollPane GridPane.columnIndex="1" GridPane.rowIndex="0"
+			minWidth="200" minHeight="60" GridPane.hgrow="always" hbarPolicy="NEVER"
+			GridPane.vgrow="always">
+			<VBox GridPane.hgrow="always" fx:id="containerType" styleClass="transaction-container-2">
+			</VBox>
+		</ScrollPane>
+		<ScrollPane GridPane.columnIndex="2" GridPane.rowIndex="0"
+			minWidth="400" minHeight="60" GridPane.hgrow="always" hbarPolicy="NEVER"
+			GridPane.vgrow="always" styleClass="transaction-container">
+			<VBox fx:id="containerCharts">
+			</VBox>
+		</ScrollPane>
+	</children>
+</GridPane>
