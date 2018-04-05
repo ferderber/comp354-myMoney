@@ -33,7 +33,7 @@ public class MyMoneyDriver extends Application {
 		
 		TransactionListCreator lc = new TransactionListCreator();
 		
-		//lc.insert();
+		lc.insert();
 		Font.loadFont(MyMoneyDriver.class.getResource("/main/resources/css/OpenSans-CondLight.ttf").toExternalForm(), 12);
 		Font.loadFont(MyMoneyDriver.class.getResource("/main/resources/css/Comfortaa_Thin.ttf").toExternalForm(), 12);
 		launch(args);

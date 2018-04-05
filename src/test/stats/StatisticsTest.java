@@ -19,12 +19,12 @@ public class StatisticsTest extends ApplicationTest
 		new MyMoneyDriver().start(stage);
 	}
 	
-	@Before
+	/*@Before
 	public void setUp()
 	{
 		TransactionListCreator ls = new TransactionListCreator();
 		ls.insert();
-	}
+	}*/
 	
 	@Test
 	public void testStatisticsClick() {
@@ -34,9 +34,28 @@ public class StatisticsTest extends ApplicationTest
 		assertTrue(lookup("#transactionName").query().isVisible());
 	}
 	
-	
+	@Test
+	public void testStatisticsType()
+	{
+		clickOn("Statistics");
+		assertTrue(lookup("#statistics").query().isVisible());
+		clickOn("Choose Type");
+		assertTrue(lookup("#transactionName").query().isVisible());
+	}
 	
 	@Test
+	public void testStatisticsTypeChicken()
+	{
+		clickOn("Statistics");
+		assertTrue(lookup("#statistics").query().isVisible());
+		clickOn("Choose Type");
+		clickOn("Lemon Type");
+		clickOn("Submit");
+		assertTrue(lookup("#transactionName").query().isVisible());
+	}
+	
+	
+	/*@Test
 	public void testStatisticsAllClick() {
 		clickOn("Statistics");
 		assertTrue(lookup("#statistics").query().isVisible());
@@ -128,6 +147,6 @@ public class StatisticsTest extends ApplicationTest
 	public void tearDown() throws Exception {
 		TransactionListCreator ls = new TransactionListCreator();
 		ls.delete();
-	}
+	}*/
 
 }

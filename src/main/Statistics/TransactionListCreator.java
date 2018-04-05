@@ -9,6 +9,7 @@ import java.util.Random;
 import com.j256.ormlite.field.DatabaseField;
 
 import main.java.dao.TransactionDao;
+import main.java.dao.TypeDao;
 import main.java.models.Transaction;
 import main.java.models.Type;
 
@@ -23,6 +24,24 @@ public class TransactionListCreator
 		{
 			dao.delete(list.get(i));
 		}
+		
+		Type type = new Type("Sample Type");
+		
+		TypeDao tydao = new TypeDao();
+		
+		type = new Type("Sample Type");
+		tydao.delete(type);
+		type = new Type("Pinapple Type");
+		tydao.delete(type);
+		type = new Type("Lemon Type");
+		tydao.delete(type);
+		type = new Type("Apple Type");
+		tydao.delete(type);
+		type = new Type("Chicken Type");
+		tydao.delete(type);
+		type = new Type("Watermelon Type");
+		tydao.delete(type);
+		
 	}
 	
 	public void insert()
@@ -46,6 +65,21 @@ public class TransactionListCreator
 		Type type = new Type("Sample Type");
 		Date date = null;
 		Transaction trans = null;
+		
+		TypeDao tydao = new TypeDao();
+		
+		type = new Type("Sample Type");
+		tydao.insert(type);
+		type = new Type("Pinapple Type");
+		tydao.insert(type);
+		type = new Type("Lemon Type");
+		tydao.insert(type);
+		type = new Type("Apple Type");
+		tydao.insert(type);
+		type = new Type("Chicken Type");
+		tydao.insert(type);
+		type = new Type("Watermelon Type");
+		tydao.insert(type);
 		
 		for(int i=0; i<100; i++)
 		{
