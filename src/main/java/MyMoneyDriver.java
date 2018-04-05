@@ -11,6 +11,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import main.Statistics.TransactionListCreator;
 import main.java.dao.AccountDao;
 import main.java.dao.TransactionDao;
 import main.java.dao.TypeDao;
@@ -30,9 +31,13 @@ public class MyMoneyDriver extends Application {
 
 	public static void main(String[] args) {
 		
+		TransactionListCreator lc = new TransactionListCreator();
+		
+		lc.insert();
 		Font.loadFont(MyMoneyDriver.class.getResource("/main/resources/css/OpenSans-CondLight.ttf").toExternalForm(), 12);
 		Font.loadFont(MyMoneyDriver.class.getResource("/main/resources/css/Comfortaa_Thin.ttf").toExternalForm(), 12);
 		launch(args);
+		lc.delete();
 	}
 
 	@Override
