@@ -30,13 +30,13 @@ public class StatisticsTest extends ApplicationTest
 	public void testStatisticsClick() {
 		clickOn("Statistics");
 		assertTrue(lookup("#statistics").query().isVisible());
-		clickOn("#container");
+		clickOn("Submit");
 		assertTrue(lookup("#transactionName").query().isVisible());
 	}
 	
 	
 	
-	/*@Test
+	@Test
 	public void testStatisticsAllClick() {
 		clickOn("Statistics");
 		assertTrue(lookup("#statistics").query().isVisible());
@@ -122,7 +122,7 @@ public class StatisticsTest extends ApplicationTest
 		write("2");
 		clickOn("Submit");
 		assertTrue(lookup("#transactionName").query().isVisible());
-	}*/
+	}
 	
 	@After
 	public void tearDown() throws Exception {
