@@ -21,5 +21,8 @@
 	xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1"
 	fx:controller="main.java.controllers.AccountDetailController" alignment = "center">
 		<children>
+			<!-- <Button fx:id="deleteAccountButton" mnemonicParsing="false"
+			onMouseClicked="#deleteAccount"
+			GridPane.columnIndex="0" GridPane.rowIndex="7" styleClass = "innerMenuButton"/> -->
 		</children>		
 	</GridPane>
