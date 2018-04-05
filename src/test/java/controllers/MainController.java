@@ -23,13 +23,13 @@ public class MainController extends ApplicationTest {
  
 	@Test
 	public void testAccountListClick() {
-		clickOn("View Transaction History");
+		clickOn("View Transactions");
 		assertTrue(lookup("#transactionList").query().isVisible());
 	}
 
 	@Test
 	public void testTransactionDetailClick() {
-		clickOn("View Transaction History");
+		clickOn("View Transactions");
 		clickOn(((VBox) lookup(".transaction-container").query()).getChildren().get(0));
 		assertTrue(lookup("#transactionDetail").query().isVisible());
 	}
