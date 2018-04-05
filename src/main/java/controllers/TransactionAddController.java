@@ -35,13 +35,23 @@ public class TransactionAddController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		AccountDao dbAccount=new AccountDao();
-		for (Account e: dbAccount.getAllAccounts())
+	/*	AccountDao dbAccount=new AccountDao();
+		for (Account e: dbAccount.getAllAccounts()){
+			System.out.println(e.getId()+". "+e.getName());
 			comboBox.getItems().add(e.getId()+". "+e.getName());
+		}*/
+	}
+	public void setTransactionAddPage(){
+		AccountDao dbAccount=new AccountDao();
+		comboBox.getItems().clear();
+		for (Account e: dbAccount.getAllAccounts()){
+			comboBox.getItems().add(e.getId()+". "+e.getName());
+		}
 	}
 
 	@FXML
 	private void addTransaction() {
+		
 		TransactionDao transDao = new TransactionDao();
 		TypeDao typeDao = new TypeDao();
 		
@@ -54,7 +64,7 @@ public class TransactionAddController implements Initializable {
 		} catch (Exception ex) {
 			// TODO: Display validation error
 		}
-		//vik: retrieves & converts selected item from drop menu Account to the ID of the associated account
+		//retrieves & converts selected item from drop menu Account to the ID of the associated account
 				int account = 1;
 				
 				try{

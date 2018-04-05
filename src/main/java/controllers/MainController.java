@@ -27,6 +27,8 @@ public class MainController implements Initializable {
 	private TransactionListController transactionListController;
 	@FXML
 	private TransactionDetailController transactionDetailController;
+	@FXML 
+	private TransactionAddController transactionAddController;
 	@FXML
 	private AccountController accountViewController;
 	@FXML
@@ -98,6 +100,7 @@ public class MainController implements Initializable {
 
 	@FXML
 	public void handleAddTransactionClick() {
+		transactionAddController.setTransactionAddPage();
 		setAllViewsInvisible();
 		transactionAdd.setVisible(true);
 	}
