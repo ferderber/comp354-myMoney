@@ -11,13 +11,13 @@
 	xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1"
 	fx:controller="main.java.controllers.MainController" fx:id="mainView">
 	<left>
-		<VBox minWidth="180" alignment="center">
+		<VBox minWidth="200" alignment="center">
 			<children>
 				<Button text="View Accounts" onAction="#handleAccountListClick"
 					minWidth="200" minHeight="60" StyleClass = "menuButton"/>
 				<Button text="Add Transaction" onAction="#handleAddTransactionClick"
 					minWidth="200" minHeight="60" StyleClass = "menuButton"/>
-				<Button text="View Transaction History" onAction="#handleTransactionListClick"
+				<Button text="View Transactions" onAction="#handleTransactionListClick"
 					minWidth="200" minHeight="60" StyleClass = "menuButton"/>
 				<Button text="Statistics" onAction="#handleStatisticsClick"
 					minWidth="200" minHeight="60" StyleClass = "menuButton"/>
