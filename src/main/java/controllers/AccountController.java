@@ -102,7 +102,7 @@ public class AccountController implements Initializable {
 		@Override
 		public void handle(MouseEvent event) {
 			budgetSet.setVisible(true);
-			updateAccounts();	
+			//updateAccounts();	
 		}
 
 	}
