@@ -198,8 +198,6 @@ public class Stats_Interface
 			return stat.getTransactionByYear(trans);
 		}
 		
-		//System.out.println(select + " " + (int)select.charAt(0));
-		
 		if((int)select.charAt(0) > 47 && (int)select.charAt(0) < 58)
 		{
 			trans = Integer.parseInt(select);
@@ -222,18 +220,26 @@ public class Stats_Interface
 		return null;
 	}
 	
-	public List<String> displayStats(String select)
+	public List<String> displayStats(String select, String Type)
 	{
 		Statistics stat = new Statistics();
 		
 		List<Transaction> list = select(select);
 		
-		
+		if(!(Type == null))
+		{
+			list = stat.RetrunByType(Type, list);
+		}
 		
 		List<String> array = new ArrayList<String>();
 		
 		String temp = "";
 		
+		if(list == null)
+		{
+			array.add("Empty");
+			return array;
+		}
 		if(list.isEmpty())
 		{
 			array.add("Empty");
@@ -283,7 +289,7 @@ public class Stats_Interface
 		return array;
 	}
 	
-	public List<String> displayRecurring(String select, int times)
+	public List<String> displayRecurring(String select, int times, String Type)
 	{
 		Statistics stat = new Statistics();
 		
@@ -291,9 +297,12 @@ public class Stats_Interface
 		
 		List<String> array = new ArrayList<String>();
 		
+		if(!(Type == null))
+		{
+			list = stat.RetrunByType(Type, list);
+		}
+		
 		String temp = "";
-		
-		
 		
 		list = stat.getRecurring(list, times);
 		
@@ -317,6 +326,79 @@ public class Stats_Interface
 		}
 		
 		return array;
+	}
+	
+	public BarChart displayYearStats()
+	{
+		
+		Statistics stat = new Statistics();
+		
+		List<Transaction> list = stat.getAllTransactions();
+		List<String> Names = new ArrayList<String>();
+		List<Integer> Years = stat.getYearList();
+		List<Double> MAvg = new ArrayList<Double>();
+		List<Double> MMed = new ArrayList<Double>();
+		List<Double> MI = new ArrayList<Double>();
+		List<Double> MO = new ArrayList<Double>();
+		
+		int Cyear = 0;
+		int Cmonth = 0;
+		
+		String Time = "";
+		
+		if(list.size()>0)
+		{
+			Cyear = list.get(list.size()-1).getDate().getYear() + 1900;
+			Cmonth = list.get(list.size()-1).getDate().getMonth();
+		}
+		
+		Cmonth = Cmonth - 12;
+		
+		if(Cmonth < 0)
+		{
+			Cyear -= 1;
+			Cmonth += 12;
+			
+			if(Cmonth == 12)
+			{
+				Cmonth = 0;
+			}
+		}
+		
+		
+		double MonthAvg = 0;
+		double MonthMed = 0;
+		double MonthIN = 0;
+		double MonthOUT = 0;
+		
+		Time = Cyear + " ";
+		
+		for(int i=0; i<13; i++)
+		{
+			MonthAvg = stat.getAverageByYearAndMonth(Cmonth, Cyear);
+			MonthMed = stat.getMedianByYearAndMonth(Cmonth, Cyear);
+			MonthIN = stat.getAverageInByYearAndMonth(Cmonth, Cyear);
+			MonthOUT = stat.getAverageOutByYearAndMonth(Cmonth, Cyear);
+			
+			MAvg.add(MonthAvg);
+			MMed.add(MonthMed);
+			MI.add(MonthIN);
+			MO.add(MonthOUT);
+			Names.add(toMonth(Cmonth));
+			
+			Cmonth += 1;
+			
+			if(Cmonth > 11)
+			{
+				Cmonth = 0;
+				Cyear += 1;
+				Time += Cyear;
+			}
+		}
+		
+		BarChart bc = new BarChart(MAvg, MMed, MI, MO, Names, Time);
+		
+		return bc;
 	}
 	
 	public String toMonth(int month)
@@ -394,11 +476,15 @@ public class Stats_Interface
 		
 		List<String> list = new ArrayList<String>();
 		
-		list = inter.displayRecurring("all", 3);
+		BarChart bc  = inter.displayYearStats();
 		
-		for(int i=0; i<list.size(); i++)
+		list = inter.displayStats("March", null);
+		
+		for(int i=0; i<bc.size; i++)
 		{
-			System.out.println(list.get(i));
+			System.out.println(bc.MonthAvg.get(i));
 		}
+		
+		System.out.println(bc.Year);
 	}
 }

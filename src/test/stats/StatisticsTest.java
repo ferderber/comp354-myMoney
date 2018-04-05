@@ -3,10 +3,13 @@ package test.stats;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import org.testfx.framework.junit.ApplicationTest;
 
 import javafx.stage.Stage;
+import main.Statistics.TransactionListCreator;
 import main.java.MyMoneyDriver;
 
 public class StatisticsTest extends ApplicationTest 
@@ -16,15 +19,24 @@ public class StatisticsTest extends ApplicationTest
 		new MyMoneyDriver().start(stage);
 	}
 	
+	@Before
+	public void setUp()
+	{
+		TransactionListCreator ls = new TransactionListCreator();
+		ls.insert();
+	}
+	
 	@Test
 	public void testStatisticsClick() {
 		clickOn("Statistics");
 		assertTrue(lookup("#statistics").query().isVisible());
-		clickOn("Submit");
+		clickOn("#container");
 		assertTrue(lookup("#transactionName").query().isVisible());
 	}
 	
-	@Test
+	
+	
+	/*@Test
 	public void testStatisticsAllClick() {
 		clickOn("Statistics");
 		assertTrue(lookup("#statistics").query().isVisible());
@@ -110,6 +122,12 @@ public class StatisticsTest extends ApplicationTest
 		write("2");
 		clickOn("Submit");
 		assertTrue(lookup("#transactionName").query().isVisible());
-	}
+	}*/
 	
+	@After
+	public void tearDown() throws Exception {
+		TransactionListCreator ls = new TransactionListCreator();
+		ls.delete();
+	}
+
 }

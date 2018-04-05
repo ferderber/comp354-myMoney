@@ -14,8 +14,18 @@ import main.java.models.Type;
 
 public class TransactionListCreator 
 {
+	public void delete()
+	{
+		TransactionDao dao = new TransactionDao();
+		List<Transaction> list = dao.getAllTransactions();
+		
+		for(int i=0; i<list.size()-1; i++)
+		{
+			dao.delete(list.get(i));
+		}
+	}
 	
-	public static void main(String args[])
+	public void insert()
 	{
 		TransactionDao dao = new TransactionDao();
 		List<Transaction> list = new ArrayList<Transaction>();
@@ -83,10 +93,12 @@ public class TransactionListCreator
 			//System.out.println(arr[i].toString());
 		}
 		
-		for(int i=0; i<list.size(); i++)
-		{
-			//dao.delete(list.get(i));
-		}
+		
 		dao.insert(arr);
+	}
+	
+	public static void main(String args[])
+	{
+		
 	}
 }
