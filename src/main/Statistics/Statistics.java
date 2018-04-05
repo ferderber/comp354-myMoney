@@ -201,22 +201,6 @@ public class Statistics {
 		return avg;
 	}
 
-	// public double getAverageIn(List<Transaction> list) {
-	// int end = list.size();
-	//
-	// int avg = 0;
-	// if (list.size() > 0) {
-	// for (int i = end - 1; i >= 0; i--) {
-	// if (list.get(i).getAmount() > 0) {
-	// avg += list.get(i).getAmount();
-	// }
-	// }
-	//
-	// avg = avg / (end);
-	// }
-	// return avg;
-	// }
-
 	public double getAverageOut(List<Transaction> list) {
 		int end = list.size();
 
@@ -232,23 +216,6 @@ public class Statistics {
 
 		return avg;
 	}
-
-	// public double getAverageOut(List<Transaction> list) {
-	// int end = list.size();
-	//
-	// int avg = 0;
-	//
-	// if (list.size() > 0) {
-	// for (int i = end - 1; i >= 0; i--) {
-	// if (list.get(i).getAmount() < 0) {
-	// avg += list.get(i).getAmount();
-	// }
-	// }
-	//
-	// avg = avg / (end);
-	// }
-	// return avg;
-	// }
 
 	public double getAverageInMonth(List<Transaction> list, int number) {
 		int end = list.size();
@@ -483,30 +450,6 @@ public class Statistics {
 		return median;
 	}
 
-	// public double getMedianIn(List<Transaction> list) {
-	// double median = 0;
-	//
-	// List<Transaction> list2 = new ArrayList<Transaction>();
-	//
-	// int end = list.size() - 1;
-	//
-	// for (int i = 0; i < end; i++) {
-	// if (list.get(i).getAmount() > 0) {
-	// list2.add(list.get(i));
-	// }
-	// }
-	//
-	// if (list2.size() > 0) {
-	// list2 = OrderForMedian(list2);
-	// } else {
-	// return 0;
-	// }
-	//
-	// median = getMaxOccurence(list2);
-	//
-	// return median;
-	// }
-
 	public double getMedianOut(List<Transaction> list) {
 		double median = 0;
 
@@ -530,30 +473,6 @@ public class Statistics {
 
 		return median;
 	}
-
-	// public double getMedianOut(List<Transaction> list) {
-	// double median = 0;
-	//
-	// List<Transaction> list2 = new ArrayList<Transaction>();
-	//
-	// int end = list.size() - 1;
-	//
-	// for (int i = 0; i < end; i++) {
-	// if (list.get(i).getAmount() < 0) {
-	// list2.add(list.get(i));
-	// }
-	// }
-	//
-	// if (list2.size() > 0) {
-	// list2 = OrderForMedian(list2);
-	// } else {
-	// return 0;
-	// }
-	//
-	// median = getMaxOccurence(list2);
-	//
-	// return median;
-	// }
 
 	public double getMedianInMonth(List<Transaction> allTransactions, int number) {
 		double median = 0;
@@ -753,34 +672,6 @@ public class Statistics {
 
 		return list2;
 	}
-
-	// public List<Transaction> getRecurring(List<Transaction> list, int times) {
-	// List<Transaction> list2 = new ArrayList<Transaction>();
-	//
-	// list = OrderForMedian(list);
-	//
-	// int end = list.size();
-	// int count = 1;
-	// double current = list.get(0).getAmount();
-	//
-	// for (int i = 0; i < end; i++) {
-	// if (current == list.get(i).getAmount()) {
-	// count += 1;
-	// } else {
-	//
-	// current = list.get(i).getAmount();
-	//
-	// if (count >= times) {
-	// list2.add(list.get(i - 1));
-	// count = 1;
-	// } else {
-	// count = 1;
-	// }
-	// }
-	// }
-	//
-	// return list2;
-	// }
 
 	public List<Transaction> getRecurringYear(List<Transaction> allTransactions, int times, int year) {
 		List<Transaction> list = this.getTransactionByYear(allTransactions, year);
