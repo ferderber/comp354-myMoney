@@ -15,6 +15,25 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.layout.ColumnConstraints?>
 
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<?import javafx.application.Application.*?>
+<?import javafx.scene.Scene.*?>
+<?import javafx.scene.chart.BarChart.*?>
+<?import javafx.scene.chart.CategoryAxis.*?>
+<?import javafx.scene.chart.NumberAxis.*?>
+<?import javafx.scene.chart.XYChart.*?>
+<?import javafx.stage.Stage.*?>
+
+
+
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1"
 	fx:controller="main.java.controllers.StatisticsController"
 	fx:id="statistics">
@@ -35,33 +54,45 @@
                      </columnConstraints>
                    
                    <children>
-                   		<Text text="Both Blank: Extreme by Month" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-                   		<Text text="Bottom Blank: Statistics by Selection" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-                   		<Text text="None Blank: Recurring by Number" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-                   		<Text text="" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                   		<Text text="" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                   		<Text text="Both Blank: Extreme by Month" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                   		<Text text="Bottom Blank: Statistics by Selection" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                   		<Text text="None Blank: Recurring by Number" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                   		<Text text="" GridPane.columnIndex="0" GridPane.rowIndex="5" />
                    		
-						<Text text="Select Range: All/Year/Month Year/NumberOfMonths" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+						<Text text="Select Range: All/Year/Month Year/NumberOfMonths" GridPane.columnIndex="0" GridPane.rowIndex="6" />
 		
 						<TextField fx:id="transactionType" 
-							GridPane.columnIndex="0" GridPane.rowIndex="6" />
+							GridPane.columnIndex="0" GridPane.rowIndex="7" />
 						
-						<Text text="Select Number of Recurring Transactions" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+						<Text text="Select Number of Recurring Transactions" GridPane.columnIndex="0" GridPane.rowIndex="8" />
 						
 						<TextField fx:id="transactionRecc" 
-							GridPane.columnIndex="0" GridPane.rowIndex="8" />
-			
+							GridPane.columnIndex="0" GridPane.rowIndex="9" />
+						
+						<ComboBox fx:id="Types" layoutX="15.0" layoutY="33.0" prefWidth="290.0" promptText="Choose Type"
+						GridPane.columnIndex="0" GridPane.rowIndex="10" >
+					      <items>
+					        <FXCollections fx:factory="observableArrayList">
+					         
+					        </FXCollections>
+					      </items>
+					    </ComboBox>
+						
 						<Button fx:id="updateStatisticsButton" mnemonicParsing="false"
 							onAction="#updateStatistics" text="Submit"
-							GridPane.columnIndex="0" GridPane.rowIndex="9" StyleClass = "innerMenuButton"/>
+							GridPane.columnIndex="0" GridPane.rowIndex="11" StyleClass = "innerMenuButton"/>
 						
-						<Text text="" GridPane.columnIndex="0" GridPane.rowIndex="10" />	
+						<Text text="" GridPane.columnIndex="0" GridPane.rowIndex="12" />	
 						<Text fx:id="transactionName" 
-							GridPane.columnIndex="0" GridPane.rowIndex="11" />
-							
+							GridPane.columnIndex="0" GridPane.rowIndex="13" />
+						
                     </children>
-                
+	                <VBox fx:id="BarChart">
+					</VBox>
                 </GridPane>
             </content>
+            	
         </ScrollPane>
     </children>
 </AnchorPane>

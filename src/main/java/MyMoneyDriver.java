@@ -11,6 +11,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import main.Statistics.TransactionListCreator;
 import main.java.dao.AccountDao;
 import main.java.dao.TransactionDao;
 import main.java.dao.TypeDao;
@@ -30,9 +31,14 @@ public class MyMoneyDriver extends Application {
 
 	public static void main(String[] args) {
 		
+		TransactionListCreator lc = new TransactionListCreator();
+		
+		lc.insert();
 		Font.loadFont(MyMoneyDriver.class.getResource("/main/resources/css/OpenSans-CondLight.ttf").toExternalForm(), 12);
 		Font.loadFont(MyMoneyDriver.class.getResource("/main/resources/css/Comfortaa_Thin.ttf").toExternalForm(), 12);
 		launch(args);
+		
+		//lc.delete();
 	}
 
 	@Override
@@ -66,7 +72,7 @@ public class MyMoneyDriver extends Application {
 	public Scene createScene() throws Exception {
 		Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("main/resources/view/MainView.fxml"));
 		// Add the fxml Object to a new scene
-		Scene scene = new Scene(root, 600, 300);
+		Scene scene = new Scene(root, 1000, 800);
 		scene.getStylesheets().add("/main/resources/css/application.css");
 		return scene;
 

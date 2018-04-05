@@ -383,13 +383,18 @@ public class Statistics
 		
 		System.out.println(list.size());
 		
+		if(list.size() == 0)
+		{
+			return 0;
+		}
+		
 		int end = list.size();
 		
 		int avg = 0;
 		
 		for(int i=end-1; i>=0; i--)
 		{
-			if(list.get(i).getDate().getYear() < 0)
+			if(list.get(i).getAmount() < 0)
 			{
 				avg += list.get(i).getAmount();
 			}
@@ -407,6 +412,11 @@ public class Statistics
 		
 		list = getTransactionByMonth(month, year);
 		
+		if(list.size() == 0)
+		{
+			return 0;
+		}
+		
 		System.out.println(list.size());
 		
 		int end = list.size();
@@ -415,7 +425,7 @@ public class Statistics
 		
 		for(int i=end-1; i>=0; i--)
 		{
-			if(list.get(i).getDate().getYear() > 0)
+			if(list.get(i).getAmount() > 0)
 			{
 				avg += list.get(i).getAmount();
 			}
@@ -461,6 +471,11 @@ public class Statistics
 		int count = 0;
 		int maxcount = 0;
 		int position = 0;
+		
+		if(list.size() == 0)
+		{
+			return 0;
+		}
 		
 		double current = list.get(0).getAmount();
 
@@ -1017,6 +1032,40 @@ public class Statistics
 		return list2;
 	}
 	
+	public List<Transaction> RetrunByType(String Type, List<Transaction> Passed)
+	{
+		List<Transaction> New = new ArrayList<Transaction>();
+		
+		for(int i=0; i<Passed.size(); i++)
+		{
+			if(Passed.get(i).getType().getId().equals(Type))
+			{
+				New.add(Passed.get(i));
+			}
+		}
+		
+		
+		return New;
+	}
+	
+	public List<String> returnTypes()
+	{
+		List<Transaction> All = this.getAllTransactions();
+		List<String> New = new ArrayList<String>();
+		
+		for(int i=0; i<All.size(); i++)
+		{
+			if((!New.contains(All.get(i).getType().getId())))
+			{
+				New.add(All.get(i).getType().getId());
+				
+			}
+		}
+		return New;
+	}
+	
+	
+	
 	public static void main(String args[])
 	{
 		
@@ -1041,7 +1090,7 @@ public class Statistics
 		System.out.println("Max Inflow TransAction: " + stat.getMaxIn().toString());
 		System.out.println("Max Outflow TransAction: " + stat.getMaxOut().toString());
 		
-System.out.println(stat.getTransactionByYear(4));
+		System.out.println(stat.getTransactionByYear(4));
 		
 		ArrayList<Integer> array = new ArrayList<Integer>();
 		
@@ -1070,7 +1119,14 @@ System.out.println(stat.getTransactionByYear(4));
 			System.out.println(list.get(i).getAmount());
 		}
 		
+		List<String> types = new ArrayList<String>();
 		
+		types = stat.returnTypes();
+		
+		for(int i=0; i<types.size(); i++)
+		{
+			System.out.println(types.get(i));
+		}
 		
 	}
 	

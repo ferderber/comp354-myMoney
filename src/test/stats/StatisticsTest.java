@@ -3,10 +3,13 @@ package test.stats;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import org.testfx.framework.junit.ApplicationTest;
 
 import javafx.stage.Stage;
+import main.Statistics.TransactionListCreator;
 import main.java.MyMoneyDriver;
 
 public class StatisticsTest extends ApplicationTest 
@@ -15,6 +18,13 @@ public class StatisticsTest extends ApplicationTest
 	public void start(Stage stage) throws Exception {
 		new MyMoneyDriver().start(stage);
 	}
+	
+	/*@Before
+	public void setUp()
+	{
+		TransactionListCreator ls = new TransactionListCreator();
+		ls.insert();
+	}*/
 	
 	@Test
 	public void testStatisticsClick() {
@@ -25,6 +35,27 @@ public class StatisticsTest extends ApplicationTest
 	}
 	
 	@Test
+	public void testStatisticsType()
+	{
+		clickOn("Statistics");
+		assertTrue(lookup("#statistics").query().isVisible());
+		clickOn("Choose Type");
+		assertTrue(lookup("#transactionName").query().isVisible());
+	}
+	
+	@Test
+	public void testStatisticsTypeChicken()
+	{
+		clickOn("Statistics");
+		assertTrue(lookup("#statistics").query().isVisible());
+		clickOn("Choose Type");
+		clickOn("Lemon Type");
+		clickOn("Submit");
+		assertTrue(lookup("#transactionName").query().isVisible());
+	}
+	
+	
+	/*@Test
 	public void testStatisticsAllClick() {
 		clickOn("Statistics");
 		assertTrue(lookup("#statistics").query().isVisible());
@@ -112,4 +143,10 @@ public class StatisticsTest extends ApplicationTest
 		assertTrue(lookup("#transactionName").query().isVisible());
 	}
 	
+	@After
+	public void tearDown() throws Exception {
+		TransactionListCreator ls = new TransactionListCreator();
+		ls.delete();
+	}*/
+
 }
