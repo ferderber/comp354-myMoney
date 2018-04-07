@@ -35,44 +35,54 @@ public class TransactionAddController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		AccountDao dbAccount=new AccountDao();
-		for (Account e: dbAccount.getAllAccounts())
-			comboBox.getItems().add(e.getId()+". "+e.getName());
+		/*
+		 * AccountDao dbAccount=new AccountDao(); for (Account e:
+		 * dbAccount.getAllAccounts()){ System.out.println(e.getId()+". "+e.getName());
+		 * comboBox.getItems().add(e.getId()+". "+e.getName()); }
+		 */
+	}
+
+	public void setTransactionAddPage() {
+		AccountDao dbAccount = new AccountDao();
+		comboBox.getItems().clear();
+		for (Account e : dbAccount.getAllAccounts()) {
+			comboBox.getItems().add(e.getId() + ". " + e.getName());
+		}
 	}
 
 	@FXML
 	private void addTransaction() {
+
 		TransactionDao transDao = new TransactionDao();
 		TypeDao typeDao = new TypeDao();
-		
+
 		String name = nameField.getText();
 		Type type = new Type(typeField.getText());
 		String description = descriptionField.getText();
 		double amount = 0.0;
 		try {
 			amount = Double.parseDouble(amountField.getText());
+			// retrieves & converts selected item from drop menu Account to the ID of the
+			// associated account
+			int account = 1;
+
+			try {
+				String currentSelection = comboBox.getSelectionModel().getSelectedItem().toString();
+				String ID = currentSelection.substring(0, 1);
+				account = Integer.parseInt(ID);
+				if (account == 1) {
+					ID = currentSelection.substring(0, 2);
+					account = Integer.parseInt(ID);
+				}
+			} catch (Exception e) {
+
+			}
+
+			Transaction t = new Transaction(name, typeDao.insert(type), amount, description, new Date(), account);
+			transDao.insert(t);
 		} catch (Exception ex) {
 			// TODO: Display validation error
 		}
-		//vik: retrieves & converts selected item from drop menu Account to the ID of the associated account
-				int account = 1;
-				
-				try{
-					String currentSelection= comboBox.getSelectionModel().getSelectedItem().toString();
-					String ID= currentSelection.substring(0,1);
-					account=Integer.parseInt(ID);
-					if (account==1){
-						ID=currentSelection.substring(0,2);
-						account=Integer.parseInt(ID);
-						}
-					}
-				catch(Exception e){
-					
-				}
-		
-		Transaction t = new Transaction(name, typeDao.insert(type), amount, description, new Date(),account);
-		transDao.insert(t);
-		
 		clearTransaction();
 	}
 

@@ -23,6 +23,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import main.java.dao.AccountDao;
 import main.java.dao.TransactionDao;
 import main.java.models.Account;
 import main.java.models.Budget;
@@ -46,13 +47,15 @@ public class AccountDetailController  implements Initializable {
 	private ObjectProperty<Account> accountProperty = new SimpleObjectProperty<>();
 	@FXML
 	private Button returnToMainViewButton  = new Button("Return");
+	@FXML 
+	private Button deleteAccountButton = new Button("Delete Account");
 	@FXML
 	private Button set_goal_button = new Button();
 	@FXML
 	private VBox container=new VBox();
 	@FXML
 	private ScrollPane scroll = new ScrollPane();
-	List<TransactionView> transactionViews;
+	private List<TransactionView> transactionViews;
 
 	@FXML
 	private ProgressBar progress_bar_goal;
@@ -127,6 +130,8 @@ public class AccountDetailController  implements Initializable {
 		accountDetailView.add(new Text("Date of creation: "),0,5);
 		accountDetailView.add(new Text (getAccount().getCreate()+""), 1, 5);
 		accountDetailView.add(returnToMainViewButton, 0, 7);
+		deleteAccountButton.setOnAction(e->deleteAccount());
+		accountDetailView.add(deleteAccountButton, 0, 8);
 		accountDetailView.add(new Text("Last updated: "),0,6);
 		//if no changes, prints N/A rather than null
 		if (getAccount().getEdit()==null)
@@ -250,6 +255,22 @@ public class AccountDetailController  implements Initializable {
 	public void returnToMain(EventHandler<MouseEvent> handler) {
 		returnToMainViewButton.setOnMouseClicked(handler);	
 	}
-
+	
+	
+	@FXML
+	private void deleteAccount() {
+		Account a = accountProperty.get();
+		if (a != null) {
+			List<Transaction> transactionsList = getTransactions();
+			AccountDao accDao = new AccountDao();
+			TransactionDao tDao=new TransactionDao();
+			for (Transaction t: transactionsList){
+				t.delete();
+				tDao.delete(t);
+			}
+			accDao.delete(a);
+			
+		}
+	}
 
 }

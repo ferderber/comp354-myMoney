@@ -101,11 +101,18 @@ public class AccountAddController implements Initializable {
 			} else {
 				dao.updateAccount(a);
 			}
-		} catch (Exception ex) {}
+		} catch (Exception ex) {}		
+		clearAccount();
 	}
 
 	public void setOnBackButtonClick(EventHandler<MouseEvent> handler) {
 		backToAccountListButton.setOnMouseClicked(handler);
 	}
-
+	@FXML
+	private void clearAccount() {
+		nameField.setText("");
+		typeField.setText("");
+		balanceField.setText("");
+		numberField.setText("");
+	}
 }

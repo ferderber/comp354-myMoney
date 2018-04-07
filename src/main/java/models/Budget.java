@@ -11,13 +11,9 @@ import com.j256.ormlite.table.DatabaseTable;
 
 public class Budget {
 	//Goal Setting Properties
-	@DatabaseField(generatedId = true)
 	private int ID;
-	@DatabaseField
 	private String end_goal;
-	@DatabaseField
 	private String goal_by_date;
-	@DatabaseField
 	private String salary;
 	
 	public Budget(){}
