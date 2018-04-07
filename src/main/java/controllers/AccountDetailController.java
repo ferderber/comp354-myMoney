@@ -225,7 +225,12 @@ public class AccountDetailController  implements Initializable {
 		date_by_text.setText("Goal Deadline: " + budget.getDateBalance());
 		salary_text.setText("Yearly Salary: " +  budget.getSalary());
 		String weekly= "" + budget.calculateWeeklySpendingLimit(this.getAccount().getBalance());
-		weekly = weekly.substring(0, weekly.indexOf(".") + 3);
+		try {
+			weekly = weekly.substring(0, weekly.indexOf(".") + 3);
+		}
+		catch(Exception e) {
+			weekly = "Goal Impossible";
+		}
 		weekly_budjet_text_obj.setText("Weekly Budget[Salary - Savings]: " + weekly);
 	}
 	

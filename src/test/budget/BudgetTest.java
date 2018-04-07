@@ -2,9 +2,13 @@ package test.budget;
 
 import static org.junit.Assert.assertTrue;
 
+
 import org.junit.Test;
 import org.testfx.framework.junit.ApplicationTest;
+import org.testfx.service.query.PointQuery;
 
+import javafx.geometry.Bounds;
+import javafx.geometry.Point2D;
 import javafx.scene.control.TextInputControl;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Font;
@@ -35,12 +39,14 @@ public class BudgetTest extends ApplicationTest{
 	}
 	
 	public void enterDetails() {
-		Pane account_list_pane = (Pane) lookup("#accountListContainer").query();
-		clickOn(account_list_pane.getChildren().get(account_list_pane.getChildren().size() - 1));
+		//fails without point2d
+		Bounds bound = (lookup("#accountListContainer").query()).localToScreen(lookup("#accountListContainer").query().getBoundsInLocal());
+		clickOn(new Point2D(bound.getMinX(), bound.getMinY() + 30));
 	}
 	
 	//Interface shows up for no set budget
-	//@Test
+	//Clear database before running test for positive
+	@Test
 	public void testAccountClickedNoData() {
 		setupAccount();
 		enterDetails();
@@ -52,10 +58,10 @@ public class BudgetTest extends ApplicationTest{
 	}
 
 	//Budget fields show
-	//@Test
+	@Test
 	public void testBudgetFields() {
 		enterDetails();
-		clickOn("Set Goal");	
+		clickOn("#GoalSetButton");	
 		
 		//Test that inputs set up
 		assertTrue(lookup("#BudgetGoal").query().isVisible());
@@ -65,10 +71,10 @@ public class BudgetTest extends ApplicationTest{
 	}
 	
 	//Goal is not in good format
-	//@Test
+	@Test
 	public void testBudgetInputInvalidBalanceErr() {
 		enterDetails();
-			clickOn("Set Goal");	
+			clickOn("#GoalSetButton");	
 			
 			//Test that inputs set up
 			clickOn("#BudgetGoal");
@@ -79,11 +85,11 @@ public class BudgetTest extends ApplicationTest{
 		}
 		
 	//Date is not in good format - Regex detect
-	//@Test
+	@Test
 	public void testBudgetInputInvalidDateErrFormatFail() {
 		//check interface created, no data interface
 		enterDetails();
-		clickOn("Set Goal");	
+		clickOn("#GoalSetButton");	
 		
 		//Test that date set up on conditions that meet the regex search
 		clickOn("#SetDateBy");
@@ -101,11 +107,11 @@ public class BudgetTest extends ApplicationTest{
 	}
 	
 	//Date is not in good format - Month Conformity Check
-	//@Test
+	@Test
 	public void testBudgetInputInvalidDateErrMonthDayFail() {
 		//check interface created, no data interface
 		enterDetails();
-		clickOn("Set Goal");	
+		clickOn("#GoalSetButton");	
 		
 		//Test that date set up on conditions that don't meet the regex search
 		clickOn("#SetDateBy");
@@ -134,11 +140,11 @@ public class BudgetTest extends ApplicationTest{
 	
 	}
 	//Date is before current
-	//@Test
+	@Test
 	public void testBudgetInputInvalidDateErrEarlyDateFail() {
 		//check interface created, no data interface
 		enterDetails();
-		clickOn("Set Goal");	
+		clickOn("#GoalSetButton");	
 		
 		//Test that date set up on early dates
 		clickOn("#SetDateBy");
@@ -149,10 +155,10 @@ public class BudgetTest extends ApplicationTest{
 	}
 		
 	//Salary format is wrong
-	//@Test
+	@Test
 	public void testBudgetInputInvalidSalaryErr() {
 		enterDetails();
-		clickOn("Set Goal");	
+		clickOn("#GoalSetButton");	
 		
 		//Test that inputs set up
 		clickOn("#SetSalary");
@@ -163,8 +169,9 @@ public class BudgetTest extends ApplicationTest{
 	
 	}
 	
-	//@Test
+	@Test
 	//test model day function
+	//Use https://www.timeanddate.com/date/duration.html to get positives
 	public void testDayCounter() {
 		// As of 03/04/2018
 		Budget test_budget_time1 = new Budget("","2018/4/26","");
@@ -181,7 +188,7 @@ public class BudgetTest extends ApplicationTest{
 		assertTrue(test_budget_time6.convertDateToDays() == 1087);
 	}
 	
-	//@Test
+	@Test
 	//Test weekly calculations
 	public void testWeeklyAllowance() {
 		Budget test_budget_time1 = new Budget("200000.00","2018/4/26","20.00");
@@ -197,10 +204,10 @@ public class BudgetTest extends ApplicationTest{
 	}
 	
 	//Is impossible to achieve goal by date
-	//@Test
+	@Test
 	public void testBudgetInputImpossibleGoalErr() {
 		enterDetails();
-		clickOn("Set Goal");	
+		clickOn("#GoalSetButton");	
 				
 		//Test that inputs set up
 		clickOn("#BudgetGoal");
@@ -217,10 +224,10 @@ public class BudgetTest extends ApplicationTest{
 	}
 		
 	//A goal being set does the right actions
-	//@Test
+	@Test
 	public void testBudgetInputNoErr() {
 		enterDetails();
-		clickOn("Set Goal");	
+		clickOn("#GoalSetButton");	
 		
 		//Test that inputs set up
 		clickOn("#BudgetGoal");
@@ -231,7 +238,7 @@ public class BudgetTest extends ApplicationTest{
 		write("20000.00");
 		clickOn("#ConfirmGoal");	
 		
-		//send back to main screen and cehck visibility
+		//send back to main screen and check visibility
 		assertTrue(lookup("#GoalProgressBar").query().isVisible());
 		assertTrue(lookup("#ProgToGoalText").query().isVisible());
 		assertTrue(lookup("#WeeklyBudgetText").query().isVisible());
@@ -254,18 +261,22 @@ public class BudgetTest extends ApplicationTest{
 	//Modify entries
 	@Test
 	public void testModifyData() {
-		//setupAccount();
 		enterDetails();
-		//Test user display with data
-		assertTrue(lookup("#BudgetProgress").query().isVisible());
-		assertTrue(lookup("#WeeklySpending").query().isVisible());
-		assertTrue(lookup("#Salary").query().isVisible());
-		assertTrue(lookup("#SetGoal").query().isVisible());
-		clickOn("Set Goal");
+		//check visibility of a;ready #GoalSetButton
+		assertTrue(lookup("#GoalProgressBar").query().isVisible());
+		assertTrue(lookup("#ProgToGoalText").query().isVisible());
+		assertTrue(lookup("#WeeklyBudgetText").query().isVisible());
+		assertTrue(lookup("#GoalSetButton").query().isVisible());	
+		
+		clickOn("#GoalSetButton");	
+		
 		//Test that inputs set up
-		assertTrue(lookup("#SetBalance").query().isVisible());
-		assertTrue(lookup("#SetDateBy").query().isVisible());
-		assertTrue(lookup("#SetSalary").query().isVisible());
-		assertTrue(lookup("#ConfirmGoal").query().isVisible());
+		clickOn("#BudgetGoal");
+		write("1000.00");
+		clickOn("#SetDateBy");
+		write("2019/02/28");
+		clickOn("#SetSalary");
+		write("20000.00");
+		clickOn("#ConfirmGoal");			
 	}
 }
