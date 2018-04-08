@@ -1,0 +1,1414 @@
+\documentclass[12pt]{article}
+
+\usepackage{color}
+\usepackage{nth}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage[pdftex]{graphicx}
+\pagestyle{empty}
+\setcounter{secnumdepth}{2}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{titlesec}
+
+%for code%
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+%/for code%
+
+\pagestyle{empty}
+\setcounter{secnumdepth}{2}
+
+\topmargin=0cm
+\oddsidemargin=0cm
+\textheight=22.0cm
+\textwidth=16cm
+\parindent=0cm
+\parskip=0.15cm
+\topskip=0truecm
+\raggedbottom
+\abovedisplayskip=3mm
+\belowdisplayskip=3mm
+\abovedisplayshortskip=0mm
+\belowdisplayshortskip=2mm
+\normalbaselineskip=12pt
+\normalbaselines
+
+
+\setcounter{secnumdepth}{4}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+\titleformat{\subsubsection}
+{\normalfont\large\bfseries}{\thesubsubsection}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+\begin{document}
+
+\vspace*{0.5in}
+\centerline{\bf\Large Test Document}
+
+\vspace*{0.5in}
+\centerline{\bf\Large Team PB-PJ}
+
+\vspace*{0.5in}
+\centerline{\bf\Large 8 April 2018}
+
+\vspace*{1.5in}
+\begin{table}[htbp]
+\caption{Team}
+\begin{center}
+\begin{tabular}{|l | c|}
+\hline
+Name & ID Number \\
+\hline
+Matthew Ferderber & 40010150 \\
+\hline
+Mylene Haurie & 26767893 \\
+\hline
+Artem Khomich & 40027025 \\
+\hline
+Maximilien Malderle & 26562906 \\
+\hline
+Viktoriya Malinova & 27056737 \\
+\hline
+Eric Morgan & 26863426 \\
+\hline 
+Kai Nicoll-Griffith & 40012407 \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\clearpage
+
+\tableofcontents
+\clearpage
+
+\section{Introduction}
+
+{
+The test document aims to provide a thorough description of the software team's testing approach. The goal is to ensure the developed software meets the functional and non functional requirements detailed in the software project description. This is achieved by testing the various components described in the design document. A test plan is defined, outlining the team's overall testing strategy, followed by a detailed report for each conducted test. This report includes the purpose of the test, its input(s) and expected output(s).
+}
+
+\section{Test Plan}
+
+{
+
+\textbf{Unit Tests}: During the unit testing phase, the software team will verify that the individual components making up the classes of the program operate correctly. Each component will be tested independently, without any interaction with other components. In this testing phase, the software team will evaluate the functionality of the program's data access objects, controllers and models. Members of the software team will adopt a white-box approach to testing, using JUnit to evaluate the inner workings of the program.\\
+
+
+\textbf{Subsystem Level Tests}: Upon completion of unit tests, subsystem level tests will be conducted, during which the individual components of the program will be combined and tested. Once components are combined, data will be passed between them. The goal of subsystem testing is to ensure that data remains consistent during the interaction of various components. During the subsystem level testing phase, the software team will combine the components making up accounts and transactions, respectively, and verify their functionality. Some of the use cases outlined in the project description will be verified during this phase. Members of the software team will use a white-box approach for this type of testing, as they will be running their tests with JUnit.\\
+
+
+\textbf{System Level Tests}: In the system level testing phase, the software team will integrate all the components of the program and evaluate it as a whole. The goal of this phase is to ensure the program complies with its specified requirements, both functional and non functional. Consequently, the test cases at this level are built around the program's requirements. The software team will adopt a black-box approach, using the application like a regular user would, and making sure it behaves as intended. 
+
+}
+
+\subsection{Unit Test Cases}
+
+\subsubsection{Unit 1: testInsert() from AccountDaoTest}
+
+\begin{table}[H]
+\centering
+\caption{Method testInsert() in AccountDaoTest class}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\textbf{Tester name}               & \multicolumn{2}{c|}{Artem Khomich} &
+\textbf{Test Date}             & \multicolumn{2}{c|}{05.04.18} \\ \hline\hline
+
+\multicolumn{1}{|l|}{\multirow{3}{*}{\textbf{Description}}}                     & \multicolumn{5}{l|} {Pass a test account object as an argument to store in database.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Pass that same test account object as an argument again.} \\ 
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Retrieve the test account from the database and verify that it only saved once.}         \\  \hline
+\textbf{Class name}        & AccountDaoTest & \textbf{Method name} & testInsert() &\textbf{File name} & AccountDaoTest.java \\ \hline 
+\textbf{Variable name(s)}        & \multicolumn{5}{l|}{Account testAccount4}  \\ \hline 
+\textbf{Pre-condition(s)}        & \multicolumn{5}{l|}{Have an existing test account object.}\\ \hline
+\textbf{Expected output}        & \multicolumn{5}{l|}{ One account instance returns from database. } \\ \hline 
+\textbf{Actual output}        & \multicolumn{5}{l|}{ One account instance returns from database.} \\ \hline 
+\textbf{Bug found? }        & \multicolumn{5}{l|}{ No } \\ \hline 
+\textbf{Post-condition(s)}        & \multicolumn{5}{l|}{The account object will be stored in the database.}\\ \hline
+\end{tabular}
+}
+\end{table}
+
+\subsubsection{Unit 2: testGetAll() from AccountDaoTest}
+
+
+\begin{table}[H]
+\centering
+\caption{Method testGetAll() in AccountDaoTest class}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\textbf{Tester name}               & \multicolumn{2}{c|}{Artem Khomich} &
+\textbf{Test Date}             & \multicolumn{2}{c|}{05.04.18} \\ \hline\hline
+
+\multicolumn{1}{|l|}{\multirow{3}{*}{\textbf{Description}}}                     & \multicolumn{5}{l|} {Insert several test account objects in database.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Retrieve all the test accounts in a queue.} \\ 
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Verify that retrieved test accounts are equivalent to the inserted ones.}         \\  \hline
+\textbf{Class name}        & AccountDaoTest & \textbf{Method name} & testGetAll() &\textbf{File name} & AccountDaoTest.java \\ \hline 
+\textbf{Variable name(s)}        & \multicolumn{5}{l|}{Account objects testAccount1, testAccount2, testAccount3}  \\ \hline 
+\textbf{Pre-condition(s)}        & \multicolumn{5}{l|}{Have existing test account objects.}\\ \hline
+\textbf{Expected output}        & \multicolumn{5}{l|}{A queue containing all inserted test accounts} \\ \hline 
+\textbf{Actual output}        & \multicolumn{5}{l|}{A queue containing all inserted test accounts} \\ \hline 
+\textbf{Bug found? }        & \multicolumn{5}{l|}{ No } \\ \hline 
+\textbf{Post-condition(s)}        & \multicolumn{5}{l|}{The test account objects are outputted as a queue, to be used by other methods.}\\ \hline
+\end{tabular}
+}
+\end{table}
+
+\subsubsection{Unit 3: testDelete() from AccountDaoTest}
+
+\begin{table}[H]
+\centering
+\caption{Method testDelete() in AccountDaoTest class}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\textbf{Tester name}               & \multicolumn{2}{c|}{Artem Khomich} &
+\textbf{Test Date}             & \multicolumn{2}{c|}{05.04.18} \\ \hline\hline
+
+\multicolumn{1}{|l|}{\multirow{3}{*}{\textbf{Description}}}                     & \multicolumn{5}{l|} {Delete an existing test account from the database.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Retrieve all the test accounts in a queue and verify that deleted account isn't in it.} \\ 
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Attempt to delete deleted account again. Should result in failure.}         \\  \hline
+\textbf{Class name}        & AccountDaoTest & \textbf{Method name} & testDelete() &\textbf{File name} & AccountDaoTest.java \\ \hline 
+\textbf{Variable name(s)}        & \multicolumn{5}{l|}{Account testAccount2}  \\ \hline 
+\textbf{Pre-condition(s)}        & \multicolumn{5}{l|}{Have existing test account objects.}\\ \hline
+\textbf{Expected output}        & \multicolumn{5}{l|}{A queue containing all test accounts except deleted account.} \\ \hline 
+\textbf{Actual output}        & \multicolumn{5}{l|}{A queue containing all test accounts except deleted account.} \\ \hline 
+\textbf{Bug found? }        & \multicolumn{5}{l|}{ No } \\ \hline 
+\textbf{Post-condition(s)}        & \multicolumn{5}{l|}{The test account is successfully removed from the database.}\\ \hline
+\end{tabular}
+}
+\end{table}
+
+
+\subsubsection{Unit 4: testInsert() from TransactionDaoTest}
+
+\begin{table}[H]
+\centering
+\caption{Method testInsert() in TransactionDaoTest class}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\textbf{Tester name}               & \multicolumn{2}{c|}{Matthew Ferderber} &
+\textbf{Test Date}             & \multicolumn{2}{c|}{05.04.18} \\ \hline\hline
+
+\multicolumn{1}{|l|}{\multirow{3}{*}{\textbf{Description}}}                     & \multicolumn{5}{l|} {Pass a test transaction object as an argument to store in database.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Pass that same test transaction object as an argument again.} \\ 
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Retrieve the test transaction from the database and verify that it only saved once.}         \\  \hline
+\textbf{Class name}        & TransactionDaoTest & \textbf{Method name} & testInsert() &\textbf{File name} & TransactionDaoTest.java \\ \hline 
+\textbf{Variable name(s)}        & \multicolumn{5}{l|}{Transaction testTransaction2}  \\ \hline 
+\textbf{Pre-condition(s)}        & \multicolumn{5}{l|}{Have an existing test transaction object.}\\ \hline
+\textbf{Expected output}        & \multicolumn{5}{l|}{ One transaction instance returns from database. } \\ \hline 
+\textbf{Actual output}        & \multicolumn{5}{l|}{ One transaction instance returns from database.} \\ \hline 
+\textbf{Bug found? }        & \multicolumn{5}{l|}{ No } \\ \hline 
+\textbf{Post-condition(s)}        & \multicolumn{5}{l|}{The transaction object will be stored in the database.}\\ \hline
+\end{tabular}
+}
+\end{table}
+
+
+
+
+\subsubsection{Unit 5: testGetAll() from TransactionDaoTest}
+
+\begin{table}[H]
+\centering
+\caption{Method testGetAll() in TransactionDaoTest class}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\textbf{Tester name}               & \multicolumn{2}{c|}{Matthew Ferderber} &
+\textbf{Test Date}             & \multicolumn{2}{c|}{05.04.18} \\ \hline\hline
+
+\multicolumn{1}{|l|}{\multirow{3}{*}{\textbf{Description}}}                     & \multicolumn{5}{l|} {Insert several test transaction objects in database.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Retrieve all the test transactions in a queue.} \\ 
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Verify that retrieved test transactions are equivalent to the inserted ones.}         \\  \hline
+\textbf{Class name}        & TransactionDaoTest & \textbf{Method name} & testGetAll() &\textbf{File name} & TransactionDaoTest.java \\ \hline 
+\textbf{Variable name(s)}        & \multicolumn{5}{l|}{Transaction objects testTransaction2, testTransaction3, testTransaction4, testTransaction5}  \\ \hline 
+\textbf{Pre-condition(s)}        & \multicolumn{5}{l|}{Have existing test transaction objects.}\\ \hline
+\textbf{Expected output}        & \multicolumn{5}{l|}{A queue containing all inserted test transactions.} \\ \hline 
+\textbf{Actual output}        & \multicolumn{5}{l|}{A queue containing all inserted test transactions.} \\ \hline 
+\textbf{Bug found? }        & \multicolumn{5}{l|}{ No } \\ \hline 
+\textbf{Post-condition(s)}        & \multicolumn{5}{l|}{The test transaction objects are outputted as a queue, to be used by other methods.}\\ \hline
+\end{tabular}
+}
+\end{table}
+
+\subsubsection{Unit 6: testDelete() from TransactionDaoTest}
+
+\begin{table}[H]
+\centering
+\caption{Method testDelete() in TransactionDaoTest class}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\textbf{Tester name}               & \multicolumn{2}{c|}{Matthew Ferderber} &
+\textbf{Test Date}             & \multicolumn{2}{c|}{05.04.18} \\ \hline\hline
+
+\multicolumn{1}{|l|}{\multirow{3}{*}{\textbf{Description}}}                     & \multicolumn{5}{l|} {Delete an existing test transaction from the database.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Retrieve all the test transactions in a queue and verify that deleted transaction isn't in it.} \\ 
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Attempt to delete deleted transaction again. Should result in failure.}         \\  \hline
+\textbf{Class name}        & TransactionDaoTest & \textbf{Method name} & testDelete() &\textbf{File name} & TransactionDaoTest.java \\ \hline 
+\textbf{Variable name(s)}        & \multicolumn{5}{l|}{Transaction testTransaction2}  \\ \hline 
+\textbf{Pre-condition(s)}        & \multicolumn{5}{l|}{Have existing test transaction objects.}\\ \hline
+\textbf{Expected output}        & \multicolumn{5}{l|}{A queue containing all test transactions except deleted account.} \\ \hline 
+\textbf{Actual output}        & \multicolumn{5}{l|}{A queue containing all test transactions except deleted account.} \\ \hline 
+\textbf{Bug found? }        & \multicolumn{5}{l|}{ No } \\ \hline 
+\textbf{Post-condition(s)}        & \multicolumn{5}{l|}{The test transaction is successfully removed from the database.}\\ \hline
+\end{tabular}
+}
+\end{table}
+
+\subsubsection{Unit 7: testInsert() from TypeDaoTest}
+
+\begin{table}[H]
+\centering
+\caption{Method testInsert() in TypeDaoTest class}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\textbf{Tester name}               & \multicolumn{2}{c|}{Mylene Haurie} &
+\textbf{Test Date}             & \multicolumn{2}{c|}{05.04.18} \\ \hline\hline
+
+\multicolumn{1}{|l|}{\multirow{3}{*}{\textbf{Description}}}                     & \multicolumn{5}{l|} {Insert a test transaction type into the database.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Attempt to insert same test transaction type again,} \\ 
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{and verify that duplicate doesn't get added to database.}         \\  \hline
+\textbf{Class name}        & TypeDaoTest & \textbf{Method name} & testInsert() &\textbf{File name} & TypeDaoTest.java \\ \hline 
+\textbf{Variable name(s)}        & \multicolumn{5}{l|}{Type objects test1, test2, test4}  \\ \hline 
+\textbf{Pre-condition(s)}        & \multicolumn{5}{l|}{Have existing test transaction type objects.}\\ \hline
+\textbf{Expected output}        & \multicolumn{5}{l|}{None. Method executes without error message.} \\ \hline 
+\textbf{Actual output}        & \multicolumn{5}{l|}{None. Method executes without error message.} \\ \hline 
+\textbf{Bug found? }        & \multicolumn{5}{l|}{ No } \\ \hline 
+\textbf{Post-condition(s)}        & \multicolumn{5}{l|}{The test transaction type is successfully inserted into the database.}\\ \hline
+\end{tabular}
+}
+\end{table}
+
+\subsubsection{Unit 8: testGetForeign() from TypeDaoTest}
+
+\begin{table}[H]
+\centering
+\caption{Method testGetForeign() in TypeDaoTest class}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\textbf{Tester name}               & \multicolumn{2}{c|}{Mylene Haurie} &
+\textbf{Test Date}             & \multicolumn{2}{c|}{05.04.18} \\ \hline\hline
+
+\multicolumn{1}{|l|}{\multirow{2}{*}{\textbf{Description}}}                     & \multicolumn{5}{l|} {Insert a test transaction with a type that already exists into the database.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Ensure that added test transaction is added to existing type's foreign collection.} \\   \hline
+\textbf{Class name}        & TypeDaoTest & \textbf{Method name} & testGetForeign() &\textbf{File name} & TypeDaoTest.java \\ \hline 
+\textbf{Variable name(s)}        & \multicolumn{5}{l|}{Type test6}  \\ \hline 
+\textbf{Pre-condition(s)}        & \multicolumn{5}{l|}{Have existing test transaction type objects.}\\ \hline
+\textbf{Expected output}        & \multicolumn{5}{l|}{None. Method executes without error message.} \\ \hline 
+\textbf{Actual output}        & \multicolumn{5}{l|}{None. Method executes without error message.} \\ \hline 
+\textbf{Bug found? }        & \multicolumn{5}{l|}{ No } \\ \hline 
+\textbf{Post-condition(s)}        & \multicolumn{5}{l|}{The inserted test transaction's type is successfully inserted into the appropriate foreign collection.}\\ \hline
+\end{tabular}
+}
+\end{table}
+
+\subsubsection{Unit 9: testDelete() from TypeDaoTest}
+
+\begin{table}[H]
+\centering
+\caption{Method testDelete() in TypeDaoTest class}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\textbf{Tester name}               & \multicolumn{2}{c|}{Mylene Haurie} &
+\textbf{Test Date}             & \multicolumn{2}{c|}{05.04.18} \\ \hline\hline
+
+\multicolumn{1}{|l|}{\multirow{2}{*}{\textbf{Description}}}                     & \multicolumn{5}{l|} {Delete a test transaction type from the database.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Try and delete same test transaction type from database, should result in error.} \\   \hline
+\textbf{Class name}        & TypeDaoTest & \textbf{Method name} & testDelete() &\textbf{File name} & TypeDaoTest.java \\ \hline 
+\textbf{Variable name(s)}        & \multicolumn{5}{l|}{Type test1}  \\ \hline 
+\textbf{Pre-condition(s)}        & \multicolumn{5}{l|}{Have existing test transaction type objects.}\\ \hline
+\textbf{Expected output}        & \multicolumn{5}{l|}{None. Method executes without error message.} \\ \hline 
+\textbf{Actual output}        & \multicolumn{5}{l|}{None. Method executes without error message.} \\ \hline 
+\textbf{Bug found? }        & \multicolumn{5}{l|}{ No } \\ \hline 
+\textbf{Post-condition(s)}        & \multicolumn{5}{l|}{The test transaction type is successfully deleted from the database.}\\ \hline
+\end{tabular}
+}
+\end{table}
+
+
+\subsubsection{Unit 10: testConstructor() from AccountTest}
+
+\begin{table}[H]
+\centering
+\caption{Method testConstructor() in AccountTest class}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\textbf{Tester name}               & \multicolumn{2}{c|}{Artem Khomich} &
+\textbf{Test Date}             & \multicolumn{2}{c|}{05.04.18} \\ \hline\hline
+
+\multicolumn{1}{|l|}{\multirow{3}{*}{\textbf{Description}}}                     & \multicolumn{5}{l|} {Declare variables name, number, type, and balance.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Pass variables as arguments to test constructor.} \\ 
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Verify that constructed account's attributes match those that were passed as arguments.}         \\  \hline
+\textbf{Class name}        & AccountTest & \textbf{Method name} & testConstructor() &\textbf{File name} & AccountTest.java \\ \hline 
+\textbf{Variable name(s)}        & \multicolumn{5}{l|}{String name, long number, AccountType type, double balance}  \\ \hline 
+\textbf{Pre-condition(s)}        & \multicolumn{5}{l|}{None.}\\ \hline
+\textbf{Expected output}        & \multicolumn{5}{l|}{ None. Method executes without error message.} \\ \hline 
+\textbf{Actual output}        & \multicolumn{5}{l|}{ None. Method executes without error message.} \\ \hline 
+\textbf{Bug found? }        & \multicolumn{5}{l|}{ No } \\ \hline 
+\textbf{Post-condition(s)}        & \multicolumn{5}{l|}{The account object will be constructed.}\\ \hline
+\end{tabular}
+}
+\end{table}
+\clearpage
+
+\subsubsection{Unit 11: testPartialConstructor() and testFullConstructor() from TransactionTest}
+
+\textbf{Test Case 1:} construct a transaction object without a transaction ID. \newline\newline
+\textbf{Test Case 2:} construct a transaction object with a defined  transaction ID. \newline
+
+\begin{table}[H]
+\centering
+\caption{Case 1: Method testPartialConstructor() in TransactionTest class}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\textbf{Tester name}               & \multicolumn{2}{c|}{Matthew Ferderber} &
+\textbf{Test Date}             & \multicolumn{2}{c|}{05.04.18} \\ \hline\hline
+
+\multicolumn{1}{|l|}{\multirow{3}{*}{\textbf{Description}}}                     & \multicolumn{5}{l|} {Declare variables name, type, amount, description and date.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Pass variables as arguments to test constructor.} \\ 
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Verify that constructed transaction's attributes match those that were passed as arguments.}         \\  \hline
+\textbf{Class name}        & TransactionTest & \textbf{Method name} & testPartialConstructor() &\textbf{File name} & TransactionTest.java \\ \hline 
+\textbf{Variable name(s)}        & \multicolumn{5}{l|}{String name, Type type, double amount, String description, Date date}  \\ \hline 
+\textbf{Pre-condition(s)}        & \multicolumn{5}{l|}{None.}\\ \hline
+\textbf{Expected output}        & \multicolumn{5}{l|}{ None. Method executes without error message.} \\ \hline 
+\textbf{Actual output}        & \multicolumn{5}{l|}{ None. Method executes without error message.} \\ \hline 
+\textbf{Bug found? }        & \multicolumn{5}{l|}{ No } \\ \hline 
+\textbf{Post-condition(s)}        & \multicolumn{5}{l|}{The transaction object will be constructed with a default ID = 0.}\\ \hline
+\end{tabular}
+}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Case 2: Method testFullConstructor() in TransactionTest class}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\textbf{Tester name}               & \multicolumn{2}{c|}{Matthew Ferderber} &
+\textbf{Test Date}             & \multicolumn{2}{c|}{05.04.18} \\ \hline\hline
+
+\multicolumn{1}{|l|}{\multirow{3}{*}{\textbf{Description}}}                     & \multicolumn{5}{l|} {Declare variables id, name, type, amount, description and date.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Pass variables as arguments to test constructor.} \\ 
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Verify that constructed transaction's attributes match those that were passed as arguments.}         \\  \hline
+\textbf{Class name}        & TransactionTest & \textbf{Method name} & testFullConstructor() &\textbf{File name} & TransactionTest.java \\ \hline 
+\textbf{Variable name(s)}        & \multicolumn{5}{l|}{int id, String name, Type type, double amount, String description, Date date}  \\ \hline 
+\textbf{Pre-condition(s)}        & \multicolumn{5}{l|}{None.}\\ \hline
+\textbf{Expected output}        & \multicolumn{5}{l|}{ None. Method executes without error message.} \\ \hline 
+\textbf{Actual output}        & \multicolumn{5}{l|}{ None. Method executes without error message.} \\ \hline 
+\textbf{Bug found? }        & \multicolumn{5}{l|}{ No } \\ \hline 
+\textbf{Post-condition(s)}        & \multicolumn{5}{l|}{The transaction object will be constructed.}\\ \hline
+\end{tabular}
+}
+\end{table}
+
+\subsubsection{Unit 12: testConstructor() from TypeTest}
+
+\begin{table}[H]
+\centering
+\caption{Method testConstructor() in TypeTest class}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\textbf{Tester name}               & \multicolumn{2}{c|}{Mylene Haurie} &
+\textbf{Test Date}             & \multicolumn{2}{c|}{05.04.18} \\ \hline\hline
+
+\multicolumn{1}{|l|}{\multirow{3}{*}{\textbf{Description}}}                     & \multicolumn{5}{l|} {Declare a string variable and pass it as an argument to the Type constructor.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Verify that the string matches the constructed Type's ID.} \\ 
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Verify that constructor did not associate new type to any existing transactions.}         \\  \hline
+\textbf{Class name}        & TypeTest & \textbf{Method name} & testConstructor() &\textbf{File name} & TypeTest.java \\ \hline 
+\textbf{Variable name(s)}        & \multicolumn{5}{l|}{String id, Type t}  \\ \hline 
+\textbf{Pre-condition(s)}        & \multicolumn{5}{l|}{None.}\\ \hline
+\textbf{Expected output}        & \multicolumn{5}{l|}{ None. Method executes without error message.} \\ \hline 
+\textbf{Actual output}        & \multicolumn{5}{l|}{ None. Method executes without error message.} \\ \hline 
+\textbf{Bug found? }        & \multicolumn{5}{l|}{ No } \\ \hline 
+\textbf{Post-condition(s)}        & \multicolumn{5}{l|}{The transaction type object will be constructed.}\\ \hline
+\end{tabular}
+}
+\end{table}
+
+\subsubsection{Unit 13: testSetAndGet() from TypeTest}
+\begin{table}[H]
+\centering
+\caption{Method testSetAndGet() in TypeTest class}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\textbf{Tester name}               & \multicolumn{2}{c|}{Mylene Haurie} &
+\textbf{Test Date}             & \multicolumn{2}{c|}{05.04.18} \\ \hline\hline
+
+\multicolumn{1}{|l|}{\multirow{3}{*}{\textbf{Description}}}                     & \multicolumn{5}{l|} {Declare a Type object with a dummy argument for its ID.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Set the Type object's ID to another argument.} \\ 
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Verify that Type object's new ID is equal to the one it was just set to.}         \\  \hline
+\textbf{Class name}        & TypeTest & \textbf{Method name} & testSetAndGet() &\textbf{File name} & TypeTest.java \\ \hline 
+\textbf{Variable name(s)}        & \multicolumn{5}{l|}{String newId, Type t}  \\ \hline 
+\textbf{Pre-condition(s)}        & \multicolumn{5}{l|}{None.}\\ \hline
+\textbf{Expected output}        & \multicolumn{5}{l|}{ None. Method executes without error message.} \\ \hline 
+\textbf{Actual output}        & \multicolumn{5}{l|}{ None. Method executes without error message.} \\ \hline 
+\textbf{Bug found? }        & \multicolumn{5}{l|}{ No } \\ \hline 
+\textbf{Post-condition(s)}        & \multicolumn{5}{l|}{The transaction type object will be modified.}\\ \hline
+\end{tabular}
+}
+\end{table}
+\clearpage
+
+\subsection{Subsystem Level Test Cases}
+
+Upon completion of the unit tests, the software team will verify that the program's subsystems behave properly. The subsystems to be verified are the Transaction, Account, and Statistics subsystems. The software team must ensure that the components making up each subsystem interact properly with one another.
+
+\subsubsection{Transaction Subsystem}
+
+\textbf{Test Case:} Click on a transaction from list of transactions.
+
+\begin{table}[H]
+\centering
+\caption{View a single transaction from transaction list}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\textbf{Tester name}               & \multicolumn{2}{c|}{Matthew Ferderber} &
+\textbf{Test Date}             & \multicolumn{2}{c|}{05.04.18} \\ \hline\hline
+
+\multicolumn{1}{|l|}{\multirow{3}{*}{\textbf{Description}}}                     & \multicolumn{5}{l|} {User clicks on 'View Transaction History' button.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Click on any transaction from transaction list.} \\ 
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Details of clicked transaction display.}         \\  \hline
+\textbf{Class name}        & TransactionListControllerTest & \textbf{Method name} & testTransItemClick() &\textbf{File name} & TransactionListControllerTest.java \\ \hline 
+\textbf{Variable name(s)}        & \multicolumn{5}{l|}{n/a}  \\ \hline 
+\textbf{Pre-condition(s)}        & \multicolumn{5}{l|}{Transactions already exist in the database.}\\ \hline
+\textbf{Expected output}        & \multicolumn{5}{l|}{Transaction detail page.} \\ \hline 
+\textbf{Actual output}        & \multicolumn{5}{l|}{Transaction detail page.} \\ \hline 
+\textbf{Bug found? }        & \multicolumn{5}{l|}{ No } \\ \hline 
+\textbf{Post-condition(s)}        & \multicolumn{5}{l|}{The user is viewing the details of a single transaction.}\\ \hline
+\end{tabular}
+}
+\end{table}
+
+
+\textbf{Test Case:} Able to scroll through all transactions
+\begin{table}[H]
+\centering
+\caption{Scroll down entire transaction list}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\textbf{Tester name}               & \multicolumn{2}{c|}{Mylene Haurie} &
+\textbf{Test Date}             & \multicolumn{2}{c|}{05.04.18} \\ \hline\hline
+
+\multicolumn{1}{|l|}{\multirow{2}{*}{\textbf{Description}}}                     & \multicolumn{5}{l|} {Click on 'View Transaction History' button.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Scroll down to bottom of transaction list.} \\   \hline
+\textbf{Class name}        & TransactionListControllerTest & \textbf{Method name} & testScrollToBottom() &\textbf{File name} & TransactionListControllerTest.java \\ \hline 
+\textbf{Variable name(s)}        & \multicolumn{5}{l|}{n/a}  \\ \hline 
+\textbf{Pre-condition(s)}        & \multicolumn{5}{l|}{Transactions already exist in the database.}\\ \hline
+\textbf{Expected output}        & \multicolumn{5}{l|}{List of all transactions.} \\ \hline 
+\textbf{Actual output}        & \multicolumn{5}{l|}{List of all transactions.} \\ \hline 
+\textbf{Bug found? }        & \multicolumn{5}{l|}{ No } \\ \hline 
+\textbf{Post-condition(s)}        & \multicolumn{5}{l|}{The user is able to scroll down to view all transactions.}\\ \hline
+\end{tabular}
+}
+\end{table}
+
+\textbf{Test Case:} Click on 'View Transaction History'
+
+\begin{table}[H]
+\centering
+\caption{View a list of all transactions}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\textbf{Tester name}               & \multicolumn{2}{c|}{Matthew Ferderber} &
+\textbf{Test Date}             & \multicolumn{2}{c|}{05.04.18} \\ \hline\hline
+
+\multicolumn{1}{|l|}{\multirow{2}{*}{\textbf{Description}}}                     & \multicolumn{5}{l|} {Click on 'View Transaction History'.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{List of all transactions is displayed.} \\   \hline
+\textbf{Class name}        & TransactionListControllerTest & \textbf{Method name} & testTransactionListClick() &\textbf{File name} & TransactionListControllerTest.java \\ \hline 
+\textbf{Variable name(s)}        & \multicolumn{5}{l|}{n/a}  \\ \hline 
+\textbf{Pre-condition(s)}        & \multicolumn{5}{l|}{Transactions already exist in the database.}\\ \hline
+\textbf{Expected output}        & \multicolumn{5}{l|}{List of all transactions.} \\ \hline 
+\textbf{Actual output}        & \multicolumn{5}{l|}{List of all transactions.} \\ \hline 
+\textbf{Bug found? }        & \multicolumn{5}{l|}{ No } \\ \hline 
+\textbf{Post-condition(s)}        & \multicolumn{5}{l|}{The user is viewing the list of all transactions.}\\ \hline
+\end{tabular}
+}
+\end{table}
+\clearpage
+
+\textbf{Test Case:} Adding a transaction
+
+\begin{table}[H]
+\centering
+\caption{Add a transaction}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\textbf{Tester name}               & \multicolumn{2}{c|}{Matthew Ferderber} &
+\textbf{Test Date}             & \multicolumn{2}{c|}{05.04.18} \\ \hline\hline
+
+\multicolumn{1}{|l|}{\multirow{7}{*}{\textbf{Description}}}                     & \multicolumn{5}{l|} {Click on name field and type in a transaction name.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Click on type field and type in a transaction type.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Click on amount field and type in a monetary amount.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Click on description field and type in a description.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Click on add transaction button.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Create a list of transactions.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Verify that added transaction is in list and return true.} \\\hline
+\textbf{Class name}        & TransactionAddControllerTest & \textbf{Method name} & testAddTransaction() &\textbf{File name} & TransactionAddControllerTest.java \\ \hline 
+\textbf{Variable name(s)}        & \multicolumn{5}{l|}{TransactionDao dao, TextFields field, typeField, amountField, descriptionField}  \\ \hline 
+\textbf{Pre-condition(s)}        & \multicolumn{5}{l|}{None}\\ \hline
+\textbf{Expected output}        & \multicolumn{5}{l|}{Method returns true.} \\ \hline 
+\textbf{Actual output}        & \multicolumn{5}{l|}{Method returns true.} \\ \hline 
+\textbf{Bug found? }        & \multicolumn{5}{l|}{ No } \\ \hline 
+\textbf{Post-condition(s)}        & \multicolumn{5}{l|}{The user successfully adds a transaction to the database.}\\ \hline
+\end{tabular}
+}
+\end{table}
+
+
+\textbf{Test Case:} Inputting an invalid amount in the amount field when adding a transaction
+
+\begin{table}[H]
+\centering
+\caption{Input an invalid field}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\textbf{Tester name}               & \multicolumn{2}{c|}{Matthew Ferderber} &
+\textbf{Test Date}             & \multicolumn{2}{c|}{05.04.18} \\ \hline\hline
+
+\multicolumn{1}{|l|}{\multirow{7}{*}{\textbf{Description}}}                     & \multicolumn{5}{l|} {Click on name field and type in a transaction name.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Click on type field and type in a transaction type.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Click on amount field and type in an invalid amount.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Click on description field and type in a description.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Click on add transaction button.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Create a list of transactions.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Verify that added transaction is not in list and return true.} \\\hline
+\textbf{Class name}        & TransactionAddControllerTest & \textbf{Method name} & testInvalidAmount() &\textbf{File name} & TransactionAddControllerTest.java \\ \hline 
+\textbf{Variable name(s)}        & \multicolumn{5}{l|}{TransactionDao dao, TextFields field, typeField, amountField, descriptionField}  \\ \hline 
+\textbf{Pre-condition(s)}        & \multicolumn{5}{l|}{None}\\ \hline
+\textbf{Expected output}        & \multicolumn{5}{l|}{Method returns true.} \\ \hline 
+\textbf{Actual output}        & \multicolumn{5}{l|}{Method returns true.} \\ \hline 
+\textbf{Bug found? }        & \multicolumn{5}{l|}{ No } \\ \hline 
+\textbf{Post-condition(s)}        & \multicolumn{5}{l|}{The user is not able to add a transaction with an invalid amount in the database.}\\ \hline
+\end{tabular}
+}
+\end{table}
+
+\textbf{Test Case:} Trying to add an empty transaction to the database
+
+\begin{table}[H]
+\centering
+\caption{Add an empty transaction}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\textbf{Tester name}               & \multicolumn{2}{c|}{Matthew Ferderber} &
+\textbf{Test Date}             & \multicolumn{2}{c|}{05.04.18} \\ \hline\hline
+
+\multicolumn{1}{|l|}{\multirow{5}{*}{\textbf{Description}}}                     & \multicolumn{5}{l|} {Create a list of existing transactions.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Count the number of transactions in list and store in an integer.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Click on 'Add Transaction' button without entering any fields.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Compare value of count integer and number of transactions in database.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{If values are the samem return true.} \\\hline
+\textbf{Class name}        & TransactionAddControllerTest & \textbf{Method name} & testEmpty() &\textbf{File name} & TransactionAddControllerTest.java \\ \hline 
+\textbf{Variable name(s)}        & \multicolumn{5}{l|}{TransactionDao dao, List list, int count}  \\ \hline 
+\textbf{Pre-condition(s)}        & \multicolumn{5}{l|}{None}\\ \hline
+\textbf{Expected output}        & \multicolumn{5}{l|}{Method returns true.} \\ \hline 
+\textbf{Actual output}        & \multicolumn{5}{l|}{Method returns true.} \\ \hline 
+\textbf{Bug found? }        & \multicolumn{5}{l|}{ No } \\ \hline 
+\textbf{Post-condition(s)}        & \multicolumn{5}{l|}{The user is not able to add an empty transaction to the database.}\\ \hline
+\end{tabular}
+}
+\end{table}
+
+%Do here Tem%
+\subsubsection{Account Subsystem}
+
+\textbf{Test Case:} Click on a account from list of account. \newline\newline
+
+\begin{table}[H]
+\centering
+\caption{View a single account from account list}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\textbf{Tester name}               & \multicolumn{2}{c|}{Artem Khomich} &
+\textbf{Test Date}             & \multicolumn{2}{c|}{05.04.18} \\ \hline\hline
+
+\multicolumn{1}{|l|}{\multirow{3}{*}{\textbf{Description}}}                     & \multicolumn{5}{l|} {User clicks on 'View Account' button.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Click on any account from account list.} \\ 
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Details of clicked account display.}         \\  \hline
+\textbf{Class name}        & AccountListControllerTest & \textbf{Method name} & testAccountItemClick() &\textbf{File name} & AccountListControllerTest.java \\ \hline 
+\textbf{Variable name(s)}        & \multicolumn{5}{l|}{n/a}  \\ \hline 
+\textbf{Pre-condition(s)}        & \multicolumn{5}{l|}{Accounts already exist in the database.}\\ \hline
+\textbf{Expected output}        & \multicolumn{5}{l|}{Account detail page.} \\ \hline 
+\textbf{Actual output}        & \multicolumn{5}{l|}{Account detail page.} \\ \hline 
+\textbf{Bug found? }        & \multicolumn{5}{l|}{ No } \\ \hline 
+\textbf{Post-condition(s)}        & \multicolumn{5}{l|}{The user is viewing the details of a single account.}\\ \hline
+\end{tabular}
+}
+\end{table}
+
+\textbf{Test Case:} Able to scroll through all accounts
+\begin{table}[H]
+\centering
+\caption{Scroll down entire account list}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\textbf{Tester name}               & \multicolumn{2}{c|}{Artem Khomich} &
+\textbf{Test Date}             & \multicolumn{2}{c|}{05.04.18} \\ \hline\hline
+
+\multicolumn{1}{|l|}{\multirow{2}{*}{\textbf{Description}}}                     & \multicolumn{5}{l|} {Click on 'View Account History' button.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Scroll down to bottom of account list.} \\   \hline
+\textbf{Class name}        & AccountListControllerTest & \textbf{Method name} & testScrollToBottom() &\textbf{File name} & AccountListControllerTest.java \\ \hline 
+\textbf{Variable name(s)}        & \multicolumn{5}{l|}{n/a}  \\ \hline 
+\textbf{Pre-condition(s)}        & \multicolumn{5}{l|}{Accounts already exist in the database.}\\ \hline
+\textbf{Expected output}        & \multicolumn{5}{l|}{List of all accounts.} \\ \hline 
+\textbf{Actual output}        & \multicolumn{5}{l|}{List of all accounts.} \\ \hline 
+\textbf{Bug found? }        & \multicolumn{5}{l|}{ No } \\ \hline 
+\textbf{Post-condition(s)}        & \multicolumn{5}{l|}{The user is able to scroll down to view all accounts.}\\ \hline
+\end{tabular}
+}
+\end{table}
+
+\textbf{Test Case:} Click on 'View Account History'
+
+\begin{table}[H]
+\centering
+\caption{View a list of all accounts}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\textbf{Tester name}               & \multicolumn{2}{c|}{Artem Khomich} &
+\textbf{Test Date}             & \multicolumn{2}{c|}{05.04.18} \\ \hline\hline
+
+\multicolumn{1}{|l|}{\multirow{2}{*}{\textbf{Description}}}                     & \multicolumn{5}{l|} {Click on 'View Account History'.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{List of all accounts is displayed.} \\   \hline
+\textbf{Class name}        & AccountListControllerTest & \textbf{Method name} & testAccountListClick() &\textbf{File name} & AccountListControllerTest.java \\ \hline 
+\textbf{Variable name(s)}        & \multicolumn{5}{l|}{n/a}  \\ \hline 
+\textbf{Pre-condition(s)}        & \multicolumn{5}{l|}{Accounts already exist in the database.}\\ \hline
+\textbf{Expected output}        & \multicolumn{5}{l|}{List of all accounts.} \\ \hline 
+\textbf{Actual output}        & \multicolumn{5}{l|}{List of all accounts.} \\ \hline 
+\textbf{Bug found? }        & \multicolumn{5}{l|}{ No } \\ \hline 
+\textbf{Post-condition(s)}        & \multicolumn{5}{l|}{The user is viewing the list of all transactions.}\\ \hline
+\end{tabular}
+}
+\end{table}
+\clearpage
+
+\subsubsection{Statistics Subsystem}
+
+\textbf{Test Case:} Click on 'Statistics'
+
+\begin{table}[H]
+\centering
+\caption{View an overview of expense statistics}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\textbf{Tester name}               & \multicolumn{2}{c|}{Maximilien Malderle} &
+\textbf{Test Date}             & \multicolumn{2}{c|}{05.04.18} \\ \hline\hline
+
+\multicolumn{1}{|l|}{\multirow{2}{*}{\textbf{Description}}}                     & \multicolumn{5}{l|} {Click on 'Statistics'.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{View of statistics is displayed.} \\  \hline
+\textbf{Class name}        & StatisticsTest & \textbf{Method name} & testStatisticsClick() &\textbf{File name} & StatisticsTest.java \\ \hline 
+\textbf{Variable name(s)}        & \multicolumn{5}{l|}{n/a}  \\ \hline 
+\textbf{Pre-condition(s)}        & \multicolumn{5}{l|}{None}\\ \hline
+\textbf{Expected output}        & \multicolumn{5}{l|}{View of statistics menu.} \\ \hline 
+\textbf{Actual output}        & \multicolumn{5}{l|}{View of statistics menu.} \\ \hline 
+\textbf{Bug found? }        & \multicolumn{5}{l|}{ No } \\ \hline 
+\textbf{Post-condition(s)}        & \multicolumn{5}{l|}{The user is viewing the statistics menu.}\\ \hline
+\end{tabular}
+}
+\end{table}
+
+\textbf{Test Case:} Viewing statistics for a specific transaction type
+
+\begin{table}[H]
+\centering
+\caption{View an overview of expense statistics for a particular type of transaction}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\textbf{Tester name}               & \multicolumn{2}{c|}{Maximilien Malderle} &
+\textbf{Test Date}             & \multicolumn{2}{c|}{05.04.18} \\ \hline\hline
+
+\multicolumn{1}{|l|}{\multirow{5}{*}{\textbf{Description}}}                     & \multicolumn{5}{l|} {Click on 'Statistics'.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{View of statistics is displayed.} \\ 
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Select a type from dropdown menu.} \\ 
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Click on 'Submit'.} \\ 
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{View of statistics for a particular type is displayed.} \\ 
+\hline
+\textbf{Class name}        & StatisticsTest & \textbf{Method name} & testStatisticsTypes() &\textbf{File name} & StatisticsTest.java \\ \hline 
+\textbf{Variable name(s)}        & \multicolumn{5}{l|}{n/a}  \\ \hline 
+\textbf{Pre-condition(s)}        & \multicolumn{5}{l|}{Have some existing transactions}\\ \hline
+\textbf{Expected output}        & \multicolumn{5}{l|}{View of statistics for a specific transaction type.} \\ \hline 
+\textbf{Actual output}        & \multicolumn{5}{l|}{View of statistics for a specific transaction type.} \\ \hline 
+\textbf{Bug found? }        & \multicolumn{5}{l|}{ No } \\ \hline 
+\textbf{Post-condition(s)}        & \multicolumn{5}{l|}{The user is viewing the statistics for a particular type of transaction.}\\ \hline
+\end{tabular}
+}
+\end{table}
+
+\textbf{Test Case:} Viewing statistics for all transactions
+
+\begin{table}[H]
+\centering
+\caption{View an overview of expense statistics for all transactions}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\textbf{Tester name}               & \multicolumn{2}{c|}{Maximilien Malderle} &
+\textbf{Test Date}             & \multicolumn{2}{c|}{05.04.18} \\ \hline\hline
+
+\multicolumn{1}{|l|}{\multirow{5}{*}{\textbf{Description}}}                     & \multicolumn{5}{l|} {Click on 'Statistics'.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{View of statistics is displayed.} \\ 
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Type 'All' in range text field.} \\ 
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Click on 'Submit'.} \\ 
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{View of statistics for all transactions is displayed.} \\ 
+\hline
+\textbf{Class name}        & StatisticsTest & \textbf{Method name} & testStatisticsAllClick() &\textbf{File name} & StatisticsTest.java \\ \hline 
+\textbf{Variable name(s)}        & \multicolumn{5}{l|}{n/a}  \\ \hline 
+\textbf{Pre-condition(s)}        & \multicolumn{5}{l|}{Have some existing transactions}\\ \hline
+\textbf{Expected output}        & \multicolumn{5}{l|}{View of statistics for all transactions.} \\ \hline 
+\textbf{Actual output}        & \multicolumn{5}{l|}{View of statistics for all transactions.} \\ \hline 
+\textbf{Bug found? }        & \multicolumn{5}{l|}{ No } \\ \hline 
+\textbf{Post-condition(s)}        & \multicolumn{5}{l|}{The user is viewing the statistics for all transactions.}\\ \hline
+\end{tabular}
+}
+\end{table}
+
+\textbf{Test Case:} Viewing statistics for a particular year
+
+\begin{table}[H]
+\centering
+\caption{View an overview of expense statistics for a particular year}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\textbf{Tester name}               & \multicolumn{2}{c|}{Maximilien Malderle} &
+\textbf{Test Date}             & \multicolumn{2}{c|}{05.04.18} \\ \hline\hline
+
+\multicolumn{1}{|l|}{\multirow{5}{*}{\textbf{Description}}}                     & \multicolumn{5}{l|} {Click on 'Statistics'.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{View of statistics is displayed.} \\ 
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Type '2017' in range text field.} \\ 
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Click on 'Submit'.} \\ 
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{View of statistics for all transactions from 2017 is displayed.} \\ 
+\hline
+\textbf{Class name}        & StatisticsTest & \textbf{Method name} & testStatisticsYearClick() &\textbf{File name} & StatisticsTest.java \\ \hline 
+\textbf{Variable name(s)}        & \multicolumn{5}{l|}{n/a}  \\ \hline 
+\textbf{Pre-condition(s)}        & \multicolumn{5}{l|}{Have some existing transactions}\\ \hline
+\textbf{Expected output}        & \multicolumn{5}{l|}{View of statistics for all transactions from 2017.} \\ \hline 
+\textbf{Actual output}        & \multicolumn{5}{l|}{View of statistics for all transactions from 2017.} \\ \hline 
+\textbf{Bug found? }        & \multicolumn{5}{l|}{ No } \\ \hline 
+\textbf{Post-condition(s)}        & \multicolumn{5}{l|}{The user is viewing the statistics for all transactions from the year 2017.}\\ \hline
+\end{tabular}
+}
+\end{table}
+
+\textbf{Test Case:} Viewing statistics for a particular month
+
+\begin{table}[H]
+\centering
+\caption{View an overview of expense statistics for a particular month}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\textbf{Tester name}               & \multicolumn{2}{c|}{Maximilien Malderle} &
+\textbf{Test Date}             & \multicolumn{2}{c|}{05.04.18} \\ \hline\hline
+
+\multicolumn{1}{|l|}{\multirow{5}{*}{\textbf{Description}}}                     & \multicolumn{5}{l|} {Click on 'Statistics'.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{View of statistics is displayed.} \\ 
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Type 'March 2017' in range text field.} \\ 
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Click on 'Submit'.} \\ 
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{View of statistics for all transactions from March 2017 is displayed.} \\ 
+\hline
+\textbf{Class name}        & StatisticsTest & \textbf{Method name} & testStatisticsMonthClick() &\textbf{File name} & StatisticsTest.java \\ \hline 
+\textbf{Variable name(s)}        & \multicolumn{5}{l|}{n/a}  \\ \hline 
+\textbf{Pre-condition(s)}        & \multicolumn{5}{l|}{Have some existing transactions}\\ \hline
+\textbf{Expected output}        & \multicolumn{5}{l|}{View of statistics for all transactions from March 2017.} \\ \hline 
+\textbf{Actual output}        & \multicolumn{5}{l|}{View of statistics for all transactions from March 2017.} \\ \hline 
+\textbf{Bug found? }        & \multicolumn{5}{l|}{ No } \\ \hline 
+\textbf{Post-condition(s)}        & \multicolumn{5}{l|}{The user is viewing the statistics for all transactions from March 2017.}\\ \hline
+\end{tabular}
+}
+\end{table}
+
+\textbf{Test Case:} Viewing statistics for a particular span of time
+
+\begin{table}[H]
+\centering
+\caption{View an overview of expense statistics for a specific span of time}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\textbf{Tester name}               & \multicolumn{2}{c|}{Maximilien Malderle} &
+\textbf{Test Date}             & \multicolumn{2}{c|}{05.04.18} \\ \hline\hline
+
+\multicolumn{1}{|l|}{\multirow{5}{*}{\textbf{Description}}}                     & \multicolumn{5}{l|} {Click on 'Statistics'.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{View of statistics is displayed.} \\ 
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Type '6' in range text field.} \\ 
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Click on 'Submit'.} \\ 
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{View of statistics for all transactions from the last 6 months is displayed.} \\ 
+\hline
+\textbf{Class name}        & StatisticsTest & \textbf{Method name} & testStatisticsSectionClick() &\textbf{File name} & StatisticsTest.java \\ \hline 
+\textbf{Variable name(s)}        & \multicolumn{5}{l|}{n/a}  \\ \hline 
+\textbf{Pre-condition(s)}        & \multicolumn{5}{l|}{Have some existing transactions}\\ \hline
+\textbf{Expected output}        & \multicolumn{5}{l|}{View of statistics for all transactions from the last 6 months.} \\ \hline 
+\textbf{Actual output}        & \multicolumn{5}{l|}{View of statistics for all transactions from the last 6 months.} \\ \hline 
+\textbf{Bug found? }        & \multicolumn{5}{l|}{ No } \\ \hline 
+\textbf{Post-condition(s)}        & \multicolumn{5}{l|}{The user is viewing the statistics for all transactions from the last 6 months.}\\ \hline
+\end{tabular}
+}
+\end{table}
+
+\textbf{Test Case:} Viewing statistics for all recurring transactions
+
+\begin{table}[H]
+\centering
+\caption{View an overview of expense statistics for all recurring transactions}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\textbf{Tester name}               & \multicolumn{2}{c|}{Maximilien Malderle} &
+\textbf{Test Date}             & \multicolumn{2}{c|}{05.04.18} \\ \hline\hline
+
+\multicolumn{1}{|l|}{\multirow{6}{*}{\textbf{Description}}}                     & \multicolumn{5}{l|} {Click on 'Statistics'.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{View of statistics is displayed.} \\ 
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Type 'All' in range text field.} \\ 
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Type '2' in recurring transaction text field.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Click on 'Submit'.} \\ 
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{View of recurring transactions is displayed.} \\ 
+\hline
+\textbf{Class name}        & StatisticsTest & \textbf{Method name} & testRecurringAllClick() &\textbf{File name} & StatisticsTest.java \\ \hline 
+\textbf{Variable name(s)}        & \multicolumn{5}{l|}{n/a}  \\ \hline 
+\textbf{Pre-condition(s)}        & \multicolumn{5}{l|}{Have some existing transactions}\\ \hline
+\textbf{Expected output}        & \multicolumn{5}{l|}{View of statistics for all recurring transactions.} \\ \hline 
+\textbf{Actual output}        & \multicolumn{5}{l|}{View of statistics for all recurring transactions.} \\ \hline 
+\textbf{Bug found? }        & \multicolumn{5}{l|}{ No } \\ \hline 
+\textbf{Post-condition(s)}        & \multicolumn{5}{l|}{The user is viewing the statistics for all recurring transactions.}\\ \hline
+\end{tabular}
+}
+\end{table}
+
+\textbf{Test Case:} Viewing statistics for recurring transactions for a particular year
+
+\begin{table}[H]
+\centering
+\caption{View an overview of expense statistics for all recurring transactions of a specific year}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\textbf{Tester name}               & \multicolumn{2}{c|}{Maximilien Malderle} &
+\textbf{Test Date}             & \multicolumn{2}{c|}{05.04.18} \\ \hline\hline
+
+\multicolumn{1}{|l|}{\multirow{6}{*}{\textbf{Description}}}                     & \multicolumn{5}{l|} {Click on 'Statistics'.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{View of statistics is displayed.} \\ 
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Type '2017' in range text field.} \\ 
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Type '2' in recurring transaction text field.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Click on 'Submit'.} \\ 
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{View of recurring transactions from 2017 is displayed.} \\ 
+\hline
+\textbf{Class name}        & StatisticsTest & \textbf{Method name} & testRecurringYearClick() &\textbf{File name} & StatisticsTest.java \\ \hline 
+\textbf{Variable name(s)}        & \multicolumn{5}{l|}{n/a}  \\ \hline 
+\textbf{Pre-condition(s)}        & \multicolumn{5}{l|}{Have some existing transactions}\\ \hline
+\textbf{Expected output}        & \multicolumn{5}{l|}{View of statistics for all recurring transactions of 2017.} \\ \hline 
+\textbf{Actual output}        & \multicolumn{5}{l|}{View of statistics for all recurring transactions of 2017.} \\ \hline 
+\textbf{Bug found? }        & \multicolumn{5}{l|}{ No } \\ \hline 
+\textbf{Post-condition(s)}        & \multicolumn{5}{l|}{The user is viewing the statistics for all recurring transactions of 2017.}\\ \hline
+\end{tabular}
+}
+\end{table}
+\clearpage
+\textbf{Test Case:} Viewing statistics for recurring transactions for a particular month
+
+\begin{table}[H]
+\centering
+\caption{View an overview of expense statistics for all recurring transactions of a specific month}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\textbf{Tester name}               & \multicolumn{2}{c|}{Maximilien Malderle} &
+\textbf{Test Date}             & \multicolumn{2}{c|}{05.04.18} \\ \hline\hline
+
+\multicolumn{1}{|l|}{\multirow{6}{*}{\textbf{Description}}}                     & \multicolumn{5}{l|} {Click on 'Statistics'.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{View of statistics is displayed.} \\ 
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Type 'March 2017' in range text field.} \\ 
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Type '2' in recurring transaction text field.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Click on 'Submit'.} \\ 
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{View of recurring transactions from 2017 is displayed.} \\ 
+\hline
+\textbf{Class name}        & StatisticsTest & \textbf{Method name} & testRecurringMonthClick() &\textbf{File name} & StatisticsTest.java \\ \hline 
+\textbf{Variable name(s)}        & \multicolumn{5}{l|}{n/a}  \\ \hline 
+\textbf{Pre-condition(s)}        & \multicolumn{5}{l|}{Have some existing transactions}\\ \hline
+\textbf{Expected output}        & \multicolumn{5}{l|}{View of statistics for all recurring transactions of March 2017.} \\ \hline 
+\textbf{Actual output}        & \multicolumn{5}{l|}{View of statistics for all recurring transactions of March 2017.} \\ \hline 
+\textbf{Bug found? }        & \multicolumn{5}{l|}{ No } \\ \hline 
+\textbf{Post-condition(s)}        & \multicolumn{5}{l|}{The user is viewing the statistics for all recurring transactions of March 2017.}\\ \hline
+\end{tabular}
+}
+\end{table}
+
+\textbf{Test Case:} Viewing statistics for recurring transactions for a particular span of time
+
+\begin{table}[H]
+\centering
+\caption{View an overview of expense statistics for all recurring transactions of a specific span of time}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\textbf{Tester name}               & \multicolumn{2}{c|}{Maximilien Malderle} &
+\textbf{Test Date}             & \multicolumn{2}{c|}{05.04.18} \\ \hline\hline
+
+\multicolumn{1}{|l|}{\multirow{6}{*}{\textbf{Description}}}                     & \multicolumn{5}{l|} {Click on 'Statistics'.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{View of statistics is displayed.} \\ 
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Type '6' in range text field.} \\ 
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Type '2' in recurring transaction text field.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Click on 'Submit'.} \\ 
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{View of recurring transactions from the last 6 months is displayed.} \\ 
+\hline
+\textbf{Class name}        & StatisticsTest & \textbf{Method name} & testRecurringSectionClick() &\textbf{File name} & StatisticsTest.java \\ \hline 
+\textbf{Variable name(s)}        & \multicolumn{5}{l|}{n/a}  \\ \hline 
+\textbf{Pre-condition(s)}        & \multicolumn{5}{l|}{Have some existing transactions}\\ \hline
+\textbf{Expected output}        & \multicolumn{5}{l|}{View of statistics for all recurring transactions of the last 6 months.} \\ \hline 
+\textbf{Actual output}        & \multicolumn{5}{l|}{View of statistics for all recurring transactions of the last 6 months.} \\ \hline 
+\textbf{Bug found? }        & \multicolumn{5}{l|}{ No } \\ \hline 
+\textbf{Post-condition(s)}        & \multicolumn{5}{l|}{The user is viewing the statistics for all recurring transactions of the last 6 months.}\\ \hline
+\end{tabular}
+}
+\end{table}
+\clearpage
+\subsection{System Level Test Cases}
+
+Upon completion of the subsystem level tests, the software team will verify the functionality of the system as a whole, ensuring that the subsystems work as intended once they communicate with one another. In addition, the team must make sure that the system satisfies the requirements specified during the requirements phase. For this portion of testing, the software team will run JUnit tests on the main controller as well as the driver, and will have a user operate the system, testing different interactions with it.
+
+\subsubsection{Main Controller and Driver Tests} 
+\textbf{View Transaction List}
+\begin{table}[H]
+\centering
+\caption{Method testTransactionListClick() in MainController class}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\textbf{Tester name}               & \multicolumn{2}{c|}{Mylene Haurie} &
+\textbf{Test Date}             & \multicolumn{2}{c|}{05.05.18} \\ \hline\hline
+
+\multicolumn{1}{|l|}{\multirow{2}{*}{\textbf{Description}}}                     & \multicolumn{5}{l|} {Click on 'View Transactions'.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{View of Transaction List is displayed.} \\ 
+\hline
+\textbf{Class name}        & MainController & \textbf{Method name} & testTransactionListClick() &\textbf{File name} & MainController.java \\ \hline 
+\textbf{Variable name(s)}        & \multicolumn{5}{l|}{n/a}  \\ \hline 
+\textbf{Pre-condition(s)}        & \multicolumn{5}{l|}{None.}\\ \hline
+\textbf{Expected output}        & \multicolumn{5}{l|}{View of list of transactions.} \\ \hline 
+\textbf{Actual output}        & \multicolumn{5}{l|}{View of list of transactions.} \\ \hline 
+\textbf{Bug found? }        & \multicolumn{5}{l|}{ No } \\ \hline 
+\textbf{Post-condition(s)}        & \multicolumn{5}{l|}{The user is viewing the transaction list.}\\ \hline
+\end{tabular}
+}
+\end{table}
+
+\textbf{View Transaction Detail}
+\begin{table}[H]
+\centering
+\caption{Method testTransactionDetailClick() in MainController class}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\textbf{Tester name}               & \multicolumn{2}{c|}{Mylene Haurie} &
+\textbf{Test Date}             & \multicolumn{2}{c|}{05.05.18} \\ \hline\hline
+
+\multicolumn{1}{|l|}{\multirow{4}{*}{\textbf{Description}}}                     & \multicolumn{5}{l|} {Click on 'View Transactions'.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{View of Transaction List is displayed.} \\ 
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Click on a transaction.} \\ 
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{View of details for that transaction is displayed.} \\ 
+\hline
+\textbf{Class name}        & MainController & \textbf{Method name} & testTransactionDetailClick() &\textbf{File name} & MainController.java \\ \hline 
+\textbf{Variable name(s)}        & \multicolumn{5}{l|}{n/a}  \\ \hline 
+\textbf{Pre-condition(s)}        & \multicolumn{5}{l|}{None.}\\ \hline
+\textbf{Expected output}        & \multicolumn{5}{l|}{View of transaction detail.} \\ \hline 
+\textbf{Actual output}        & \multicolumn{5}{l|}{View of transaction detail.} \\ \hline 
+\textbf{Bug found? }        & \multicolumn{5}{l|}{ No } \\ \hline 
+\textbf{Post-condition(s)}        & \multicolumn{5}{l|}{The user is viewing the details pertaining to a single transaction.}\\ \hline
+\end{tabular}
+}
+\end{table}
+\clearpage
+\textbf{View Account List}
+\begin{table}[H]
+\centering
+\caption{Method testAccountButtonPresent() in MainController class}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\textbf{Tester name}               & \multicolumn{2}{c|}{Mylene Haurie} &
+\textbf{Test Date}             & \multicolumn{2}{c|}{05.05.18} \\ \hline\hline
+
+\multicolumn{1}{|l|}{\multirow{2}{*}{\textbf{Description}}}                     & \multicolumn{5}{l|} {Click on 'View Accounts'.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{View of Account List is displayed.} \\ 
+\hline
+\textbf{Class name}        & MainController & \textbf{Method name} & testAccountButtonPresent() &\textbf{File name} & MainController.java \\ \hline 
+\textbf{Variable name(s)}        & \multicolumn{5}{l|}{n/a}  \\ \hline 
+\textbf{Pre-condition(s)}        & \multicolumn{5}{l|}{None.}\\ \hline
+\textbf{Expected output}        & \multicolumn{5}{l|}{View of list of accounts.} \\ \hline 
+\textbf{Actual output}        & \multicolumn{5}{l|}{View of list of accounts.} \\ \hline 
+\textbf{Bug found? }        & \multicolumn{5}{l|}{ No } \\ \hline 
+\textbf{Post-condition(s)}        & \multicolumn{5}{l|}{The user is viewing the account list.}\\ \hline
+\end{tabular}
+}
+\end{table}
+
+\textbf{Add Transaction}
+\begin{table}[H]
+\centering
+\caption{Method testAddTransactionClick() in MainController class}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\textbf{Tester name}               & \multicolumn{2}{c|}{Mylene Haurie} &
+\textbf{Test Date}             & \multicolumn{2}{c|}{05.05.18} \\ \hline\hline
+
+\multicolumn{1}{|l|}{\multirow{2}{*}{\textbf{Description}}}                     & \multicolumn{5}{l|} {Click on 'Add Transaction'.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Add Transaction menu is displayed.} \\ 
+\hline
+\textbf{Class name}        & MainController & \textbf{Method name} & testAddTransactionClick() &\textbf{File name} & MainController.java \\ \hline 
+\textbf{Variable name(s)}        & \multicolumn{5}{l|}{n/a}  \\ \hline 
+\textbf{Pre-condition(s)}        & \multicolumn{5}{l|}{None.}\\ \hline
+\textbf{Expected output}        & \multicolumn{5}{l|}{View of add transaction menu.} \\ \hline 
+\textbf{Actual output}        & \multicolumn{5}{l|}{View of list of add transaction menu.} \\ \hline 
+\textbf{Bug found? }        & \multicolumn{5}{l|}{ No } \\ \hline 
+\textbf{Post-condition(s)}        & \multicolumn{5}{l|}{The user is viewing the add transaction menu.}\\ \hline
+\end{tabular}
+}
+\end{table}
+
+\textbf{Open application}
+\begin{table}[H]
+\centering
+\caption{Method testWindowExists() in MyMoneyDriverTest class}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\textbf{Tester name}               & \multicolumn{2}{c|}{Mylene Haurie} &
+\textbf{Test Date}             & \multicolumn{2}{c|}{05.05.18} \\ \hline\hline
+
+\multicolumn{1}{|l|}{\multirow{2}{*}{\textbf{Description}}}                     & \multicolumn{5}{l|} {Launch application driver.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{Verify that application window opens.} \\ 
+\hline
+\textbf{Class name}        & MyMoneyDriverTest & \textbf{Method name} & testWindowExists() &\textbf{File name} & MyMoneyDriverTest.java \\ \hline 
+\textbf{Variable name(s)}        & \multicolumn{5}{l|}{n/a}  \\ \hline 
+\textbf{Pre-condition(s)}        & \multicolumn{5}{l|}{None.}\\ \hline
+\textbf{Expected output}        & \multicolumn{5}{l|}{MyMoney application window.} \\ \hline 
+\textbf{Actual output}        & \multicolumn{5}{l|}{MyMoney application window.} \\ \hline 
+\textbf{Bug found? }        & \multicolumn{5}{l|}{ No } \\ \hline 
+\textbf{Post-condition(s)}        & \multicolumn{5}{l|}{The user can now operate the system.}\\ \hline
+\end{tabular}
+}
+\end{table}
+
+
+\subsubsection{Test Case 1: Adding an account}
+
+\begin{table}[H]
+\centering
+\caption{Add an account}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\textbf{Tester name}               & \multicolumn{2}{c|}{Mylene Haurie} &
+\textbf{Test Date}             & \multicolumn{2}{c|}{05.05.18} \\ \hline\hline
+
+\multicolumn{1}{|l|}{\multirow{2}{*}{\textbf{Purpose}}}                     & \multicolumn{5}{l|} {Verify that program satisfies the requirement that a user be able to add an account,} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{that he/she will be able to refer to later.} \\ 
+\hline
+\multicolumn{1}{|l|}
+{\multirow{5}{*}{\textbf{Input Specification}}}                     
+& \multicolumn{5}{l|} {1 - Start the application.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{2 - Click on 'Add Account'.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{3 - Input some random test data.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{4 - Click on 'Save Account'.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{5 - Click on 'Back'.} \\\hline 
+\textbf{Expected output}        & \multicolumn{5}{l|}{The added account will appear on the list of accounts in the 'View Accounts' tab.}\\ \hline
+\textbf{Actual output}        & \multicolumn{5}{l|}{The added account only appears once the application is closed and reopened.} \\ \hline 
+\textbf{Traces to use cases}        & \multicolumn{5}{l|}{The ability to add an account, that can then be referred to during usage of the program.} \\ \hline 
+\textbf{Bug found? }        & \multicolumn{5}{l|}{ Yes } \\ \hline
+\end{tabular}
+}
+\end{table}
+
+\subsubsection{Test Case 2: Adding a transaction} 
+
+\begin{table}[H]
+\centering
+\caption{Add a transaction}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\textbf{Tester name}               & \multicolumn{2}{c|}{Mylene Haurie} &
+\textbf{Test Date}             & \multicolumn{2}{c|}{05.05.18} \\ \hline\hline
+
+\multicolumn{1}{|l|}{\multirow{2}{*}{\textbf{Purpose}}}                     & \multicolumn{5}{l|} {Verify that program satisfies the requirement that a user be able to add a transaction,} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{that he/she will be able to refer to later.} \\ 
+\hline
+\multicolumn{1}{|l|}
+{\multirow{4}{*}{\textbf{Input Specification}}}                     
+& \multicolumn{5}{l|} {1 - Start the application.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{2 - Click on 'Add Transaction'.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{3 - Input some random test data.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{4 - Click on 'Add Transaction'.} \\\hline 
+\textbf{Expected output}        & \multicolumn{5}{l|}{The added transaction will appear on the list of transactions in the 'View Transaction History' tab.}\\ \hline
+\textbf{Actual output}        & \multicolumn{5}{l|}{The added transaction appears when the user clicks on 'View Transaction History'} \\ \hline 
+\textbf{Traces to use cases}        & \multicolumn{5}{l|}{The ability to add a transaction, that can then be referred to during usage of the program.} \\ \hline 
+\textbf{Bug found? }        & \multicolumn{5}{l|}{ No } \\ \hline
+\end{tabular}
+}
+\end{table}
+
+\subsubsection{Test Case 3: Viewing Transactions} 
+
+\begin{table}[H]
+\centering
+\caption{View list of all transactions}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\textbf{Tester name}               & \multicolumn{2}{c|}{Mylene Haurie} &
+\textbf{Test Date}             & \multicolumn{2}{c|}{05.05.18} \\ \hline\hline
+
+\multicolumn{1}{|l|}{\multirow{2}{*}{\textbf{Purpose}}}                     & \multicolumn{5}{l|} {Verify that program satisfies the requirement that a user be able to} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{view a list of all their transactions.} \\ 
+\hline
+\multicolumn{1}{|l|}
+{\multirow{2}{*}{\textbf{Input Specification}}}                     
+& \multicolumn{5}{l|} {1 - Start the application.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{2 - Click on 'View Transactions'.} \\\hline 
+\textbf{Expected output}        & \multicolumn{5}{l|}{A list of all inputted transactions appears.}\\ \hline
+\textbf{Actual output}        & \multicolumn{5}{l|}{The list of all transactions appears when the user clicks on 'View Transactions'} \\ \hline 
+\textbf{Traces to use cases}        & \multicolumn{5}{l|}{The ability to view all transactions inputted into the system.} \\ \hline 
+\textbf{Bug found? }        & \multicolumn{5}{l|}{ No } \\ \hline
+\end{tabular}
+}
+\end{table}
+
+\subsubsection{Test Case 4: Viewing Details of a Single Transaction} 
+
+\begin{table}[H]
+\centering
+\caption{View transaction details}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\textbf{Tester name}               & \multicolumn{2}{c|}{Mylene Haurie} &
+\textbf{Test Date}             & \multicolumn{2}{c|}{05.05.18} \\ \hline\hline
+
+\multicolumn{1}{|l|}{\multirow{2}{*}{\textbf{Purpose}}}                     & \multicolumn{5}{l|} {Verify that program satisfies the requirement that a user be able to} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{view details pertaining to a single transaction.} \\ 
+\hline
+\multicolumn{1}{|l|}
+{\multirow{3}{*}{\textbf{Input Specification}}}                     
+& \multicolumn{5}{l|} {1 - Start the application.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{2 - Click on 'View Transactions'.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{3 - Click on any transaction from the list.} \\\hline 
+\textbf{Expected output}        & \multicolumn{5}{l|}{The details of the transaction that was clicked.}\\ \hline
+\textbf{Actual output}        & \multicolumn{5}{l|}{The details of the transaction on which the user clicks appears.} \\ \hline 
+\textbf{Traces to use cases}        & \multicolumn{5}{l|}{The ability to view the details of a single transaction.} \\ \hline 
+\textbf{Bug found? }        & \multicolumn{5}{l|}{ No } \\ \hline
+\end{tabular}
+}
+\end{table}
+
+\subsubsection{Test Case 5: Editing a Transaction} 
+
+\begin{table}[H]
+\centering
+\caption{Edit transaction details}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\textbf{Tester name}               & \multicolumn{2}{c|}{Mylene Haurie} &
+\textbf{Test Date}             & \multicolumn{2}{c|}{05.05.18} \\ \hline\hline
+
+\multicolumn{1}{|l|}{\multirow{2}{*}{\textbf{Purpose}}}                     & \multicolumn{5}{l|} {Verify that program satisfies the requirement that a user be able to} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{edit the information pertaining to a specific transaction.} \\ 
+\hline
+\multicolumn{1}{|l|}
+{\multirow{6}{*}{\textbf{Input Specification}}}                     
+& \multicolumn{5}{l|} {1 - Start the application.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{2 - Click on 'View Transactions'.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{3 - Click on any transaction from the list.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{4 - Click on 'Edit Transaction'.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{5 - Input some random data.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{6 - Click on 'Save Transaction'.} \\\hline 
+\textbf{Expected output}        & \multicolumn{5}{l|}{The details of the transaction that was edited are updated to reflect the changes made.}\\ \hline
+\textbf{Actual output}        & \multicolumn{5}{l|}{The details of the transaction reflect the changes made when it is clicked on.} \\ \hline 
+\textbf{Traces to use cases}        & \multicolumn{5}{l|}{The ability to edit the details of a single transaction.} \\ \hline 
+\textbf{Bug found? }        & \multicolumn{5}{l|}{ No } \\ \hline
+\end{tabular}
+}
+\end{table}
+
+\subsubsection{Test Case 6: Deleting a Transaction} 
+
+\begin{table}[H]
+\centering
+\caption{Delete transaction}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\textbf{Tester name}               & \multicolumn{2}{c|}{Mylene Haurie} &
+\textbf{Test Date}             & \multicolumn{2}{c|}{05.05.18} \\ \hline\hline
+
+\multicolumn{1}{|l|}{\multirow{2}{*}{\textbf{Purpose}}}                     & \multicolumn{5}{l|} {Verify that program satisfies the requirement that a user be able to} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{delete a specific transaction.} \\ 
+\hline
+\multicolumn{1}{|l|}
+{\multirow{4}{*}{\textbf{Input Specification}}}                     
+& \multicolumn{5}{l|} {1 - Start the application.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{2 - Click on 'View Transactions'.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{3 - Click on any transaction from the list.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{4 - Click on 'Delete Transaction'.} \\\hline 
+\textbf{Expected output}        & \multicolumn{5}{l|}{The transaction no longer appears in list of transactions.}\\ \hline
+\textbf{Actual output}        & \multicolumn{5}{l|}{The transaction no longer appears in list of transactions.} \\ \hline 
+\textbf{Traces to use cases}        & \multicolumn{5}{l|}{The ability to delete a transaction.} \\ \hline 
+\textbf{Bug found? }        & \multicolumn{5}{l|}{ No } \\ \hline
+\end{tabular}
+}
+\end{table}
+
+\subsubsection{Test Case 7: Viewing Statistics} 
+
+\begin{table}[H]
+\centering
+\caption{View statistics}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\textbf{Tester name}               & \multicolumn{2}{c|}{Mylene Haurie} &
+\textbf{Test Date}             & \multicolumn{2}{c|}{05.05.18} \\ \hline\hline
+
+\multicolumn{1}{|l|}{\multirow{2}{*}{\textbf{Purpose}}}                     & \multicolumn{5}{l|} {Verify that program satisfies the requirement that a user be able to} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{view statistics pertaining to their spending habits.} \\ 
+\hline
+\multicolumn{1}{|l|}
+{\multirow{2}{*}{\textbf{Input Specification}}}                     
+& \multicolumn{5}{l|} {1 - Start the application.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{2 - Click on 'Statistics'.} \\\hline 
+{\multirow{2}{*}{\textbf{Expected Output}}}  & \multicolumn{5}{l|}{A bar chart outlining spending habits of the last year}\\ 
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{as well as a menu for viewing more detailed statistics.} \\\hline
+\textbf{Actual output}        & \multicolumn{5}{l|}{The bar chart and menu both appear.} \\ \hline 
+\textbf{Traces to use cases}        & \multicolumn{5}{l|}{The ability to view statistics.} \\ \hline 
+\textbf{Bug found? }        & \multicolumn{5}{l|}{ No } \\ \hline
+\end{tabular}
+}
+\end{table}
+
+\subsubsection{Test Case 8: Viewing Statistics Over a Range of Time} 
+
+\begin{table}[H]
+\centering
+\caption{View statistics for a certain range of time}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\textbf{Tester name}               & \multicolumn{2}{c|}{Mylene Haurie} &
+\textbf{Test Date}             & \multicolumn{2}{c|}{05.05.18} \\ \hline\hline
+
+\multicolumn{1}{|l|}{\multirow{3}{*}{\textbf{Purpose}}}                     & \multicolumn{5}{l|} {Verify that program satisfies the requirement that a user be able to} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{view statistics pertaining to their spending habits over a } \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{certain span of time. } \\
+\hline
+\multicolumn{1}{|l|}
+{\multirow{4}{*}{\textbf{Input Specification}}}                     
+& \multicolumn{5}{l|} {1 - Start the application.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{2 - Click on 'Statistics'.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{3 - Input a number to indicate the number of months in the Range text box.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{4 - Click on 'Submit'.} \\\hline 
+{\multirow{2}{*}{\textbf{Expected Output}}}  & \multicolumn{5}{l|}{Below the text boxes, display data pertaining to the inflow and outflow}\\ 
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{of money during the specified range of months.} \\\hline
+\textbf{Actual output}        & \multicolumn{5}{l|}{The data relating to the inflow and outflow of money during the indicated range appears.} \\ \hline 
+\textbf{Traces to use cases}        & \multicolumn{5}{l|}{The ability to view statistics pertaining to a certain range of months.} \\ \hline 
+\textbf{Bug found? }        & \multicolumn{5}{l|}{ No } \\ \hline
+\end{tabular}
+}
+\end{table}
+
+\subsubsection{Test Case 9: Viewing Statistics Over a Range of Time for Recurring Transactions} 
+
+\begin{table}[H]
+\centering
+\caption{View statistics for recurring expenses over a certain range of time}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\textbf{Tester name}               & \multicolumn{2}{c|}{Mylene Haurie} &
+\textbf{Test Date}             & \multicolumn{2}{c|}{05.05.18} \\ \hline\hline
+
+\multicolumn{1}{|l|}{\multirow{3}{*}{\textbf{Purpose}}}                     & \multicolumn{5}{l|} {Verify that program satisfies the requirement that a user be able to} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{view statistics pertaining to their spending habits over a } \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{certain span of time for recurring transactions. } \\
+\hline
+\multicolumn{1}{|l|}
+{\multirow{6}{*}{\textbf{Input Specification}}}                     
+& \multicolumn{5}{l|} {1 - Start the application.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{2 - Click on 'Statistics'.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{3 - Input a number to indicate the number of months in the Range text box.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{4 - Input a number to indicate } \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{the number of recurring transactions in the Recurring Transactions text box.} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{5 - Click on 'Submit'.} \\\hline 
+{\multirow{2}{*}{\textbf{Expected Output}}}  & \multicolumn{5}{l|}{Below the text boxes, display data pertaining to the inflow and outflow of money during}\\ 
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{the specified range of months for the specific number of recurring transactions.} \\\hline
+{\multirow{2}{*}{\textbf{Actual output}}}        & \multicolumn{5}{l|}{The data relating to the inflow and outflow of money during the indicated range} \\
+\multicolumn{1}{|l|}{} & \multicolumn{5}{l|}{and for the specific number of recurring transactions appears.}\\\hline 
+\textbf{Traces to use cases}        & \multicolumn{5}{l|}{The ability to view statistics pertaining to a certain range of months for recurring expenses.} \\ \hline 
+\textbf{Bug found? }        & \multicolumn{5}{l|}{ No } \\ \hline
+\end{tabular}
+}
+\end{table}
+\clearpage
+
+
+\section{Test Results}
+All of the unit tests and subsystem level tests conducted during their respective phases pass; however, a bug was found in Test Case 1 from the system level tests. Due to time constraints, this bug could not be fixed before the end of the current iteration. Despite the rest of the conducted tests passing, it is not enough to state that the rest of the application is error and bug free. Time restrictions limited the amount and thoroughness of tests that the software team could conduct. With this being said, the test document does provide a decent overview of the functionality and behaviour of the application, and shows that it meets the requirements planned out in earlier iterations.
+
+\section{References}
+
+[1]C. Larman, \textit{Applying UML and patterns: An Introduction to Object-Oriented Analysis and Design and Iterative Development}, 3rd ed. Upper Saddle River (New Jersey): Addison Wesley Professional, 2004.\\\\
+
+[2]R. Pressman and B. Maxim, \textit{Software engineering}, 8th ed. New York: McGraw-Hill Higher Education, 2015.
+
+\end{document}
+    
